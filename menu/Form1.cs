@@ -36,5 +36,20 @@ namespace menu
         {
 
         }
+
+        private void txtTenDangNhap_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQuenMatKhau_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
