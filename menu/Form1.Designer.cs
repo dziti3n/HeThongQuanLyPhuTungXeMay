@@ -35,11 +35,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMK = new System.Windows.Forms.TextBox();
+            this.lblDK = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTK = new System.Windows.Forms.TextBox();
             this.btnQuenMK = new System.Windows.Forms.Button();
             this.btnDN = new System.Windows.Forms.Button();
-            this.lblDK = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,12 +72,13 @@
             this.chkHienMK.TabIndex = 2;
             this.chkHienMK.Text = "Hiện mật khẩu";
             this.chkHienMK.UseVisualStyleBackColor = true;
+            this.chkHienMK.CheckedChanged += new System.EventHandler(this.chkHienMK_CheckedChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(54, 143);
+            this.label4.Location = new System.Drawing.Point(51, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 2;
@@ -87,43 +88,52 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(317, 143);
+            this.label6.Location = new System.Drawing.Point(327, 136);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(25, 20);
             this.label6.TabIndex = 2;
             this.label6.Text = "🔒";
-            this.label6.Click += new System.EventHandler(this.label3_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(317, 88);
+            this.label5.Location = new System.Drawing.Point(327, 80);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 20);
             this.label5.TabIndex = 2;
             this.label5.Text = "👤";
-            this.label5.Click += new System.EventHandler(this.label3_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 88);
+            this.label3.Location = new System.Drawing.Point(13, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên đăng nhập";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtMK
             // 
             this.txtMK.Location = new System.Drawing.Point(143, 136);
-            this.txtMK.Multiline = true;
             this.txtMK.Name = "txtMK";
-            this.txtMK.Size = new System.Drawing.Size(209, 38);
+            this.txtMK.Size = new System.Drawing.Size(209, 23);
             this.txtMK.TabIndex = 1;
-            this.txtMK.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtMK.UseSystemPasswordChar = true;
+            // 
+            // lblDK
+            // 
+            this.lblDK.AutoSize = true;
+            this.lblDK.BackColor = System.Drawing.Color.White;
+            this.lblDK.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDK.ForeColor = System.Drawing.Color.Blue;
+            this.lblDK.Location = new System.Drawing.Point(16, 311);
+            this.lblDK.Name = "lblDK";
+            this.lblDK.Size = new System.Drawing.Size(151, 22);
+            this.lblDK.TabIndex = 5;
+            this.lblDK.Text = "Chưa có tài khoản?";
+            this.lblDK.Click += new System.EventHandler(this.lblDK_Click);
             // 
             // label2
             // 
@@ -140,11 +150,9 @@
             // txtTK
             // 
             this.txtTK.Location = new System.Drawing.Point(143, 80);
-            this.txtTK.Multiline = true;
             this.txtTK.Name = "txtTK";
-            this.txtTK.Size = new System.Drawing.Size(209, 38);
+            this.txtTK.Size = new System.Drawing.Size(209, 23);
             this.txtTK.TabIndex = 0;
-            this.txtTK.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnQuenMK
             // 
@@ -155,6 +163,7 @@
             this.btnQuenMK.TabIndex = 4;
             this.btnQuenMK.Text = "Quên mật khẩu?";
             this.btnQuenMK.UseVisualStyleBackColor = false;
+            this.btnQuenMK.Click += new System.EventHandler(this.btnQuenMK_Click);
             // 
             // btnDN
             // 
@@ -166,18 +175,7 @@
             this.btnDN.TabIndex = 3;
             this.btnDN.Text = "🔑  Đăng nhập";
             this.btnDN.UseVisualStyleBackColor = false;
-            // 
-            // lblDK
-            // 
-            this.lblDK.AutoSize = true;
-            this.lblDK.BackColor = System.Drawing.Color.White;
-            this.lblDK.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDK.ForeColor = System.Drawing.Color.Blue;
-            this.lblDK.Location = new System.Drawing.Point(16, 311);
-            this.lblDK.Name = "lblDK";
-            this.lblDK.Size = new System.Drawing.Size(151, 22);
-            this.lblDK.TabIndex = 5;
-            this.lblDK.Text = "Chưa có tài khoản?";
+            this.btnDN.Click += new System.EventHandler(this.btnDN_Click);
             // 
             // frmDangNhap
             // 
