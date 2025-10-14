@@ -1,6 +1,6 @@
 ﻿namespace menu
 {
-    partial class Form1
+    partial class frmDangNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -53,13 +53,14 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(107, 118);
+            this.panel1.Location = new System.Drawing.Point(108, 71);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(385, 358);
+            this.panel1.Size = new System.Drawing.Size(385, 361);
             this.panel1.TabIndex = 0;
             // 
             // checkBox1
@@ -169,37 +170,34 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(101, 48);
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(16, 311);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(389, 33);
+            this.label1.Size = new System.Drawing.Size(151, 22);
             this.label1.TabIndex = 1;
-            this.label1.Text = "CHƯƠNG TRÌNH ĐĂNG NHẬP";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Chưa có tài khoản?";
             // 
-            // Form1
+            // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 565);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(611, 516);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.Name = "Form1";
+            this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chương trình đăng nhập";
+            this.Text = "CHƯƠNG TRÌNH QUẢN LÝ HỆ THỐNG PHỤ TÙNG XE MÁY";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
@@ -210,6 +208,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
     }
 }
 
