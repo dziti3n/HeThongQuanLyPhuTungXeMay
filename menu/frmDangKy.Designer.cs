@@ -35,11 +35,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtXN = new System.Windows.Forms.TextBox();
+            this.txtMK = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtTK = new System.Windows.Forms.TextBox();
+            this.btnDK = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,11 +53,11 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtXN);
+            this.panel1.Controls.Add(this.txtMK);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.txtTK);
+            this.panel1.Controls.Add(this.btnDK);
             this.panel1.Location = new System.Drawing.Point(94, 62);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(385, 358);
@@ -123,21 +123,21 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên đăng nhập";
             // 
-            // textBox3
+            // txtXN
             // 
-            this.textBox3.Location = new System.Drawing.Point(143, 193);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(209, 38);
-            this.textBox3.TabIndex = 1;
+            this.txtXN.Location = new System.Drawing.Point(143, 193);
+            this.txtXN.Multiline = true;
+            this.txtXN.Name = "txtXN";
+            this.txtXN.Size = new System.Drawing.Size(209, 38);
+            this.txtXN.TabIndex = 2;
             // 
-            // textBox2
+            // txtMK
             // 
-            this.textBox2.Location = new System.Drawing.Point(143, 136);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 38);
-            this.textBox2.TabIndex = 1;
+            this.txtMK.Location = new System.Drawing.Point(143, 136);
+            this.txtMK.Multiline = true;
+            this.txtMK.Name = "txtMK";
+            this.txtMK.Size = new System.Drawing.Size(209, 38);
+            this.txtMK.TabIndex = 1;
             // 
             // label2
             // 
@@ -151,24 +151,24 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "ĐĂNG KÝ";
             // 
-            // textBox1
+            // txtTK
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 80);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 38);
-            this.textBox1.TabIndex = 1;
+            this.txtTK.Location = new System.Drawing.Point(143, 80);
+            this.txtTK.Multiline = true;
+            this.txtTK.Name = "txtTK";
+            this.txtTK.Size = new System.Drawing.Size(209, 38);
+            this.txtTK.TabIndex = 0;
             // 
-            // button1
+            // btnDK
             // 
-            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(20, 269);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(353, 69);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "🔑  Đăng ký";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnDK.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnDK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDK.Location = new System.Drawing.Point(20, 269);
+            this.btnDK.Name = "btnDK";
+            this.btnDK.Size = new System.Drawing.Size(353, 69);
+            this.btnDK.TabIndex = 3;
+            this.btnDK.Text = "🔑  Đăng ký  ";
+            this.btnDK.UseVisualStyleBackColor = false;
             // 
             // frmDangKy
             // 
@@ -191,12 +191,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMK;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtTK;
+        private System.Windows.Forms.Button btnDK;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtXN;
     }
 }
