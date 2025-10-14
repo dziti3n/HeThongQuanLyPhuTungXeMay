@@ -16,5 +16,10 @@ namespace menu
         {
             InitializeComponent();
         }
+
+        private void dgvNguoiDung_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
