@@ -68,7 +68,7 @@
             this.chkHienMK.AutoSize = true;
             this.chkHienMK.Location = new System.Drawing.Point(231, 180);
             this.chkHienMK.Name = "chkHienMK";
-            this.chkHienMK.Size = new System.Drawing.Size(121, 21);
+            this.chkHienMK.Size = new System.Drawing.Size(95, 17);
             this.chkHienMK.TabIndex = 2;
             this.chkHienMK.Text = "Hiện mật khẩu";
             this.chkHienMK.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(51, 137);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 20);
+            this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Mật khẩu";
             // 
@@ -90,7 +90,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(327, 136);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 20);
+            this.label6.Size = new System.Drawing.Size(24, 17);
             this.label6.TabIndex = 2;
             this.label6.Text = "🔒";
             // 
@@ -100,7 +100,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(327, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 20);
+            this.label5.Size = new System.Drawing.Size(24, 17);
             this.label5.TabIndex = 2;
             this.label5.Text = "👤";
             // 
@@ -110,7 +110,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(13, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 20);
+            this.label3.Size = new System.Drawing.Size(105, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên đăng nhập";
             // 
@@ -118,7 +118,7 @@
             // 
             this.txtMK.Location = new System.Drawing.Point(143, 136);
             this.txtMK.Name = "txtMK";
-            this.txtMK.Size = new System.Drawing.Size(209, 23);
+            this.txtMK.Size = new System.Drawing.Size(209, 20);
             this.txtMK.TabIndex = 1;
             this.txtMK.UseSystemPasswordChar = true;
             // 
@@ -130,10 +130,12 @@
             this.lblDK.ForeColor = System.Drawing.Color.Blue;
             this.lblDK.Location = new System.Drawing.Point(16, 311);
             this.lblDK.Name = "lblDK";
-            this.lblDK.Size = new System.Drawing.Size(151, 22);
+            this.lblDK.Size = new System.Drawing.Size(124, 18);
             this.lblDK.TabIndex = 5;
             this.lblDK.Text = "Chưa có tài khoản?";
             this.lblDK.Click += new System.EventHandler(this.lblDK_Click);
+            this.lblDK.MouseLeave += new System.EventHandler(this.lblDK_MouseLeave);
+            this.lblDK.MouseHover += new System.EventHandler(this.lblDK_MouseHover);
             // 
             // label2
             // 
@@ -143,7 +145,7 @@
             this.label2.ForeColor = System.Drawing.Color.Blue;
             this.label2.Location = new System.Drawing.Point(119, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 35);
+            this.label2.Size = new System.Drawing.Size(124, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "ĐĂNG NHẬP";
             // 
@@ -151,7 +153,7 @@
             // 
             this.txtTK.Location = new System.Drawing.Point(143, 80);
             this.txtTK.Name = "txtTK";
-            this.txtTK.Size = new System.Drawing.Size(209, 23);
+            this.txtTK.Size = new System.Drawing.Size(209, 20);
             this.txtTK.TabIndex = 0;
             // 
             // btnQuenMK
@@ -179,7 +181,7 @@
             // 
             // frmDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 516);
             this.Controls.Add(this.panel1);

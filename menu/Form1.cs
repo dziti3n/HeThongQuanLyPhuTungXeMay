@@ -62,5 +62,17 @@ namespace menu
         {
             MessageBox.Show("Hết Cứu!", "Thông báo");
         }
+
+        private void lblDK_MouseHover(object sender, EventArgs e)
+        {
+            lblDK.Font = new Font(lblDK.Font, FontStyle.Underline);
+            lblDK.Cursor = Cursors.Hand;
+        }
+
+        private void lblDK_MouseLeave(object sender, EventArgs e)
+        {
+            lblDK.Font = new Font(lblDK.Font, FontStyle.Regular);
+            lblDK.Cursor = Cursors.Default;
+        }
     }
 }
