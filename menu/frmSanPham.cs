@@ -67,8 +67,8 @@ namespace menu
             {
                 MaPT = txtMaPT.Text,
                 TenPT = txtTenPT.Text,
-                LoaiPT = txtLoaiPT.Text,
-                DonViTinh = txtDonViTinh.Text,
+                LoaiPT = cmbLoaiPT.Text,
+                DonViTinh = cmbDonViTinh.Text,
                 DonGia = decimal.TryParse(txtDonGia.Text, out decimal gia) ? gia : 0,
                 SoLuongTon = int.TryParse(txtSoLuongTon.Text, out int sl) ? sl : 0
             };
@@ -119,6 +119,76 @@ namespace menu
             if (result == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void cmbDonViTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbLoaiPT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewThongTin_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return; // Bỏ qua nếu click tiêu đề hoặc không có dòng
+
+            DataGridViewRow row = dataGridViewThongTin.Rows[e.RowIndex];
+
+            txtMaPT.Text = row.Cells["ColumnMaPT"].Value?.ToString();
+            txtTenPT.Text = row.Cells["ColumnTenPT"].Value?.ToString();
+            cmbLoaiPT.Text = row.Cells["ColumnLoaiPT"].Value?.ToString();
+            cmbDonViTinh.Text = row.Cells["ColumnDonViTinh"].Value?.ToString();
+            txtDonGia.Text = row.Cells["ColumnDonGia"].Value?.ToString();
+            txtSoLuongTon.Text = row.Cells["ColumnSLTon"].Value?.ToString();
+        }
+
+        private void dataGridViewThongTin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return; // Bỏ qua nếu click tiêu đề hoặc không có dòng
+
+            DataGridViewRow row = dataGridViewThongTin.Rows[e.RowIndex];
+
+            txtMaPT.Text = row.Cells["ColumnMaPT"].Value?.ToString();
+            txtTenPT.Text = row.Cells["ColumnTenPT"].Value?.ToString();
+            cmbLoaiPT.Text = row.Cells["ColumnLoaiPT"].Value?.ToString();
+            cmbDonViTinh.Text = row.Cells["ColumnDonViTinh"].Value?.ToString();
+            txtDonGia.Text = row.Cells["ColumnDonGia"].Value?.ToString();
+            txtSoLuongTon.Text = row.Cells["ColumnSLTon"].Value?.ToString();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTenPT.Text.Trim().ToLower();
+            string maKhoa = txtMaPT.Text.Trim().ToLower();
+
+            // Nếu cả 2 ô đều trống thì hiển thị lại toàn bộ danh sách
+            if (string.IsNullOrEmpty(tuKhoa) && string.IsNullOrEmpty(maKhoa))
+            {
+                dataGridViewThongTin.DataSource = null;
+                dataGridViewThongTin.DataSource = dsPhuTung;
+                return;
+            }
+
+            // Lọc danh sách
+            var ketQua = dsPhuTung
+                .Where(pt =>
+                    pt.TenPT.ToLower().Contains(tuKhoa) ||
+                    pt.MaPT.ToLower().Contains(maKhoa))
+                .ToList();
+
+            // Hiển thị kết quả
+            if (ketQua.Count > 0)
+            {
+                dataGridViewThongTin.DataSource = null;
+                dataGridViewThongTin.DataSource = ketQua;
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy phụ tùng nào phù hợp!", "Kết quả tìm kiếm");
             }
         }
     }
