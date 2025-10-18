@@ -93,5 +93,10 @@ namespace menu
         {
            
         }
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
