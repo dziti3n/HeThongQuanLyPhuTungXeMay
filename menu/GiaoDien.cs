@@ -51,5 +51,10 @@ namespace menu
             frmDonDatHang f = new frmDonDatHang();
             f.ShowDialog();
         }
+
+        private void GiaoDien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
