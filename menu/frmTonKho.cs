@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace menu
 {
-    public partial class frmDonDatHang : Form
+    public partial class frmTonKho : Form
     {
-        public frmDonDatHang()
+        public frmTonKho()
         {
             InitializeComponent();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

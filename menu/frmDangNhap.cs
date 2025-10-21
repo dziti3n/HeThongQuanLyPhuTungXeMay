@@ -22,5 +22,10 @@ namespace menu
             GiaoDien g = new GiaoDien();
             
         }
+
+        private void chkHienMK_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkHienMK.Checked) { txtMK.UseSystemPasswordChar = false; } else { txtMK.UseSystemPasswordChar = true; }
+        }
     }
 }

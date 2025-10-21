@@ -364,7 +364,7 @@
             this.Controls.Add(this.lblCanhBao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmSanPham";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Quản lý phụ tùng";
             this.grbThongTinSP.ResumeLayout(false);
             this.grbThongTinSP.PerformLayout();

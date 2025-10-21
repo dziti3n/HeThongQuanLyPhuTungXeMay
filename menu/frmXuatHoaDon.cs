@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace menu
 {
-    public partial class frmDonDatHang : Form
+    public partial class frmXuatHoaDon : Form
     {
-        public frmDonDatHang()
+        public frmXuatHoaDon()
         {
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl1_Click(object sender, EventArgs e)
         {
 
         }

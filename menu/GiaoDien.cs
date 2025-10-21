@@ -106,7 +106,8 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnTinhTrangPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmTrangThaiPhieuNhap f = new frmTrangThaiPhieuNhap();
+            OpenChildForm(f);
         }
 
         private void btnXuatPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -128,12 +129,13 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnXuatHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmXuatHoaDon f = new frmXuatHoaDon();  
+            OpenChildForm(f);
         }
 
         private void btnTraHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            
         }
 
         private void btnLichSuBuonBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -155,17 +157,20 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnLichSuMuaHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmLichSuMuaHang f = new frmLichSuMuaHang();
+            OpenChildForm(f);
         }
 
         private void btnDoanhThu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmDoanhThu f = new frmDoanhThu();
+            OpenChildForm(f);
         }
 
         private void btnLoiNhuan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmLoiNhuan f = new frmLoiNhuan();
+            OpenChildForm(f);
         }
 
         private void btnMatHangBanChay_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -175,7 +180,8 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnThongTinTonKhoVaSapHet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmThongTinTonKho f = new frmThongTinTonKho();
+            OpenChildForm(f);
         }
 
         private void btnThietLapTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -186,7 +192,8 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnNhatKy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            NhatKy f = new NhatKy();
+            OpenChildForm(f);
         }
 
         private void rbcMENU_Click(object sender, EventArgs e)
@@ -195,14 +202,32 @@ private void label1_Click(object sender, EventArgs e)
         }
         private void OpenChildForm(Form child)
         {
-            // đóng tất cả form con trước khi mở (nếu muốn)
+            // Đóng form con cũ (nếu cần)
             foreach (Form f in this.MdiChildren)
                 f.Close();
 
+            // 👇 BƯỚC MỚI: Đồng bộ màu nền MdiClient với form con
+            var mdiClient = this.Controls.OfType<MdiClient>().FirstOrDefault();
+            if (mdiClient != null)
+            {
+                // Lấy màu nền từ form con (hoặc đặt cứng màu bạn muốn)
+                mdiClient.BackColor = child.BackColor; // hoặc Color.White, Color.LightGray, v.v.
+            }
+
+            // Cấu hình form con
             child.MdiParent = this;
             child.FormBorderStyle = FormBorderStyle.None;
-            child.Dock = DockStyle.Fill;
-            child.TopLevel = false;
+            child.StartPosition = FormStartPosition.Manual;
+
+            // Căn giữa (nếu bạn vẫn muốn căn giữa)
+            if (mdiClient != null)
+            {
+                int x = Math.Max(0, (mdiClient.Width - child.Width) / 2);
+                int y = Math.Max(0, (mdiClient.Height - child.Height) / 2);
+                y = Math.Max(0, y - 30);
+                child.Location = new Point(x, y);
+            }
+
             child.Show();
         }
     }
