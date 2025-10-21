@@ -37,13 +37,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.deTuNgay = new DevExpress.XtraEditors.DateEdit();
             this.deDenNgay = new DevExpress.XtraEditors.DateEdit();
+            this.deTuNgay = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuBuonBan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deTuNgay.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deTuNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deDenNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deDenNgay.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTuNgay.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTuNgay.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvLichSuBuonBan
@@ -57,7 +57,7 @@
             this.loaiphutung,
             this.soluongban,
             this.ngayban});
-            this.dgvLichSuBuonBan.Location = new System.Drawing.Point(220, 185);
+            this.dgvLichSuBuonBan.Location = new System.Drawing.Point(109, 172);
             this.dgvLichSuBuonBan.Name = "dgvLichSuBuonBan";
             this.dgvLichSuBuonBan.RowHeadersWidth = 51;
             this.dgvLichSuBuonBan.RowTemplate.Height = 24;
@@ -125,20 +125,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Đến ngày:";
             // 
-            // deTuNgay
-            // 
-            this.deTuNgay.EditValue = null;
-            this.deTuNgay.Location = new System.Drawing.Point(706, 60);
-            this.deTuNgay.Name = "deTuNgay";
-            this.deTuNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deTuNgay.Properties.Appearance.Options.UseFont = true;
-            this.deTuNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deTuNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deTuNgay.Size = new System.Drawing.Size(132, 30);
-            this.deTuNgay.TabIndex = 4;
-            // 
             // deDenNgay
             // 
             this.deDenNgay.EditValue = null;
@@ -153,6 +139,20 @@
             this.deDenNgay.Size = new System.Drawing.Size(132, 30);
             this.deDenNgay.TabIndex = 5;
             // 
+            // deTuNgay
+            // 
+            this.deTuNgay.EditValue = null;
+            this.deTuNgay.Location = new System.Drawing.Point(706, 60);
+            this.deTuNgay.Name = "deTuNgay";
+            this.deTuNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deTuNgay.Properties.Appearance.Options.UseFont = true;
+            this.deTuNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deTuNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deTuNgay.Size = new System.Drawing.Size(132, 30);
+            this.deTuNgay.TabIndex = 4;
+            // 
             // frmLichSuBuonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -165,12 +165,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvLichSuBuonBan);
             this.Name = "frmLichSuBuonBan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLichSuBuonBan";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuBuonBan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deTuNgay.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deTuNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deDenNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deDenNgay.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTuNgay.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTuNgay.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
