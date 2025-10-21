@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.dgvLichSuBuonBan = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.deTuNgay = new DevExpress.XtraEditors.DateEdit();
-            this.deDenNgay = new DevExpress.XtraEditors.DateEdit();
             this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenhang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaiphutung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soluongban = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayban = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.deTuNgay = new DevExpress.XtraEditors.DateEdit();
+            this.deDenNgay = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuBuonBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deTuNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deTuNgay.Properties.CalendarTimeProperties)).BeginInit();
@@ -57,21 +57,51 @@
             this.loaiphutung,
             this.soluongban,
             this.ngayban});
-            this.dgvLichSuBuonBan.Location = new System.Drawing.Point(0, 183);
+            this.dgvLichSuBuonBan.Location = new System.Drawing.Point(220, 185);
             this.dgvLichSuBuonBan.Name = "dgvLichSuBuonBan";
             this.dgvLichSuBuonBan.RowHeadersWidth = 51;
             this.dgvLichSuBuonBan.RowTemplate.Height = 24;
             this.dgvLichSuBuonBan.Size = new System.Drawing.Size(959, 385);
             this.dgvLichSuBuonBan.TabIndex = 0;
             // 
+            // stt
+            // 
+            this.stt.HeaderText = "Số thứ tự";
+            this.stt.MinimumWidth = 6;
+            this.stt.Name = "stt";
+            // 
+            // tenhang
+            // 
+            this.tenhang.HeaderText = "Tên phụ tùng";
+            this.tenhang.MinimumWidth = 6;
+            this.tenhang.Name = "tenhang";
+            // 
+            // loaiphutung
+            // 
+            this.loaiphutung.HeaderText = "Loại phụ tùng";
+            this.loaiphutung.MinimumWidth = 6;
+            this.loaiphutung.Name = "loaiphutung";
+            // 
+            // soluongban
+            // 
+            this.soluongban.HeaderText = "Số lượng bán";
+            this.soluongban.MinimumWidth = 6;
+            this.soluongban.Name = "soluongban";
+            // 
+            // ngayban
+            // 
+            this.ngayban.HeaderText = "NgayBan";
+            this.ngayban.MinimumWidth = 6;
+            this.ngayban.Name = "ngayban";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(142, 65);
+            this.label1.Location = new System.Drawing.Point(292, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 39);
+            this.label1.Size = new System.Drawing.Size(265, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "Lịch sử buôn bán";
             // 
@@ -123,41 +153,11 @@
             this.deDenNgay.Size = new System.Drawing.Size(132, 30);
             this.deDenNgay.TabIndex = 5;
             // 
-            // stt
-            // 
-            this.stt.HeaderText = "Số thứ tự";
-            this.stt.MinimumWidth = 6;
-            this.stt.Name = "stt";
-            // 
-            // tenhang
-            // 
-            this.tenhang.HeaderText = "Tên phụ tùng";
-            this.tenhang.MinimumWidth = 6;
-            this.tenhang.Name = "tenhang";
-            // 
-            // loaiphutung
-            // 
-            this.loaiphutung.HeaderText = "Loại phụ tùng";
-            this.loaiphutung.MinimumWidth = 6;
-            this.loaiphutung.Name = "loaiphutung";
-            // 
-            // soluongban
-            // 
-            this.soluongban.HeaderText = "Số lượng bán";
-            this.soluongban.MinimumWidth = 6;
-            this.soluongban.Name = "soluongban";
-            // 
-            // ngayban
-            // 
-            this.ngayban.HeaderText = "NgayBan";
-            this.ngayban.MinimumWidth = 6;
-            this.ngayban.Name = "ngayban";
-            // 
             // frmLichSuBuonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 569);
+            this.ClientSize = new System.Drawing.Size(1176, 569);
             this.Controls.Add(this.deDenNgay);
             this.Controls.Add(this.deTuNgay);
             this.Controls.Add(this.label3);

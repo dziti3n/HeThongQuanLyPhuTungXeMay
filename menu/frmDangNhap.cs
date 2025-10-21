@@ -16,5 +16,11 @@ namespace menu
         {
             InitializeComponent();
         }
+
+        private void btnDN_Click(object sender, EventArgs e)
+        {
+            GiaoDien g = new GiaoDien();
+            
+        }
     }
 }

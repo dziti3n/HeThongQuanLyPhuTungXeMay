@@ -172,6 +172,7 @@
             this.btnDN.TabIndex = 3;
             this.btnDN.Text = "🔑  Đăng nhập";
             this.btnDN.UseVisualStyleBackColor = false;
+            this.btnDN.Click += new System.EventHandler(this.btnDN_Click);
             // 
             // frmDangNhap
             // 

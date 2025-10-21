@@ -83,6 +83,13 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
+            frmDangNhap f = new frmDangNhap();
+            
+            
+            f.Show();
+            this.Hide();
+            this.Close();
 
         }
 
@@ -93,7 +100,8 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnThongTinPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmDonDatHang f = new frmDonDatHang();
+            OpenChildForm(f);
         }
 
         private void btnTinhTrangPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -114,7 +122,8 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnLapHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmHoaDon f = new frmHoaDon();
+            OpenChildForm(f);
         }
 
         private void btnXuatHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -129,12 +138,14 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnLichSuBuonBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmLichSuBuonBan f = new frmLichSuBuonBan();
+            OpenChildForm(f);
         }
 
         private void btnThongTinKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmKhachHang f = new frmKhachHang();
+            OpenChildForm(f);
         }
 
         private void btnLichHen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -169,7 +180,8 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnThietLapTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmNgDung f = new frmNgDung();
+            OpenChildForm(f);
         }
 
         private void btnNhatKy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
