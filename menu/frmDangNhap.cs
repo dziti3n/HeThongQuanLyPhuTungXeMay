@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace menu
 {
-    public partial class frmLoaiHang : Form
+    public partial class frmDangNhap : Form
     {
-        public frmLoaiHang()
+        public frmDangNhap()
         {
             InitializeComponent();
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            frmDonDatHang f = new frmDonDatHang();
-            f.ShowDialog();
         }
     }
 }
