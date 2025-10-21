@@ -50,9 +50,9 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblTitle.Location = new System.Drawing.Point(270, 20);
+            this.lblTitle.Location = new System.Drawing.Point(309, 21);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(245, 30);
+            this.lblTitle.Size = new System.Drawing.Size(288, 37);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "QUẢN LÝ LOẠI HÀNG";
             // 
@@ -64,37 +64,38 @@
             this.dgvLoaiHang.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoaiHang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLoaiHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLoaiHang.Location = new System.Drawing.Point(50, 250);
+            this.dgvLoaiHang.Location = new System.Drawing.Point(57, 267);
             this.dgvLoaiHang.MultiSelect = false;
             this.dgvLoaiHang.Name = "dgvLoaiHang";
             this.dgvLoaiHang.ReadOnly = true;
+            this.dgvLoaiHang.RowHeadersWidth = 51;
             this.dgvLoaiHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLoaiHang.Size = new System.Drawing.Size(640, 220);
+            this.dgvLoaiHang.Size = new System.Drawing.Size(731, 235);
             this.dgvLoaiHang.TabIndex = 9;
             // 
             // txtMaLoai
             // 
             this.txtMaLoai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtMaLoai.Location = new System.Drawing.Point(180, 90);
+            this.txtMaLoai.Location = new System.Drawing.Point(206, 96);
             this.txtMaLoai.Name = "txtMaLoai";
-            this.txtMaLoai.Size = new System.Drawing.Size(200, 25);
+            this.txtMaLoai.Size = new System.Drawing.Size(228, 30);
             this.txtMaLoai.TabIndex = 1;
             // 
             // txtTenLoai
             // 
             this.txtTenLoai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtTenLoai.Location = new System.Drawing.Point(180, 130);
+            this.txtTenLoai.Location = new System.Drawing.Point(206, 139);
             this.txtTenLoai.Name = "txtTenLoai";
-            this.txtTenLoai.Size = new System.Drawing.Size(300, 25);
+            this.txtTenLoai.Size = new System.Drawing.Size(342, 30);
             this.txtTenLoai.TabIndex = 2;
             // 
             // lblMaLoai
             // 
             this.lblMaLoai.AutoSize = true;
             this.lblMaLoai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblMaLoai.Location = new System.Drawing.Point(100, 93);
+            this.lblMaLoai.Location = new System.Drawing.Point(114, 99);
             this.lblMaLoai.Name = "lblMaLoai";
-            this.lblMaLoai.Size = new System.Drawing.Size(62, 19);
+            this.lblMaLoai.Size = new System.Drawing.Size(74, 23);
             this.lblMaLoai.TabIndex = 5;
             this.lblMaLoai.Text = "Mã Loại:";
             // 
@@ -102,62 +103,63 @@
             // 
             this.lblTenLoai.AutoSize = true;
             this.lblTenLoai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblTenLoai.Location = new System.Drawing.Point(100, 133);
+            this.lblTenLoai.Location = new System.Drawing.Point(114, 142);
             this.lblTenLoai.Name = "lblTenLoai";
-            this.lblTenLoai.Size = new System.Drawing.Size(66, 19);
+            this.lblTenLoai.Size = new System.Drawing.Size(76, 23);
             this.lblTenLoai.TabIndex = 6;
             this.lblTenLoai.Text = "Tên Loại:";
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(520, 80);
+            this.btnThem.Location = new System.Drawing.Point(594, 85);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(80, 30);
+            this.btnThem.Size = new System.Drawing.Size(91, 32);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(610, 80);
+            this.btnSua.Location = new System.Drawing.Point(697, 85);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(80, 30);
+            this.btnSua.Size = new System.Drawing.Size(91, 32);
             this.btnSua.TabIndex = 4;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(520, 120);
+            this.btnXoa.Location = new System.Drawing.Point(594, 128);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(80, 30);
+            this.btnXoa.Size = new System.Drawing.Size(91, 32);
             this.btnXoa.TabIndex = 5;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(610, 120);
+            this.btnLuu.Location = new System.Drawing.Point(697, 128);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(80, 30);
+            this.btnLuu.Size = new System.Drawing.Size(91, 32);
             this.btnLuu.TabIndex = 6;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(520, 160);
+            this.btnHuy.Location = new System.Drawing.Point(594, 171);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(80, 30);
+            this.btnHuy.Size = new System.Drawing.Size(91, 32);
             this.btnHuy.TabIndex = 7;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(610, 160);
+            this.btnThoat.Location = new System.Drawing.Point(697, 171);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(80, 30);
+            this.btnThoat.Size = new System.Drawing.Size(91, 32);
             this.btnThoat.TabIndex = 8;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -165,16 +167,16 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtTimKiem.Location = new System.Drawing.Point(180, 200);
+            this.txtTimKiem.Location = new System.Drawing.Point(206, 213);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(300, 25);
+            this.txtTimKiem.Size = new System.Drawing.Size(342, 30);
             this.txtTimKiem.TabIndex = 10;
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(520, 200);
+            this.btnTim.Location = new System.Drawing.Point(594, 213);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(80, 30);
+            this.btnTim.Size = new System.Drawing.Size(91, 32);
             this.btnTim.TabIndex = 11;
             this.btnTim.Text = "Tìm kiếm";
             this.btnTim.UseVisualStyleBackColor = true;
@@ -183,18 +185,18 @@
             // 
             this.lblTimKiem.AutoSize = true;
             this.lblTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblTimKiem.Location = new System.Drawing.Point(100, 204);
+            this.lblTimKiem.Location = new System.Drawing.Point(114, 218);
             this.lblTimKiem.Name = "lblTimKiem";
-            this.lblTimKiem.Size = new System.Drawing.Size(74, 19);
+            this.lblTimKiem.Size = new System.Drawing.Size(83, 23);
             this.lblTimKiem.TabIndex = 13;
             this.lblTimKiem.Text = "Tìm kiếm:";
             // 
             // frmLoaiHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(750, 500);
+            this.ClientSize = new System.Drawing.Size(857, 533);
             this.Controls.Add(this.lblTimKiem);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.txtTimKiem);
@@ -218,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
