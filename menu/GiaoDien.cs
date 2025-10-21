@@ -106,7 +106,8 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnTinhTrangPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmTrangThaiPhieuNhap f = new frmTrangThaiPhieuNhap();
+            OpenChildForm(f);
         }
 
         private void btnXuatPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -155,7 +156,8 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnLichSuMuaHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmLichSuMuaHang f = new frmLichSuMuaHang();
+            OpenChildForm(f);
         }
 
         private void btnDoanhThu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
