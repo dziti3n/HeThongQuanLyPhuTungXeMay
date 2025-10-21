@@ -135,7 +135,7 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnTraHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            
         }
 
         private void btnLichSuBuonBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -221,6 +221,7 @@ private void label1_Click(object sender, EventArgs e)
             {
                 int x = Math.Max(0, (mdiClient.Width - child.Width) / 2);
                 int y = Math.Max(0, (mdiClient.Height - child.Height) / 2);
+                y = Math.Max(0, y - 30);
                 child.Location = new Point(x, y);
             }
 
