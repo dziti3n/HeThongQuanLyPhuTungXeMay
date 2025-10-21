@@ -135,7 +135,8 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnTraHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            frmTraHang f = new frmTraHang();
+            OpenChildForm(f);
         }
 
         private void btnLichSuBuonBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
