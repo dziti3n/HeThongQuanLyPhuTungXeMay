@@ -197,6 +197,7 @@
             this.btnSua.Size = new System.Drawing.Size(110, 35);
             this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -213,6 +214,7 @@
             this.btnLuu.Size = new System.Drawing.Size(110, 35);
             this.btnLuu.TabIndex = 8;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnLamMoi
             // 
@@ -221,6 +223,7 @@
             this.btnLamMoi.Size = new System.Drawing.Size(110, 35);
             this.btnLamMoi.TabIndex = 9;
             this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXuatExcel
             // 
@@ -238,6 +241,7 @@
             this.btnThoat.Size = new System.Drawing.Size(110, 30);
             this.btnThoat.TabIndex = 11;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
             // 
             // dgvPhuTung
             // 
@@ -257,6 +261,7 @@
             this.dgvPhuTung.RowHeadersWidth = 51;
             this.dgvPhuTung.Size = new System.Drawing.Size(693, 353);
             this.dgvPhuTung.TabIndex = 2;
+            this.dgvPhuTung.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhuTung_CellContentClick);
             // 
             // colMa
             // 
@@ -314,6 +319,7 @@
             this.btnTimKiem.Size = new System.Drawing.Size(90, 30);
             this.btnTimKiem.TabIndex = 4;
             this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click_1);
             // 
             // lblTieuDe
             // 
@@ -366,6 +372,7 @@
             this.Name = "frmSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Quản lý phụ tùng";
+            this.Load += new System.EventHandler(this.frmSanPham_Load);
             this.grbThongTinSP.ResumeLayout(false);
             this.grbThongTinSP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhuTung)).EndInit();
