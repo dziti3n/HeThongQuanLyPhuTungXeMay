@@ -42,7 +42,9 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.lblTimKiem = new System.Windows.Forms.Label();
+            this.grpbxLoaiHang = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).BeginInit();
+            this.grpbxLoaiHang.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -76,7 +78,7 @@
             // txtMaLoai
             // 
             this.txtMaLoai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtMaLoai.Location = new System.Drawing.Point(206, 96);
+            this.txtMaLoai.Location = new System.Drawing.Point(108, 36);
             this.txtMaLoai.Name = "txtMaLoai";
             this.txtMaLoai.Size = new System.Drawing.Size(228, 30);
             this.txtMaLoai.TabIndex = 1;
@@ -84,7 +86,7 @@
             // txtTenLoai
             // 
             this.txtTenLoai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtTenLoai.Location = new System.Drawing.Point(206, 139);
+            this.txtTenLoai.Location = new System.Drawing.Point(108, 79);
             this.txtTenLoai.Name = "txtTenLoai";
             this.txtTenLoai.Size = new System.Drawing.Size(342, 30);
             this.txtTenLoai.TabIndex = 2;
@@ -93,7 +95,7 @@
             // 
             this.lblMaLoai.AutoSize = true;
             this.lblMaLoai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblMaLoai.Location = new System.Drawing.Point(114, 99);
+            this.lblMaLoai.Location = new System.Drawing.Point(16, 39);
             this.lblMaLoai.Name = "lblMaLoai";
             this.lblMaLoai.Size = new System.Drawing.Size(74, 23);
             this.lblMaLoai.TabIndex = 5;
@@ -103,7 +105,7 @@
             // 
             this.lblTenLoai.AutoSize = true;
             this.lblTenLoai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblTenLoai.Location = new System.Drawing.Point(114, 142);
+            this.lblTenLoai.Location = new System.Drawing.Point(16, 82);
             this.lblTenLoai.Name = "lblTenLoai";
             this.lblTenLoai.Size = new System.Drawing.Size(76, 23);
             this.lblTenLoai.TabIndex = 6;
@@ -167,7 +169,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtTimKiem.Location = new System.Drawing.Point(206, 213);
+            this.txtTimKiem.Location = new System.Drawing.Point(108, 126);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(342, 30);
             this.txtTimKiem.TabIndex = 10;
@@ -185,11 +187,26 @@
             // 
             this.lblTimKiem.AutoSize = true;
             this.lblTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblTimKiem.Location = new System.Drawing.Point(114, 218);
+            this.lblTimKiem.Location = new System.Drawing.Point(16, 131);
             this.lblTimKiem.Name = "lblTimKiem";
             this.lblTimKiem.Size = new System.Drawing.Size(83, 23);
             this.lblTimKiem.TabIndex = 13;
             this.lblTimKiem.Text = "Tìm kiếm:";
+            // 
+            // grpbxLoaiHang
+            // 
+            this.grpbxLoaiHang.Controls.Add(this.txtTimKiem);
+            this.grpbxLoaiHang.Controls.Add(this.lblTimKiem);
+            this.grpbxLoaiHang.Controls.Add(this.txtMaLoai);
+            this.grpbxLoaiHang.Controls.Add(this.txtTenLoai);
+            this.grpbxLoaiHang.Controls.Add(this.lblMaLoai);
+            this.grpbxLoaiHang.Controls.Add(this.lblTenLoai);
+            this.grpbxLoaiHang.Location = new System.Drawing.Point(83, 85);
+            this.grpbxLoaiHang.Name = "grpbxLoaiHang";
+            this.grpbxLoaiHang.Size = new System.Drawing.Size(505, 176);
+            this.grpbxLoaiHang.TabIndex = 14;
+            this.grpbxLoaiHang.TabStop = false;
+            this.grpbxLoaiHang.Text = "Thông tin loại hàng";
             // 
             // frmLoaiHang
             // 
@@ -197,19 +214,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(857, 533);
-            this.Controls.Add(this.lblTimKiem);
+            this.Controls.Add(this.grpbxLoaiHang);
             this.Controls.Add(this.btnTim);
-            this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.lblTenLoai);
-            this.Controls.Add(this.lblMaLoai);
-            this.Controls.Add(this.txtTenLoai);
-            this.Controls.Add(this.txtMaLoai);
             this.Controls.Add(this.dgvLoaiHang);
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -218,6 +230,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý loại hàng";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).EndInit();
+            this.grpbxLoaiHang.ResumeLayout(false);
+            this.grpbxLoaiHang.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +254,6 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Label lblTimKiem;
+        private System.Windows.Forms.GroupBox grpbxLoaiHang;
     }
 }
