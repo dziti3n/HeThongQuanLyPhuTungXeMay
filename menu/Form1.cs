@@ -72,5 +72,20 @@ namespace menu
             lblDK.Font = new Font(lblDK.Font, FontStyle.Regular);
             lblDK.Cursor = Cursors.Default;
         }
+
+        private void txtTenDangNhap_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQuenMatKhau_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
