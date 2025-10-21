@@ -161,6 +161,12 @@
     <Compile Include="GiaoDien.Designer.cs">
       <DependentUpon>GiaoDien.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhatKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhatKy.Designer.cs">
+      <DependentUpon>NhatKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmTrangThaiPhieuNhap.cs">
@@ -207,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien.resx">
       <DependentUpon>GiaoDien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhatKy.resx">
+      <DependentUpon>NhatKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
