@@ -39,6 +39,7 @@
             this.btnChonSP = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtTongTien = new DevExpress.XtraEditors.TextEdit();
             this.btnThanhToan = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtEMaHoaDon = new DevExpress.XtraEditors.TextEdit();
             this.label11 = new System.Windows.Forms.Label();
@@ -92,6 +92,8 @@
             // 
             // grCtrlThongtTinKH
             // 
+            this.grCtrlThongtTinKH.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.grCtrlThongtTinKH.Appearance.Options.UseBackColor = true;
             this.grCtrlThongtTinKH.Controls.Add(this.btnChonKH);
             this.grCtrlThongtTinKH.Controls.Add(this.label2);
             this.grCtrlThongtTinKH.Controls.Add(this.txtTenKH);
@@ -200,6 +202,16 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Số lượng bán";
             this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Location = new System.Drawing.Point(288, 149);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(106, 23);
+            this.btnHuy.TabIndex = 9;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // label6
             // 
@@ -359,16 +371,6 @@
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Location = new System.Drawing.Point(288, 149);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(106, 23);
-            this.btnHuy.TabIndex = 9;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // label10
             // 
