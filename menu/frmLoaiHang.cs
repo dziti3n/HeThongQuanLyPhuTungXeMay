@@ -19,8 +19,8 @@ namespace menu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            frmNgDung frm = new frmNgDung();
-            frm.ShowDialog();
+            frmDonDatHang f = new frmDonDatHang();
+            f.ShowDialog();
         }
     }
 }
