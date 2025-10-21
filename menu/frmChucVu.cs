@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace menu
 {
-    public partial class frmNgDung : Form
+    public partial class frmChucVu : Form
     {
-        public frmNgDung()
+        public frmChucVu()
         {
             InitializeComponent();
         }
