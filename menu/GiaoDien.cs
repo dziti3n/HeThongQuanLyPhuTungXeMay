@@ -162,7 +162,8 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnDoanhThu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmDoanhThu f = new frmDoanhThu();
+            OpenChildForm(f);
         }
 
         private void btnLoiNhuan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
