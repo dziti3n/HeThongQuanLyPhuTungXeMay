@@ -16,15 +16,5 @@ namespace menu
         {
             InitializeComponent();
         }
-
-        private void textEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelControl1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
