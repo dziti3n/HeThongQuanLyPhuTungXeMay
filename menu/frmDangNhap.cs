@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace menu
 {
-    public partial class frmDangKymcut : Form
+    public partial class frmDangNhap : Form
     {
-        public frmDangKymcut()
+        public frmDangNhap()
         {
             InitializeComponent();
         }
