@@ -129,8 +129,7 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnXuatHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmXuatHoaDon f = new frmXuatHoaDon();  
-            OpenChildForm(f);
+           
         }
 
         private void btnTraHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -180,8 +179,7 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnThongTinTonKhoVaSapHet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmThongTinTonKho f = new frmThongTinTonKho();
-            OpenChildForm(f);
+            
         }
 
         private void btnThietLapTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

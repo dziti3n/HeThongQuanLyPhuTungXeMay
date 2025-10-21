@@ -1,13 +1,14 @@
 ﻿using DoAnMonHoc.DAL.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DoAnMonHoc.BUS
 {
-    internal class PhuTungService
+    public class PhuTungService
     {
         public List<PhuTung> GetAllPhuTung()
         {
@@ -23,7 +24,7 @@ namespace DoAnMonHoc.BUS
         public void UpdatePhuTung(PhuTung phuTung)
         {
             XeMayContextDB context = new XeMayContextDB();
-            context.PhuTungs.Update(phuTung);
+            context.PhuTungs.AddOrUpdate(phuTung);
             context.SaveChanges();
         }
         public void DeletePhuTung(string maPT)
@@ -36,6 +37,19 @@ namespace DoAnMonHoc.BUS
                 context.SaveChanges();
             }
         }
+        public PhuTung FindById(string maPT)
+        {
+            XeMayContextDB context = new XeMayContextDB();
+            return context.PhuTungs.FirstOrDefault(pt => pt.MaPT == maPT);
+        }
+        public List<PhuTung> Search(string keyword)
+        {
+            XeMayContextDB context = new XeMayContextDB();
+            return context.PhuTungs
+                .Where(pt => pt.TenPT.Contains(keyword) || pt.MaPT.Contains(keyword))
+                .ToList();
+        }
+
 
     }
 }
