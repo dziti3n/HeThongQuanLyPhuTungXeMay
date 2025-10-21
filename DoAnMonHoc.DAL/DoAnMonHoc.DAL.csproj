@@ -64,7 +64,6 @@
     <Compile Include="Model\NhatKy.cs" />
     <Compile Include="Model\PhieuNhap.cs" />
     <Compile Include="Model\PhuTung.cs" />
-    <Compile Include="Model\sysdiagram.cs" />
     <Compile Include="Model\XeMayContextDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -214,6 +214,16 @@
   <ItemGroup>
     <None Include="Resources\Icon+.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DoAnMonHoc.BUS\DoAnMonHoc.BUS.csproj">
+      <Project>{1fc12933-fd6a-42dc-a88e-09cf63721a75}</Project>
+      <Name>DoAnMonHoc.BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DoAnMonHoc.DAL\DoAnMonHoc.DAL.csproj">
+      <Project>{86144e30-dd31-4685-bfa7-fdd3e4bfbe07}</Project>
+      <Name>DoAnMonHoc.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -51,12 +51,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BaoCaoService.cs" />
+    <Compile Include="ChiTietHoaDonService.cs" />
+    <Compile Include="ChiTietPhieuNhapService.cs" />
+    <Compile Include="ChucVuService.cs" />
+    <Compile Include="HoaDonService.cs" />
+    <Compile Include="KhachHangService.cs" />
+    <Compile Include="LoaiHangService.cs" />
+    <Compile Include="NguoiDungService.cs" />
+    <Compile Include="NhaCungCapService.cs" />
+    <Compile Include="NhatKyService.cs" />
+    <Compile Include="PhieuNhapService.cs" />
+    <Compile Include="PhuTungService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DoAnMonHoc.DAL\DoAnMonHoc.DAL.csproj">
+      <Project>{86144e30-dd31-4685-bfa7-fdd3e4bfbe07}</Project>
+      <Name>DoAnMonHoc.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

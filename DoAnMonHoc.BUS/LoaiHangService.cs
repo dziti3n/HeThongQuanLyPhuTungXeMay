@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DoAnMonHoc.BUS
 {
-    public class Class1
+    internal class LoaiHangService
     {
     }
 }
