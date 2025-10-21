@@ -366,6 +366,7 @@
             this.Name = "frmSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Quản lý phụ tùng";
+            this.Load += new System.EventHandler(this.frmSanPham_Load);
             this.grbThongTinSP.ResumeLayout(false);
             this.grbThongTinSP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhuTung)).EndInit();

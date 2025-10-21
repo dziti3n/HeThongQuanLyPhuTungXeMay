@@ -98,5 +98,10 @@ namespace menu
         {
 
         }
+
+        private void frmSanPham_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
