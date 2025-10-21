@@ -15,9 +15,18 @@ namespace menu
         public GiaoDien()
         {
             InitializeComponent();
+            foreach (Control ctl in this.Controls)
+            {
+                if (ctl is MdiClient)
+                {
+                    ctl.BackColor = Color.White;
+                    break;
+                }
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+private void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -79,7 +88,7 @@ namespace menu
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnThongTinPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -99,7 +108,8 @@ namespace menu
 
         private void btnThongTinPhuTung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmSanPham f = new frmSanPham();
+            OpenChildForm(f);
         }
 
         private void btnLapHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -165,6 +175,23 @@ namespace menu
         private void btnNhatKy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void rbcMENU_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void OpenChildForm(Form child)
+        {
+            // đóng tất cả form con trước khi mở (nếu muốn)
+            foreach (Form f in this.MdiChildren)
+                f.Close();
+
+            child.MdiParent = this;
+            child.FormBorderStyle = FormBorderStyle.None;
+            child.Dock = DockStyle.Fill;
+            child.TopLevel = false;
+            child.Show();
         }
     }
 }

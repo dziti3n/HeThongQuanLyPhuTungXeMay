@@ -49,17 +49,17 @@
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.dgvPhuTung = new System.Windows.Forms.DataGridView();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.lblTieuDe = new System.Windows.Forms.Label();
-            this.lblTong = new System.Windows.Forms.Label();
-            this.lblCanhBao = new System.Windows.Forms.Label();
             this.colMa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.lblTieuDe = new System.Windows.Forms.Label();
+            this.lblTong = new System.Windows.Forms.Label();
+            this.lblCanhBao = new System.Windows.Forms.Label();
             this.grbThongTinSP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhuTung)).BeginInit();
             this.SuspendLayout();
@@ -123,9 +123,9 @@
             this.lblSoLuongTon.AutoSize = true;
             this.lblSoLuongTon.Location = new System.Drawing.Point(16, 115);
             this.lblSoLuongTon.Name = "lblSoLuongTon";
-            this.lblSoLuongTon.Size = new System.Drawing.Size(113, 23);
+            this.lblSoLuongTon.Size = new System.Drawing.Size(82, 23);
             this.lblSoLuongTon.TabIndex = 4;
-            this.lblSoLuongTon.Text = "Số lượng tồn:";
+            this.lblSoLuongTon.Text = "Số lượng:";
             // 
             // txtSoLuongTon
             // 
@@ -216,7 +216,7 @@
             // 
             // btnLamMoi
             // 
-            this.btnLamMoi.Location = new System.Drawing.Point(505, 422);
+            this.btnLamMoi.Location = new System.Drawing.Point(517, 493);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(110, 35);
             this.btnLamMoi.TabIndex = 9;
@@ -250,13 +250,55 @@
             this.colDonVi,
             this.colDonGia,
             this.colTon});
-            this.dgvPhuTung.Location = new System.Drawing.Point(408, 109);
+            this.dgvPhuTung.Location = new System.Drawing.Point(408, 104);
             this.dgvPhuTung.Name = "dgvPhuTung";
             this.dgvPhuTung.ReadOnly = true;
             this.dgvPhuTung.RowHeadersVisible = false;
             this.dgvPhuTung.RowHeadersWidth = 51;
-            this.dgvPhuTung.Size = new System.Drawing.Size(700, 350);
+            this.dgvPhuTung.Size = new System.Drawing.Size(693, 353);
             this.dgvPhuTung.TabIndex = 2;
+            // 
+            // colMa
+            // 
+            this.colMa.HeaderText = "Mã phụ tùng";
+            this.colMa.MinimumWidth = 6;
+            this.colMa.Name = "colMa";
+            this.colMa.ReadOnly = true;
+            // 
+            // colTen
+            // 
+            this.colTen.HeaderText = "Tên phụ tùng";
+            this.colTen.MinimumWidth = 6;
+            this.colTen.Name = "colTen";
+            this.colTen.ReadOnly = true;
+            // 
+            // colLoai
+            // 
+            this.colLoai.HeaderText = "Loại phụ tùng";
+            this.colLoai.MinimumWidth = 6;
+            this.colLoai.Name = "colLoai";
+            this.colLoai.ReadOnly = true;
+            // 
+            // colDonVi
+            // 
+            this.colDonVi.HeaderText = "Đơn vị tính";
+            this.colDonVi.MinimumWidth = 6;
+            this.colDonVi.Name = "colDonVi";
+            this.colDonVi.ReadOnly = true;
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.HeaderText = "Đơn giá (VNĐ)";
+            this.colDonGia.MinimumWidth = 6;
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.ReadOnly = true;
+            // 
+            // colTon
+            // 
+            this.colTon.HeaderText = "Số lượng tồn";
+            this.colTon.MinimumWidth = 6;
+            this.colTon.Name = "colTon";
+            this.colTon.ReadOnly = true;
             // 
             // txtTimKiem
             // 
@@ -302,48 +344,6 @@
             this.lblCanhBao.Size = new System.Drawing.Size(253, 16);
             this.lblCanhBao.TabIndex = 13;
             this.lblCanhBao.Text = "⚠️ Hệ thống sẽ cảnh báo khi hàng sắp hết";
-            // 
-            // colMa
-            // 
-            this.colMa.HeaderText = "Mã phụ tùng";
-            this.colMa.MinimumWidth = 6;
-            this.colMa.Name = "colMa";
-            this.colMa.ReadOnly = true;
-            // 
-            // colTen
-            // 
-            this.colTen.HeaderText = "Tên phụ tùng";
-            this.colTen.MinimumWidth = 6;
-            this.colTen.Name = "colTen";
-            this.colTen.ReadOnly = true;
-            // 
-            // colLoai
-            // 
-            this.colLoai.HeaderText = "Loại phụ tùng";
-            this.colLoai.MinimumWidth = 6;
-            this.colLoai.Name = "colLoai";
-            this.colLoai.ReadOnly = true;
-            // 
-            // colDonVi
-            // 
-            this.colDonVi.HeaderText = "Đơn vị tính";
-            this.colDonVi.MinimumWidth = 6;
-            this.colDonVi.Name = "colDonVi";
-            this.colDonVi.ReadOnly = true;
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.HeaderText = "Đơn giá (VNĐ)";
-            this.colDonGia.MinimumWidth = 6;
-            this.colDonGia.Name = "colDonGia";
-            this.colDonGia.ReadOnly = true;
-            // 
-            // colTon
-            // 
-            this.colTon.HeaderText = "Số lượng tồn";
-            this.colTon.MinimumWidth = 6;
-            this.colTon.Name = "colTon";
-            this.colTon.ReadOnly = true;
             // 
             // frmSanPham
             // 

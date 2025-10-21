@@ -135,7 +135,7 @@
             // rbcMENU
             // 
             this.rbcMENU.ExpandCollapseItem.Id = 0;
-            this.rbcMENU.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rbcMENU.ForeColor = System.Drawing.Color.Black;
             this.rbcMENU.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.rbcMENU.ExpandCollapseItem,
             this.barButtonItem2,
@@ -215,6 +215,7 @@
             this.rbcMENU.Size = new System.Drawing.Size(952, 177);
             this.rbcMENU.Toolbar.ShowCustomizeItem = false;
             this.rbcMENU.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            this.rbcMENU.Click += new System.EventHandler(this.rbcMENU_Click);
             // 
             // barButtonItem2
             // 
@@ -869,8 +870,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(952, 561);
+            this.ClientSize = new System.Drawing.Size(952, 606);
             this.Controls.Add(this.rbcMENU);
+            this.IsMdiContainer = true;
             this.Name = "GiaoDien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GiaoDien";
