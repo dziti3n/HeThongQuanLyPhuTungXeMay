@@ -132,6 +132,7 @@
             // 
             // rbcMENU
             // 
+            this.rbcMENU.BackColor = System.Drawing.Color.LightGray;
             this.rbcMENU.ExpandCollapseItem.Id = 0;
             this.rbcMENU.ForeColor = System.Drawing.Color.Black;
             this.rbcMENU.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -846,13 +847,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(952, 606);
             this.Controls.Add(this.rbcMENU);
             this.IsMdiContainer = true;
             this.Name = "GiaoDien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GiaoDien";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GiaoDien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rbcMENU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();

@@ -199,14 +199,31 @@ private void label1_Click(object sender, EventArgs e)
         }
         private void OpenChildForm(Form child)
         {
-            // đóng tất cả form con trước khi mở (nếu muốn)
+            // Đóng form con cũ (nếu cần)
             foreach (Form f in this.MdiChildren)
                 f.Close();
 
+            // 👇 BƯỚC MỚI: Đồng bộ màu nền MdiClient với form con
+            var mdiClient = this.Controls.OfType<MdiClient>().FirstOrDefault();
+            if (mdiClient != null)
+            {
+                // Lấy màu nền từ form con (hoặc đặt cứng màu bạn muốn)
+                mdiClient.BackColor = child.BackColor; // hoặc Color.White, Color.LightGray, v.v.
+            }
+
+            // Cấu hình form con
             child.MdiParent = this;
             child.FormBorderStyle = FormBorderStyle.None;
-            child.Dock = DockStyle.Fill;
-            child.TopLevel = false;
+            child.StartPosition = FormStartPosition.Manual;
+
+            // Căn giữa (nếu bạn vẫn muốn căn giữa)
+            if (mdiClient != null)
+            {
+                int x = Math.Max(0, (mdiClient.Width - child.Width) / 2);
+                int y = Math.Max(0, (mdiClient.Height - child.Height) / 2);
+                child.Location = new Point(x, y);
+            }
+
             child.Show();
         }
     }
