@@ -10,31 +10,67 @@ using System.Windows.Forms;
 
 namespace menu
 {
-    public partial class Form1 : Form
+    public partial class frmDangNhap : Form
     {
-        public Form1()
+        public frmDangNhap()
         {
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void chkHienMK_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (chkHienMK.Checked)
+            {
+                txtMK.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtMK.UseSystemPasswordChar = true;
+            }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void btnDN_Click(object sender, EventArgs e)
         {
+            string username = txtTK.Text.Trim();
+            string password = txtMK.Text.Trim();
 
+            if (username == "" || password == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin đăng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (username == "admin" && password == "123")
+            {
+                MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void lblDK_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Vui Lòng Liên Hệ Chủ Sở Hữu", "Thông báo");
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnQuenMK_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Hết Cứu!", "Thông báo");
+        }
 
+        private void lblDK_MouseHover(object sender, EventArgs e)
+        {
+            lblDK.Font = new Font(lblDK.Font, FontStyle.Underline);
+            lblDK.Cursor = Cursors.Hand;
+        }
+
+        private void lblDK_MouseLeave(object sender, EventArgs e)
+        {
+            lblDK.Font = new Font(lblDK.Font, FontStyle.Regular);
+            lblDK.Cursor = Cursors.Default;
         }
 
         private void txtTenDangNhap_TextChanged(object sender, EventArgs e)

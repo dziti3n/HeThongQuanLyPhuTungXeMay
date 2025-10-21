@@ -1,6 +1,6 @@
 ﻿namespace menu
 {
-    partial class Form1
+    partial class frmDangNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkHienMK = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
-            this.btnQuenMatKhau = new System.Windows.Forms.Button();
-            this.btnDangNhap = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,38 +42,34 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.chkHienMK);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtMatKhau);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtTenDangNhap);
-            this.panel1.Controls.Add(this.btnQuenMatKhau);
-            this.panel1.Controls.Add(this.btnDangNhap);
-            this.panel1.Location = new System.Drawing.Point(107, 118);
+
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(385, 358);
+            this.panel1.Size = new System.Drawing.Size(385, 361);
             this.panel1.TabIndex = 0;
             // 
-            // checkBox1
+            // chkHienMK
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(231, 180);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(121, 21);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Hiện mật khẩu";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkHienMK.AutoSize = true;
+            this.chkHienMK.Location = new System.Drawing.Point(231, 180);
+            this.chkHienMK.Name = "chkHienMK";
+            this.chkHienMK.Size = new System.Drawing.Size(95, 17);
+            this.chkHienMK.TabIndex = 2;
+            this.chkHienMK.Text = "Hiện mật khẩu";
+            this.chkHienMK.UseVisualStyleBackColor = true;
+            this.chkHienMK.CheckedChanged += new System.EventHandler(this.chkHienMK_CheckedChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(54, 143);
+            this.label4.Location = new System.Drawing.Point(51, 137);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 20);
+            this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Mật khẩu";
             // 
@@ -86,34 +77,31 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(317, 143);
+            this.label6.Location = new System.Drawing.Point(327, 136);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 20);
+            this.label6.Size = new System.Drawing.Size(24, 17);
             this.label6.TabIndex = 2;
             this.label6.Text = "🔒";
-            this.label6.Click += new System.EventHandler(this.label3_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(317, 88);
+            this.label5.Location = new System.Drawing.Point(327, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 20);
+            this.label5.Size = new System.Drawing.Size(24, 17);
             this.label5.TabIndex = 2;
             this.label5.Text = "👤";
-            this.label5.Click += new System.EventHandler(this.label3_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 88);
+            this.label3.Location = new System.Drawing.Point(13, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 20);
+            this.label3.Size = new System.Drawing.Size(105, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên đăng nhập";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtMatKhau
             // 
@@ -131,7 +119,7 @@
             this.label2.ForeColor = System.Drawing.Color.Blue;
             this.label2.Location = new System.Drawing.Point(119, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 35);
+            this.label2.Size = new System.Drawing.Size(124, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "ĐĂNG NHẬP";
             // 
@@ -181,17 +169,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 565);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(611, 516);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.Name = "Form1";
+            this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chương trình đăng nhập";
+            this.Text = "CHƯƠNG TRÌNH QUẢN LÝ HỆ THỐNG PHỤ TÙNG XE MÁY";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -206,9 +192,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkHienMK;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblDK;
     }
 }
 
