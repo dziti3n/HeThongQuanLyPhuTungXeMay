@@ -53,9 +53,7 @@ namespace menu
 
         private void lblDK_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new frmDangKymcut().ShowDialog();
-            this.Close();
+            MessageBox.Show("Vui Lòng Liên Hệ Chủ Sở Hữu", "Thông báo");
         }
 
         private void btnQuenMK_Click(object sender, EventArgs e)
