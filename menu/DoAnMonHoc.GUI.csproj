@@ -142,6 +142,7 @@
     </Compile>
     <Compile Include="frmXuatHoaDon.Designer.cs">
       <DependentUpon>frmXuatHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmXuatPhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +195,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmXuatHoaDon.resx">
       <DependentUpon>frmXuatHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmXuatPhieuNhap.resx">
       <DependentUpon>frmXuatPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
