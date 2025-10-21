@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "menu", "menu\menu.csproj", "{8753C626-2C0F-44FE-9416-BD14E794063F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoAnMonHoc.GUI", "menu\DoAnMonHoc.GUI.csproj", "{8753C626-2C0F-44FE-9416-BD14E794063F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoAnMonHoc.BUS", "DoAnMonHoc.BUS\DoAnMonHoc.BUS.csproj", "{1FC12933-FD6A-42DC-A88E-09CF63721A75}"
 EndProject
