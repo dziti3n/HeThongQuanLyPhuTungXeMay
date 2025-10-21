@@ -68,16 +68,13 @@
             this.btnThongTinPhuTung = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.btnTinhTrangPhieuNhap = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXuatPhieuNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnLapHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.btnTraHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnLichSuBuonBan = new DevExpress.XtraBars.BarButtonItem();
             this.btnXuatHoaDon = new DevExpress.XtraBars.BarButtonItem();
-            this.btnLichHen = new DevExpress.XtraBars.BarButtonItem();
             this.btnLichSuMuaHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnDoanhThu = new DevExpress.XtraBars.BarButtonItem();
             this.btnLoiNhuan = new DevExpress.XtraBars.BarButtonItem();
-            this.btnMatHangBanChay = new DevExpress.XtraBars.BarButtonItem();
             this.btnThongTinTonKhoVaSapHet = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem42 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem43 = new DevExpress.XtraBars.BarButtonItem();
@@ -173,16 +170,13 @@
             this.btnThongTinPhuTung,
             this.barButtonItem4,
             this.btnTinhTrangPhieuNhap,
-            this.btnXuatPhieuNhap,
             this.btnLapHoaDon,
             this.btnTraHang,
             this.btnLichSuBuonBan,
             this.btnXuatHoaDon,
-            this.btnLichHen,
             this.btnLichSuMuaHang,
             this.btnDoanhThu,
             this.btnLoiNhuan,
-            this.btnMatHangBanChay,
             this.btnThongTinTonKhoVaSapHet,
             this.barButtonItem42,
             this.barButtonItem43,
@@ -468,14 +462,6 @@
             this.btnTinhTrangPhieuNhap.Name = "btnTinhTrangPhieuNhap";
             this.btnTinhTrangPhieuNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTinhTrangPhieuNhap_ItemClick);
             // 
-            // btnXuatPhieuNhap
-            // 
-            this.btnXuatPhieuNhap.Caption = "Xuất phiếu nhập";
-            this.btnXuatPhieuNhap.Id = 64;
-            this.btnXuatPhieuNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXuatPhieuNhap.ImageOptions.SvgImage")));
-            this.btnXuatPhieuNhap.Name = "btnXuatPhieuNhap";
-            this.btnXuatPhieuNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuatPhieuNhap_ItemClick);
-            // 
             // btnLapHoaDon
             // 
             this.btnLapHoaDon.Caption = "Lập hóa đơn";
@@ -508,14 +494,6 @@
             this.btnXuatHoaDon.Name = "btnXuatHoaDon";
             this.btnXuatHoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuatHoaDon_ItemClick);
             // 
-            // btnLichHen
-            // 
-            this.btnLichHen.Caption = "Lịch Hẹn";
-            this.btnLichHen.Id = 69;
-            this.btnLichHen.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLichHen.ImageOptions.SvgImage")));
-            this.btnLichHen.Name = "btnLichHen";
-            this.btnLichHen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLichHen_ItemClick);
-            // 
             // btnLichSuMuaHang
             // 
             this.btnLichSuMuaHang.Caption = "Lịch sử mua hàng";
@@ -540,14 +518,6 @@
             this.btnLoiNhuan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLoiNhuan.ImageOptions.SvgImage")));
             this.btnLoiNhuan.Name = "btnLoiNhuan";
             this.btnLoiNhuan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoiNhuan_ItemClick);
-            // 
-            // btnMatHangBanChay
-            // 
-            this.btnMatHangBanChay.Caption = "Mặt hàng bán chạy";
-            this.btnMatHangBanChay.Id = 73;
-            this.btnMatHangBanChay.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnMatHangBanChay.ImageOptions.SvgImage")));
-            this.btnMatHangBanChay.Name = "btnMatHangBanChay";
-            this.btnMatHangBanChay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMatHangBanChay_ItemClick);
             // 
             // btnThongTinTonKhoVaSapHet
             // 
@@ -710,7 +680,6 @@
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnThongTinPhieuNhap);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnTinhTrangPhieuNhap, true);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnXuatPhieuNhap, true);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Quản lý nhập kho";
             // 
@@ -774,7 +743,6 @@
             // ribbonPageGroup13
             // 
             this.ribbonPageGroup13.ItemLinks.Add(this.btnThongTinKhachHang);
-            this.ribbonPageGroup13.ItemLinks.Add(this.btnLichHen, true);
             this.ribbonPageGroup13.ItemLinks.Add(this.btnLichSuMuaHang, true);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
             this.ribbonPageGroup13.Text = "Quản ký khách hàng";
@@ -804,7 +772,6 @@
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnMatHangBanChay);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnThongTinTonKhoVaSapHet, true);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Thông tin hàng hóa";
@@ -968,7 +935,6 @@
         private DevExpress.XtraBars.BarButtonItem btnThongTinPhuTung;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem btnTinhTrangPhieuNhap;
-        private DevExpress.XtraBars.BarButtonItem btnXuatPhieuNhap;
         private DevExpress.XtraBars.BarButtonItem btnLapHoaDon;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
@@ -976,11 +942,9 @@
         private DevExpress.XtraBars.BarButtonItem btnLichSuBuonBan;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
         private DevExpress.XtraBars.BarButtonItem btnXuatHoaDon;
-        private DevExpress.XtraBars.BarButtonItem btnLichHen;
         private DevExpress.XtraBars.BarButtonItem btnLichSuMuaHang;
         private DevExpress.XtraBars.BarButtonItem btnDoanhThu;
         private DevExpress.XtraBars.BarButtonItem btnLoiNhuan;
-        private DevExpress.XtraBars.BarButtonItem btnMatHangBanChay;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnThongTinTonKhoVaSapHet;
         private DevExpress.XtraBars.BarButtonItem barButtonItem42;
