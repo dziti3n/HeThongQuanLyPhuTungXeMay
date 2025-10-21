@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace menu
 {
-    public partial class frmLog : Form
+    public partial class frmTaiKhoan : Form
     {
-        public frmLog()
+        public frmTaiKhoan()
         {
             InitializeComponent();
         }
