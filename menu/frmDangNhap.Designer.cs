@@ -72,6 +72,7 @@
             this.chkHienMK.TabIndex = 2;
             this.chkHienMK.Text = "Hiện mật khẩu";
             this.chkHienMK.UseVisualStyleBackColor = true;
+            this.chkHienMK.CheckedChanged += new System.EventHandler(this.chkHienMK_CheckedChanged);
             // 
             // label4
             // 
