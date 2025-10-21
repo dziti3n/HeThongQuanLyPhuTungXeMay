@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLiDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
@@ -37,15 +41,11 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.ColumnMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLiDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -53,8 +53,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -72,8 +72,37 @@
             this.dataGridView1.Size = new System.Drawing.Size(758, 312);
             this.dataGridView1.TabIndex = 8;
             // 
+            // ColumnMaHD
+            // 
+            this.ColumnMaHD.HeaderText = "Mã hóa đơn";
+            this.ColumnMaHD.MinimumWidth = 6;
+            this.ColumnMaHD.Name = "ColumnMaHD";
+            this.ColumnMaHD.Width = 125;
+            // 
+            // ColumnTenSP
+            // 
+            this.ColumnTenSP.HeaderText = "Tên sản phẩm";
+            this.ColumnTenSP.MinimumWidth = 6;
+            this.ColumnTenSP.Name = "ColumnTenSP";
+            this.ColumnTenSP.Width = 125;
+            // 
+            // ColumnLiDo
+            // 
+            this.ColumnLiDo.HeaderText = "Lí do";
+            this.ColumnLiDo.MinimumWidth = 6;
+            this.ColumnLiDo.Name = "ColumnLiDo";
+            this.ColumnLiDo.Width = 125;
+            // 
+            // ColumnNgayTra
+            // 
+            this.ColumnNgayTra.HeaderText = "Ngày trả";
+            this.ColumnNgayTra.MinimumWidth = 6;
+            this.ColumnNgayTra.Name = "ColumnNgayTra";
+            this.ColumnNgayTra.Width = 125;
+            // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.textEdit2);
             this.groupControl1.Controls.Add(this.dateEdit2);
             this.groupControl1.Controls.Add(this.textEdit4);
             this.groupControl1.Controls.Add(this.textEdit5);
@@ -81,7 +110,6 @@
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl8);
-            this.groupControl1.Controls.Add(this.textEdit6);
             this.groupControl1.Location = new System.Drawing.Point(33, 64);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(251, 273);
@@ -146,41 +174,6 @@
             this.labelControl8.TabIndex = 9;
             this.labelControl8.Text = "Mã hóa đơn";
             // 
-            // textEdit6
-            // 
-            this.textEdit6.Location = new System.Drawing.Point(113, 38);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(125, 22);
-            this.textEdit6.TabIndex = 8;
-            // 
-            // ColumnMaHD
-            // 
-            this.ColumnMaHD.HeaderText = "Mã hóa đơn";
-            this.ColumnMaHD.MinimumWidth = 6;
-            this.ColumnMaHD.Name = "ColumnMaHD";
-            this.ColumnMaHD.Width = 125;
-            // 
-            // ColumnTenSP
-            // 
-            this.ColumnTenSP.HeaderText = "Tên sản phẩm";
-            this.ColumnTenSP.MinimumWidth = 6;
-            this.ColumnTenSP.Name = "ColumnTenSP";
-            this.ColumnTenSP.Width = 125;
-            // 
-            // ColumnLiDo
-            // 
-            this.ColumnLiDo.HeaderText = "Lí do";
-            this.ColumnLiDo.MinimumWidth = 6;
-            this.ColumnLiDo.Name = "ColumnLiDo";
-            this.ColumnLiDo.Width = 125;
-            // 
-            // ColumnNgayTra
-            // 
-            this.ColumnNgayTra.HeaderText = "Ngày trả";
-            this.ColumnNgayTra.MinimumWidth = 6;
-            this.ColumnNgayTra.Name = "ColumnNgayTra";
-            this.ColumnNgayTra.Width = 125;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(104, 361);
@@ -215,6 +208,13 @@
             this.textEdit1.Size = new System.Drawing.Size(125, 22);
             this.textEdit1.TabIndex = 14;
             // 
+            // textEdit2
+            // 
+            this.textEdit2.Location = new System.Drawing.Point(112, 42);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Size = new System.Drawing.Size(125, 22);
+            this.textEdit2.TabIndex = 16;
+            // 
             // frmTraHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -236,8 +236,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,10 +257,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
     }
 }
