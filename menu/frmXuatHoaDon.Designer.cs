@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.ColumnMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNVLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,13 +49,13 @@
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -76,6 +76,21 @@
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Thông tin hóa đơn";
             // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(43, 281);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(54, 16);
+            this.labelControl5.TabIndex = 9;
+            this.labelControl5.Text = "Tổng tiền";
+            // 
+            // textEdit4
+            // 
+            this.textEdit4.Location = new System.Drawing.Point(132, 278);
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Size = new System.Drawing.Size(125, 22);
+            this.textEdit4.TabIndex = 8;
+            // 
             // dateEdit1
             // 
             this.dateEdit1.EditValue = null;
@@ -95,6 +110,13 @@
             this.labelControl4.Size = new System.Drawing.Size(49, 16);
             this.labelControl4.TabIndex = 7;
             this.labelControl4.Text = "Ngày lập";
+            // 
+            // textEdit3
+            // 
+            this.textEdit3.Location = new System.Drawing.Point(132, 165);
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Size = new System.Drawing.Size(125, 22);
+            this.textEdit3.TabIndex = 6;
             // 
             // labelControl3
             // 
@@ -138,6 +160,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnMaHD,
@@ -152,62 +175,35 @@
             this.dataGridView1.Size = new System.Drawing.Size(842, 330);
             this.dataGridView1.TabIndex = 2;
             // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(132, 165);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(125, 22);
-            this.textEdit3.TabIndex = 6;
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Location = new System.Drawing.Point(132, 278);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(125, 22);
-            this.textEdit4.TabIndex = 8;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(43, 281);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(54, 16);
-            this.labelControl5.TabIndex = 9;
-            this.labelControl5.Text = "Tổng tiền";
-            // 
             // ColumnMaHD
             // 
             this.ColumnMaHD.HeaderText = "Mã hóa đơn";
             this.ColumnMaHD.MinimumWidth = 6;
             this.ColumnMaHD.Name = "ColumnMaHD";
-            this.ColumnMaHD.Width = 125;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Mã khách hàng";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
             // 
             // ColumnNVLap
             // 
             this.ColumnNVLap.HeaderText = "Nhân viên lập";
             this.ColumnNVLap.MinimumWidth = 6;
             this.ColumnNVLap.Name = "ColumnNVLap";
-            this.ColumnNVLap.Width = 125;
             // 
             // ColumnNgayLap
             // 
             this.ColumnNgayLap.HeaderText = "Ngày lập";
             this.ColumnNgayLap.MinimumWidth = 6;
             this.ColumnNgayLap.Name = "ColumnNgayLap";
-            this.ColumnNgayLap.Width = 125;
             // 
             // ColumnTongTien
             // 
             this.ColumnTongTien.HeaderText = "Tổng tiền";
             this.ColumnTongTien.MinimumWidth = 6;
             this.ColumnTongTien.Name = "ColumnTongTien";
-            this.ColumnTongTien.Width = 125;
             // 
             // button1
             // 
@@ -241,13 +237,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

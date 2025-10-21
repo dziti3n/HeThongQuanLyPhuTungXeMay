@@ -129,7 +129,8 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnXuatHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmXuatHoaDon f = new frmXuatHoaDon();  
+            OpenChildForm(f);
         }
 
         private void btnTraHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
