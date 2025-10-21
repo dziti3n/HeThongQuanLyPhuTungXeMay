@@ -54,7 +54,7 @@ namespace menu
         private void lblDK_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new frmDangKy().ShowDialog();
+            new frmTaiKhoan().ShowDialog();
             this.Close();
         }
 
