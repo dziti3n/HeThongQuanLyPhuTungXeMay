@@ -66,7 +66,7 @@
             // chkHienMK
             // 
             this.chkHienMK.AutoSize = true;
-            this.chkHienMK.Location = new System.Drawing.Point(231, 180);
+            this.chkHienMK.Location = new System.Drawing.Point(247, 179);
             this.chkHienMK.Name = "chkHienMK";
             this.chkHienMK.Size = new System.Drawing.Size(114, 20);
             this.chkHienMK.TabIndex = 2;
@@ -88,7 +88,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(327, 136);
+            this.label6.Location = new System.Drawing.Point(343, 135);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(25, 20);
             this.label6.TabIndex = 2;
@@ -98,7 +98,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(327, 80);
+            this.label5.Location = new System.Drawing.Point(343, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 20);
             this.label5.TabIndex = 2;
@@ -116,7 +116,7 @@
             // 
             // txtMK
             // 
-            this.txtMK.Location = new System.Drawing.Point(143, 136);
+            this.txtMK.Location = new System.Drawing.Point(159, 135);
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(209, 22);
             this.txtMK.TabIndex = 1;
@@ -148,7 +148,7 @@
             // 
             // txtTK
             // 
-            this.txtTK.Location = new System.Drawing.Point(143, 80);
+            this.txtTK.Location = new System.Drawing.Point(159, 79);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(209, 22);
             this.txtTK.TabIndex = 0;
