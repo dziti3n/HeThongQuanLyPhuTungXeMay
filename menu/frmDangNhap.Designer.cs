@@ -60,7 +60,7 @@
             this.panel1.Controls.Add(this.btnDN);
             this.panel1.Location = new System.Drawing.Point(145, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(385, 361);
+            this.panel1.Size = new System.Drawing.Size(396, 361);
             this.panel1.TabIndex = 1;
             // 
             // chkHienMK
@@ -169,7 +169,7 @@
             this.btnDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDN.Location = new System.Drawing.Point(15, 219);
             this.btnDN.Name = "btnDN";
-            this.btnDN.Size = new System.Drawing.Size(353, 69);
+            this.btnDN.Size = new System.Drawing.Size(363, 69);
             this.btnDN.TabIndex = 3;
             this.btnDN.Text = "🔑  Đăng nhập";
             this.btnDN.UseVisualStyleBackColor = false;
