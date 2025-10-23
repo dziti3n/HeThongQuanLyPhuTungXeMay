@@ -19,9 +19,23 @@ namespace menu
 
         private void btnDN_Click(object sender, EventArgs e)
         {
-            GiaoDien g = new GiaoDien();
-            
+            GiaoDien f = new GiaoDien();
+            f.Show();
+            this.Hide();
+            f.DangXuat += F_DangXuat;
         }
+
+        private void F_DangXuat(object sender, EventArgs e)
+        {
+            (sender as GiaoDien).isThoat = false;
+            (sender as GiaoDien).Close();
+            this.Show();
+        }
+
+        //bool KiemTraDangNhap(string TaiKhoan, string MatKhau)
+        //{
+            
+        //}
 
         private void chkHienMK_CheckedChanged(object sender, EventArgs e)
         {
