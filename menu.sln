@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoAnMonHoc.BUS", "DoAnMonHo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoAnMonHoc.DAL", "DoAnMonHoc.DAL\DoAnMonHoc.DAL.csproj", "{86144E30-DD31-4685-BFA7-FDD3E4BFBE07}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TestSetUp", "TestSetUp\TestSetUp.vdproj", "{12CF54D3-057E-8108-EEF5-6D5FDF80BF5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{86144E30-DD31-4685-BFA7-FDD3E4BFBE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86144E30-DD31-4685-BFA7-FDD3E4BFBE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86144E30-DD31-4685-BFA7-FDD3E4BFBE07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12CF54D3-057E-8108-EEF5-6D5FDF80BF5A}.Debug|Any CPU.ActiveCfg = Debug
+		{12CF54D3-057E-8108-EEF5-6D5FDF80BF5A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
