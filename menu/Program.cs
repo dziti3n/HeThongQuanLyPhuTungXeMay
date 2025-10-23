@@ -16,7 +16,7 @@ namespace menu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSanPham());
+            Application.Run(new frmDangNhap());
         }
     }
 }

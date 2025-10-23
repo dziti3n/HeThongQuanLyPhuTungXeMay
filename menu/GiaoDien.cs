@@ -12,6 +12,7 @@ namespace menu
 {
     public partial class GiaoDien : Form
     {
+        public bool isThoat = true;
         public GiaoDien()
         {
             InitializeComponent();
@@ -81,16 +82,11 @@ private void label1_Click(object sender, EventArgs e)
 
         }
 
+        public event EventHandler DangXuat;
+
         private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
-            frmDangNhap f = new frmDangNhap();
-            
-            
-            f.Show();
-            this.Hide();
-            this.Close();
-
+            DangXuat?.Invoke(this, new EventArgs());
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
