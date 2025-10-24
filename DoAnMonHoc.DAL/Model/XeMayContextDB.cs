@@ -8,7 +8,7 @@ namespace DoAnMonHoc.DAL.Model
     public partial class XeMayContextDB : DbContext
     {
         public XeMayContextDB()
-            : base("name=XeMayContextDB")
+            : base("name=XeMayContextDB1")
         {
         }
 
@@ -23,7 +23,6 @@ namespace DoAnMonHoc.DAL.Model
         public virtual DbSet<NhatKy> NhatKies { get; set; }
         public virtual DbSet<PhieuNhap> PhieuNhaps { get; set; }
         public virtual DbSet<PhuTung> PhuTungs { get; set; }
-        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
