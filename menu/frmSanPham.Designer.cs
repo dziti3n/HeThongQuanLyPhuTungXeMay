@@ -60,6 +60,7 @@
             this.lblTieuDe = new System.Windows.Forms.Label();
             this.lblTong = new System.Windows.Forms.Label();
             this.lblCanhBao = new System.Windows.Forms.Label();
+            this.btnThemLoaiHang = new System.Windows.Forms.Button();
             this.grbThongTinSP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhuTung)).BeginInit();
             this.SuspendLayout();
@@ -351,9 +352,18 @@
             this.lblCanhBao.TabIndex = 13;
             this.lblCanhBao.Text = "⚠️ Hệ thống sẽ cảnh báo khi hàng sắp hết";
             // 
+            // btnThemLoaiHang
+            // 
+            this.btnThemLoaiHang.Location = new System.Drawing.Point(648, 493);
+            this.btnThemLoaiHang.Name = "btnThemLoaiHang";
+            this.btnThemLoaiHang.Size = new System.Drawing.Size(110, 35);
+            this.btnThemLoaiHang.TabIndex = 14;
+            this.btnThemLoaiHang.Text = "Thêm loại hàng";
+            // 
             // frmSanPham
             // 
             this.ClientSize = new System.Drawing.Size(1120, 551);
+            this.Controls.Add(this.btnThemLoaiHang);
             this.Controls.Add(this.lblTieuDe);
             this.Controls.Add(this.grbThongTinSP);
             this.Controls.Add(this.dgvPhuTung);
@@ -417,5 +427,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonVi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTon;
+        private System.Windows.Forms.Button btnThemLoaiHang;
     }
 }

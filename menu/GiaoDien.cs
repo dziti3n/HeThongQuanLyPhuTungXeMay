@@ -26,48 +26,7 @@ namespace menu
             }
         }
 
-
-private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            frmNgDung f = new frmNgDung();
-            f.ShowDialog();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            frmKhachHang f = new frmKhachHang();
-            f.ShowDialog();
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            frmLoaiHang f = new frmLoaiHang();
-            f.ShowDialog();
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            frmSanPham f = new frmSanPham();
-            f.ShowDialog();
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            frmDonDatHang f = new frmDonDatHang();
-            f.ShowDialog();
-        }
-
         private void GiaoDien_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSaoLuuKhoiPhuc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }
@@ -100,17 +59,7 @@ private void label1_Click(object sender, EventArgs e)
             OpenChildForm(f);
         }
 
-        private void btnTinhTrangPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmTrangThaiPhieuNhap f = new frmTrangThaiPhieuNhap();
-            OpenChildForm(f);
-        }
-
-        private void btnXuatPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
+        
         private void btnThongTinPhuTung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmSanPham f = new frmSanPham();
@@ -125,7 +74,8 @@ private void label1_Click(object sender, EventArgs e)
 
         private void btnXuatHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            frmHoaDon f = new frmHoaDon();  
+            OpenChildForm(f);
         }
 
         private void btnTraHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -144,12 +94,7 @@ private void label1_Click(object sender, EventArgs e)
         {
             frmKhachHang f = new frmKhachHang();
             OpenChildForm(f);
-        }
-
-        private void btnLichHen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
+        }     
 
         private void btnLichSuMuaHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -169,14 +114,12 @@ private void label1_Click(object sender, EventArgs e)
             OpenChildForm(f);
         }
 
-        private void btnMatHangBanChay_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
+        
 
         private void btnThongTinTonKhoVaSapHet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            frmThongTinTonKho f = new frmThongTinTonKho();
+            OpenChildForm(f);
         }
 
         private void btnThietLapTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -185,11 +128,7 @@ private void label1_Click(object sender, EventArgs e)
             OpenChildForm(f);
         }
 
-        private void btnNhatKy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            NhatKy f = new NhatKy();
-            OpenChildForm(f);
-        }
+       
 
         private void rbcMENU_Click(object sender, EventArgs e)
         {
@@ -224,6 +163,11 @@ private void label1_Click(object sender, EventArgs e)
             }
 
             child.Show();
+        }
+
+        private void btnQltk_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmNgDung f = new frmNgDung();
         }
     }
 }

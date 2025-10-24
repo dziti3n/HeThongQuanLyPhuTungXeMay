@@ -74,12 +74,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmChucVu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmChucVu.Designer.cs">
-      <DependentUpon>frmChucVu.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,20 +164,8 @@
     <Compile Include="GiaoDien.Designer.cs">
       <DependentUpon>GiaoDien.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhatKy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NhatKy.Designer.cs">
-      <DependentUpon>NhatKy.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="frmTrangThaiPhieuNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTrangThaiPhieuNhap.Designer.cs">
-      <DependentUpon>frmTrangThaiPhieuNhap.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,9 +180,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSanPham.resx">
       <DependentUpon>frmSanPham.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmChucVu.resx">
-      <DependentUpon>frmChucVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNgDung.resx">
       <DependentUpon>frmNgDung.cs</DependentUpon>
@@ -226,9 +205,6 @@
     <EmbeddedResource Include="GiaoDien.resx">
       <DependentUpon>GiaoDien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhatKy.resx">
-      <DependentUpon>NhatKy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -239,9 +215,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="frmTrangThaiPhieuNhap.resx">
-      <DependentUpon>frmTrangThaiPhieuNhap.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
