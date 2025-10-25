@@ -111,7 +111,6 @@
             this.ribbonPageCategory5 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.rgbBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageCategory6 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.repositoryItemCheckedComboBoxEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit();
@@ -133,7 +132,7 @@
             // rbcMENU
             // 
             this.rbcMENU.BackColor = System.Drawing.Color.LightGray;
-            this.rbcMENU.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(57);
+            this.rbcMENU.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(71);
             this.rbcMENU.ExpandCollapseItem.Id = 0;
             this.rbcMENU.ForeColor = System.Drawing.Color.Black;
             this.rbcMENU.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -192,10 +191,10 @@
             this.btnQltk,
             this.btnLoaiHang});
             this.rbcMENU.Location = new System.Drawing.Point(0, 0);
-            this.rbcMENU.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rbcMENU.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.rbcMENU.MaxItemId = 93;
             this.rbcMENU.Name = "rbcMENU";
-            this.rbcMENU.OptionsMenuMinWidth = 644;
+            this.rbcMENU.OptionsMenuMinWidth = 805;
             this.rbcMENU.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1,
             this.ribbonPageCategory2,
@@ -774,8 +773,7 @@
             // rgbBaoCao
             // 
             this.rgbBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup7,
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup7});
             this.rgbBaoCao.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("rgbBaoCao.ImageOptions.SvgImage")));
             this.rgbBaoCao.Name = "rgbBaoCao";
             this.rgbBaoCao.Text = "Báo cáo";
@@ -786,12 +784,6 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.btnLoiNhuan, true);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Thông tin kinh doanh";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnThongTinTonKhoVaSapHet, true);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Thông tin hàng hóa";
             // 
             // ribbonPageCategory6
             // 
@@ -943,7 +935,6 @@
         private DevExpress.XtraBars.BarButtonItem btnLichSuMuaHang;
         private DevExpress.XtraBars.BarButtonItem btnDoanhThu;
         private DevExpress.XtraBars.BarButtonItem btnLoiNhuan;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnThongTinTonKhoVaSapHet;
         private DevExpress.XtraBars.BarButtonItem barButtonItem42;
         private DevExpress.XtraBars.BarButtonItem barButtonItem43;
