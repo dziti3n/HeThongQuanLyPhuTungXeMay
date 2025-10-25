@@ -17,7 +17,14 @@ namespace menu
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+       
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaPhieuNhap_Click(object sender, EventArgs e)
         {
 
         }
