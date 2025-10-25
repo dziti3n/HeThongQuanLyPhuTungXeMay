@@ -28,14 +28,14 @@ namespace menu
 
             foreach (var pt in list)
             {
-                dgvPhuTung.Rows.Add(pt.MaPT, pt.TenPT, pt.LoaiHang?.TenLoai, pt.DonViTinh, pt.DonGia, pt.SoLuongTon);
+                dgvPhuTung.Rows.Add(pt.MaPT, pt.TenPT, pt.LoaiHang?.TenLoai, pt.DonViTinh, pt.DonGia, pt.SoLuong);
             }
 
-            lblTong.Text = $"Tổng hàng tồn: {list.Sum(p => p.SoLuongTon)}";
+            lblTong.Text = $"Tổng hàng tồn: {list.Sum(p => p.SoLuong)}";
         }
         private void LoadLoaiPhuTung()
         {
-            XeMayContextDB context = new XeMayContextDB();
+            PhuTungContextDB context = new PhuTungContextDB();
             var loaiList = context.LoaiHangs.ToList();
             cmbLoaiPT.DataSource = loaiList;
             cmbLoaiPT.DisplayMember = "TenLoai";
@@ -136,7 +136,7 @@ namespace menu
                 TenPT = txtTenPT.Text.Trim(),
                 DonViTinh = cmbDonViTinh.Text,
                 DonGia = donGia,
-                SoLuongTon = soLuong,
+                SoLuong = soLuong,
                 MaLoai = cmbLoaiPT.SelectedValue.ToString()
             };
 
@@ -217,7 +217,7 @@ namespace menu
             dgvPhuTung.Rows.Clear();
             foreach (var pt in list)
             {
-                dgvPhuTung.Rows.Add(pt.MaPT, pt.TenPT, pt.LoaiHang?.TenLoai, pt.DonViTinh, pt.DonGia, pt.SoLuongTon);
+                dgvPhuTung.Rows.Add(pt.MaPT, pt.TenPT, pt.LoaiHang?.TenLoai, pt.DonViTinh, pt.DonGia, pt.SoLuong);
             }
         }
 
@@ -266,7 +266,7 @@ namespace menu
                 pt.TenPT = txtTenPT.Text.Trim();
                 pt.DonViTinh = cmbDonViTinh.Text;
                 pt.DonGia = decimal.Parse(txtDonGia.Text);
-                pt.SoLuongTon = int.Parse(txtSoLuongTon.Text);
+                pt.SoLuong = int.Parse(txtSoLuongTon.Text);
                 pt.MaLoai = cmbLoaiPT.SelectedValue.ToString();
 
                 phuTungService.UpdatePhuTung(pt);
@@ -286,7 +286,7 @@ namespace menu
             dgvPhuTung.Rows.Clear();
             foreach (var pt in list)
             {
-                dgvPhuTung.Rows.Add(pt.MaPT, pt.TenPT, pt.LoaiHang?.TenLoai, pt.DonViTinh, pt.DonGia, pt.SoLuongTon);
+                dgvPhuTung.Rows.Add(pt.MaPT, pt.TenPT, pt.LoaiHang?.TenLoai, pt.DonViTinh, pt.DonGia, pt.SoLuong);
             }
         }
 
@@ -323,7 +323,7 @@ namespace menu
                 pt.TenPT = txtTenPT.Text.Trim();
                 pt.DonViTinh = cmbDonViTinh.Text;
                 pt.DonGia = decimal.Parse(txtDonGia.Text);
-                pt.SoLuongTon = int.Parse(txtSoLuongTon.Text);
+                pt.SoLuong = int.Parse(txtSoLuongTon.Text);
                 pt.MaLoai = cmbLoaiPT.SelectedValue.ToString();
 
                 phuTungService.UpdatePhuTung(pt);
