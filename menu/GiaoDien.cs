@@ -170,5 +170,11 @@ namespace menu
             frmNgDung f = new frmNgDung();
             OpenChildForm(f);
         }
+
+        private void btnLoaiHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmLoaiHang f = new frmLoaiHang();
+            OpenChildForm(f);
+        }
     }
 }

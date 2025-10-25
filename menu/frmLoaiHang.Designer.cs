@@ -24,14 +24,15 @@
             this.lblTenLoai = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvLoaiHang = new System.Windows.Forms.DataGridView();
-            this.colMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlButtons = new System.Windows.Forms.Panel();
+            this.colMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -95,6 +96,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(220, 30);
             this.txtSearch.TabIndex = 5;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dgvLoaiHang
             // 
@@ -108,7 +110,8 @@
             this.dgvLoaiHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaLoai,
-            this.colTenLoai});
+            this.colTenLoai,
+            this.colSoLg});
             this.dgvLoaiHang.Location = new System.Drawing.Point(20, 96);
             this.dgvLoaiHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvLoaiHang.Name = "dgvLoaiHang";
@@ -119,20 +122,7 @@
             this.dgvLoaiHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLoaiHang.Size = new System.Drawing.Size(760, 256);
             this.dgvLoaiHang.TabIndex = 6;
-            // 
-            // colMaLoai
-            // 
-            this.colMaLoai.HeaderText = "Mã loại";
-            this.colMaLoai.MinimumWidth = 6;
-            this.colMaLoai.Name = "colMaLoai";
-            this.colMaLoai.ReadOnly = true;
-            // 
-            // colTenLoai
-            // 
-            this.colTenLoai.HeaderText = "Tên loại";
-            this.colTenLoai.MinimumWidth = 6;
-            this.colTenLoai.Name = "colTenLoai";
-            this.colTenLoai.ReadOnly = true;
+            this.dgvLoaiHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiHang_CellClick);
             // 
             // btnThem
             // 
@@ -144,6 +134,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "🧩 Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -155,6 +146,7 @@
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "✏️ Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -166,6 +158,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "❌ Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLamMoi
             // 
@@ -173,10 +166,11 @@
             this.btnLamMoi.Location = new System.Drawing.Point(330, 0);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(110, 32);
+            this.btnLamMoi.Size = new System.Drawing.Size(120, 32);
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "🔄 Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // pnlTop
             // 
@@ -203,6 +197,27 @@
             this.pnlButtons.Size = new System.Drawing.Size(450, 36);
             this.pnlButtons.TabIndex = 8;
             // 
+            // colMaLoai
+            // 
+            this.colMaLoai.HeaderText = "Mã loại";
+            this.colMaLoai.MinimumWidth = 6;
+            this.colMaLoai.Name = "colMaLoai";
+            this.colMaLoai.ReadOnly = true;
+            // 
+            // colTenLoai
+            // 
+            this.colTenLoai.HeaderText = "Tên loại";
+            this.colTenLoai.MinimumWidth = 6;
+            this.colTenLoai.Name = "colTenLoai";
+            this.colTenLoai.ReadOnly = true;
+            // 
+            // colSoLg
+            // 
+            this.colSoLg.HeaderText = "Số lượng";
+            this.colSoLg.MinimumWidth = 6;
+            this.colSoLg.Name = "colSoLg";
+            this.colSoLg.ReadOnly = true;
+            // 
             // frmLoaiHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,6 +232,7 @@
             this.Name = "frmLoaiHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Quản lý loại hàng";
+            this.Load += new System.EventHandler(this.frmLoaiHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).EndInit();
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
@@ -234,13 +250,14 @@
         private System.Windows.Forms.Label lblMaLoai;
         private System.Windows.Forms.Label lblTenLoai;
         private System.Windows.Forms.DataGridView dgvLoaiHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaLoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenLoai;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSoLg;
     }
 }
