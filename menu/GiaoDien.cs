@@ -33,7 +33,22 @@ namespace menu
 
         private void btnHDSD_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            try
+            {
+                string filePath = "README.txt"; // vì đã nằm trong bin\Debug
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.Diagnostics.Process.Start(filePath);
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy file README.txt. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi mở file hướng dẫn:\n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
