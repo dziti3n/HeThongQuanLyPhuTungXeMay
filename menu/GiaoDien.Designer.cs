@@ -103,7 +103,6 @@
             this.ribbonPageCategory3 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.rbgBanHang = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageCategory4 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.rgbKhachHang = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -714,8 +713,7 @@
             // rbgBanHang
             // 
             this.rbgBanHang.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup12,
-            this.ribbonPageGroup17});
+            this.ribbonPageGroup12});
             this.rbgBanHang.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("rbgBanHang.ImageOptions.SvgImage")));
             this.rbgBanHang.Name = "rbgBanHang";
             this.rbgBanHang.Text = "Bán hàng";
@@ -726,12 +724,6 @@
             this.ribbonPageGroup12.ItemLinks.Add(this.btnXuatHoaDon, true);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Thông tin bán hàng";
-            // 
-            // ribbonPageGroup17
-            // 
-            this.ribbonPageGroup17.ItemLinks.Add(this.btnTraHang);
-            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
-            this.ribbonPageGroup17.Text = "Thông tin trả hàng";
             // 
             // ribbonPageCategory4
             // 
@@ -924,7 +916,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem btnLapHoaDon;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
         private DevExpress.XtraBars.BarButtonItem btnTraHang;
         private DevExpress.XtraBars.BarButtonItem btnLichSuBuonBan;
         private DevExpress.XtraBars.BarButtonItem btnXuatHoaDon;
