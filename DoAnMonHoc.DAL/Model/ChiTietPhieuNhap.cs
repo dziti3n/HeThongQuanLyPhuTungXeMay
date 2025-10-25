@@ -16,7 +16,7 @@ namespace DoAnMonHoc.DAL.Model
 
         [Key]
         [Column(Order = 1)]
-        [StringLength(10)]
+        [StringLength(5)]
         public string MaPT { get; set; }
 
         public int? SoLuong { get; set; }

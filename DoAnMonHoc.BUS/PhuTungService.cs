@@ -12,24 +12,24 @@ namespace DoAnMonHoc.BUS
     {
         public List<PhuTung> GetAllPhuTung()
         {
-            XeMayContextDB context = new XeMayContextDB();
+            PhuTungContextDB context = new PhuTungContextDB();
             return context.PhuTungs.ToList();
         }
         public void AddPhuTung(PhuTung phuTung)
         {
-            XeMayContextDB context = new XeMayContextDB();
+            PhuTungContextDB context = new PhuTungContextDB();
             context.PhuTungs.Add(phuTung);
             context.SaveChanges();
         }
         public void UpdatePhuTung(PhuTung phuTung)
         {
-            XeMayContextDB context = new XeMayContextDB();
+            PhuTungContextDB context = new PhuTungContextDB();
             context.PhuTungs.AddOrUpdate(phuTung);
             context.SaveChanges();
         }
         public void DeletePhuTung(string maPT)
         {
-            XeMayContextDB context = new XeMayContextDB();
+            PhuTungContextDB context = new PhuTungContextDB   ();
             var phuTung = context.PhuTungs.Find(maPT);
             if (phuTung != null)
             {
@@ -39,12 +39,12 @@ namespace DoAnMonHoc.BUS
         }
         public PhuTung FindById(string maPT)
         {
-            XeMayContextDB context = new XeMayContextDB();
+            PhuTungContextDB context = new PhuTungContextDB()   ;
             return context.PhuTungs.FirstOrDefault(pt => pt.MaPT == maPT);
         }
         public List<PhuTung> Search(string keyword)
         {
-            XeMayContextDB context = new XeMayContextDB();
+            PhuTungContextDB context = new PhuTungContextDB();
             return context.PhuTungs
                 .Where(pt => pt.TenPT.Contains(keyword) || pt.MaPT.Contains(keyword))
                 .ToList();

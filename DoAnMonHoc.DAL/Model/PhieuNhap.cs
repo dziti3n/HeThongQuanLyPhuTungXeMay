@@ -22,11 +22,11 @@ namespace DoAnMonHoc.DAL.Model
         [Column(TypeName = "date")]
         public DateTime? NgayNhap { get; set; }
 
-        [StringLength(10)]
+        [StringLength(5)]
         public string MaNCC { get; set; }
 
-        [StringLength(10)]
-        public string MaNV { get; set; }
+        [StringLength(5)]
+        public string MaND { get; set; }
 
         public decimal? TongTien { get; set; }
 

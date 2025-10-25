@@ -16,20 +16,17 @@ namespace DoAnMonHoc.DAL.Model
         }
 
         [Key]
-        [StringLength(10)]
+        [StringLength(5)]
         public string MaNCC { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(40)]
         public string TenNCC { get; set; }
 
-        [StringLength(200)]
-        public string DiaChi { get; set; }
-
-        [StringLength(15)]
+        [StringLength(11)]
         public string DienThoai { get; set; }
 
-        [StringLength(100)]
+        [StringLength(40)]
         public string Email { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

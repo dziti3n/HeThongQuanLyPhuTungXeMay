@@ -16,27 +16,21 @@ namespace DoAnMonHoc.DAL.Model
         }
 
         [Key]
-        [StringLength(10)]
+        [StringLength(5)]
         public string MaKH { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(40)]
         public string TenKH { get; set; }
 
-        [StringLength(200)]
+        [StringLength(100)]
         public string DiaChi { get; set; }
 
-        [StringLength(15)]
+        [StringLength(11)]
         public string DienThoai { get; set; }
 
-        [StringLength(100)]
+        [StringLength(40)]
         public string Email { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime? NgayDangKy { get; set; }
-
-        [StringLength(50)]
-        public string LoaiKH { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }
