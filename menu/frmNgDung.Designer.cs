@@ -30,13 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNgDung));
             this.dgvNguoiDung = new System.Windows.Forms.DataGridView();
-            this.TaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Khoa = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.lblTongTK = new System.Windows.Forms.Label();
@@ -55,12 +48,18 @@
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
-            this.btnQLCV = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnThemSua = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.txtTong = new System.Windows.Forms.TextBox();
+            this.Khoa = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguoiDung)).BeginInit();
             this.grbThongTin.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -84,68 +83,19 @@
             this.dgvNguoiDung.ReadOnly = true;
             this.dgvNguoiDung.RowHeadersWidth = 51;
             this.dgvNguoiDung.RowTemplate.Height = 24;
-            this.dgvNguoiDung.Size = new System.Drawing.Size(783, 333);
+            this.dgvNguoiDung.Size = new System.Drawing.Size(1190, 333);
             this.dgvNguoiDung.TabIndex = 0;
-            // 
-            // TaiKhoan
-            // 
-            this.TaiKhoan.HeaderText = "Tài khoản";
-            this.TaiKhoan.MinimumWidth = 6;
-            this.TaiKhoan.Name = "TaiKhoan";
-            this.TaiKhoan.ReadOnly = true;
-            // 
-            // TenNV
-            // 
-            this.TenNV.HeaderText = "Tên NV";
-            this.TenNV.MinimumWidth = 6;
-            this.TenNV.Name = "TenNV";
-            this.TenNV.ReadOnly = true;
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.HeaderText = "Mật Khẩu";
-            this.MatKhau.MinimumWidth = 6;
-            this.MatKhau.Name = "MatKhau";
-            this.MatKhau.ReadOnly = true;
-            // 
-            // ChucVu
-            // 
-            this.ChucVu.HeaderText = "Chức Vụ";
-            this.ChucVu.MinimumWidth = 6;
-            this.ChucVu.Name = "ChucVu";
-            this.ChucVu.ReadOnly = true;
-            // 
-            // SoDienThoai
-            // 
-            this.SoDienThoai.HeaderText = "SĐT";
-            this.SoDienThoai.MinimumWidth = 6;
-            this.SoDienThoai.Name = "SoDienThoai";
-            this.SoDienThoai.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // Khoa
-            // 
-            this.Khoa.HeaderText = "Khoá Tài Khoản";
-            this.Khoa.MinimumWidth = 6;
-            this.Khoa.Name = "Khoa";
-            this.Khoa.ReadOnly = true;
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(813, 56);
+            this.txtTimKiem.Location = new System.Drawing.Point(1223, 56);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(208, 22);
             this.txtTimKiem.TabIndex = 1;
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(1038, 56);
+            this.btnTimKiem.Location = new System.Drawing.Point(1448, 56);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
             this.btnTimKiem.TabIndex = 2;
@@ -155,7 +105,7 @@
             // lblTongTK
             // 
             this.lblTongTK.AutoSize = true;
-            this.lblTongTK.Location = new System.Drawing.Point(967, 410);
+            this.lblTongTK.Location = new System.Drawing.Point(1377, 410);
             this.lblTongTK.Name = "lblTongTK";
             this.lblTongTK.Size = new System.Drawing.Size(42, 16);
             this.lblTongTK.TabIndex = 7;
@@ -177,7 +127,7 @@
             this.grbThongTin.Controls.Add(this.txtMatKhau);
             this.grbThongTin.Controls.Add(this.txtTenNV);
             this.grbThongTin.Controls.Add(this.txtTaiKhoan);
-            this.grbThongTin.Location = new System.Drawing.Point(813, 93);
+            this.grbThongTin.Location = new System.Drawing.Point(1223, 93);
             this.grbThongTin.Name = "grbThongTin";
             this.grbThongTin.Size = new System.Drawing.Size(312, 297);
             this.grbThongTin.TabIndex = 8;
@@ -300,15 +250,6 @@
             this.txtTaiKhoan.Size = new System.Drawing.Size(185, 22);
             this.txtTaiKhoan.TabIndex = 0;
             // 
-            // btnQLCV
-            // 
-            this.btnQLCV.Location = new System.Drawing.Point(12, 406);
-            this.btnQLCV.Name = "btnQLCV";
-            this.btnQLCV.Size = new System.Drawing.Size(134, 23);
-            this.btnQLCV.TabIndex = 9;
-            this.btnQLCV.Text = "Quản Lý Chức Vụ";
-            this.btnQLCV.UseVisualStyleBackColor = true;
-            // 
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -318,7 +259,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1166, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1567, 27);
             this.toolStrip1.TabIndex = 10;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -349,19 +290,67 @@
             // txtTong
             // 
             this.txtTong.Enabled = false;
-            this.txtTong.Location = new System.Drawing.Point(1013, 406);
+            this.txtTong.Location = new System.Drawing.Point(1423, 406);
             this.txtTong.Name = "txtTong";
             this.txtTong.Size = new System.Drawing.Size(100, 22);
             this.txtTong.TabIndex = 11;
+            // 
+            // Khoa
+            // 
+            this.Khoa.HeaderText = "Khoá Tài Khoản";
+            this.Khoa.MinimumWidth = 6;
+            this.Khoa.Name = "Khoa";
+            this.Khoa.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // SoDienThoai
+            // 
+            this.SoDienThoai.HeaderText = "SĐT";
+            this.SoDienThoai.MinimumWidth = 6;
+            this.SoDienThoai.Name = "SoDienThoai";
+            this.SoDienThoai.ReadOnly = true;
+            // 
+            // ChucVu
+            // 
+            this.ChucVu.HeaderText = "Chức Vụ";
+            this.ChucVu.MinimumWidth = 6;
+            this.ChucVu.Name = "ChucVu";
+            this.ChucVu.ReadOnly = true;
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.HeaderText = "Mật Khẩu";
+            this.MatKhau.MinimumWidth = 6;
+            this.MatKhau.Name = "MatKhau";
+            this.MatKhau.ReadOnly = true;
+            // 
+            // TenNV
+            // 
+            this.TenNV.HeaderText = "Tên NV";
+            this.TenNV.MinimumWidth = 6;
+            this.TenNV.Name = "TenNV";
+            this.TenNV.ReadOnly = true;
+            // 
+            // TaiKhoan
+            // 
+            this.TaiKhoan.HeaderText = "Tài khoản";
+            this.TaiKhoan.MinimumWidth = 6;
+            this.TaiKhoan.Name = "TaiKhoan";
+            this.TaiKhoan.ReadOnly = true;
             // 
             // frmNgDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 478);
+            this.ClientSize = new System.Drawing.Size(1567, 450);
             this.Controls.Add(this.txtTong);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.btnQLCV);
             this.Controls.Add(this.grbThongTin);
             this.Controls.Add(this.lblTongTK);
             this.Controls.Add(this.btnTimKiem);
@@ -394,7 +383,6 @@
         private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnQLCV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -406,6 +394,8 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnThemSua;
         private System.Windows.Forms.ToolStripButton btnXoa;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.TextBox txtTong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
@@ -413,7 +403,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoDienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Khoa;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.TextBox txtTong;
     }
 }
