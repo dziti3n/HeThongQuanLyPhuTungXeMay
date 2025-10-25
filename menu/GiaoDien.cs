@@ -168,6 +168,7 @@ namespace menu
         private void btnQltk_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmNgDung f = new frmNgDung();
+            OpenChildForm(f);
         }
     }
 }
