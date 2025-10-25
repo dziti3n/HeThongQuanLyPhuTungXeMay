@@ -116,11 +116,7 @@ namespace menu
 
         
 
-        private void btnThongTinTonKhoVaSapHet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmThongTinTonKho f = new frmThongTinTonKho();
-            OpenChildForm(f);
-        }
+        
 
         private void btnThietLapTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

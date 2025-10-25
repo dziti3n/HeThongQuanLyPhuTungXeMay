@@ -520,7 +520,6 @@
             this.btnThongTinTonKhoVaSapHet.Id = 74;
             this.btnThongTinTonKhoVaSapHet.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThongTinTonKhoVaSapHet.ImageOptions.SvgImage")));
             this.btnThongTinTonKhoVaSapHet.Name = "btnThongTinTonKhoVaSapHet";
-            this.btnThongTinTonKhoVaSapHet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongTinTonKhoVaSapHet_ItemClick);
             // 
             // barButtonItem42
             // 
