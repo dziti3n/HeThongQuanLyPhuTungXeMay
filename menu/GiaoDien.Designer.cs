@@ -133,7 +133,7 @@
             // rbcMENU
             // 
             this.rbcMENU.BackColor = System.Drawing.Color.LightGray;
-            this.rbcMENU.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(46);
+            this.rbcMENU.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(57);
             this.rbcMENU.ExpandCollapseItem.Id = 0;
             this.rbcMENU.ForeColor = System.Drawing.Color.Black;
             this.rbcMENU.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -192,10 +192,10 @@
             this.btnQltk,
             this.btnLoaiHang});
             this.rbcMENU.Location = new System.Drawing.Point(0, 0);
-            this.rbcMENU.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rbcMENU.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rbcMENU.MaxItemId = 93;
             this.rbcMENU.Name = "rbcMENU";
-            this.rbcMENU.OptionsMenuMinWidth = 515;
+            this.rbcMENU.OptionsMenuMinWidth = 644;
             this.rbcMENU.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1,
             this.ribbonPageCategory2,
@@ -852,7 +852,7 @@
             this.IsMdiContainer = true;
             this.Name = "GiaoDien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GiaoDien";
+            this.Text = "Hệ thống quản lý phụ tùng\t";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GiaoDien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rbcMENU)).EndInit();
