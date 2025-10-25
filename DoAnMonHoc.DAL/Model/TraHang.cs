@@ -6,27 +6,32 @@ namespace DoAnMonHoc.DAL.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ChucVu")]
-    public partial class ChucVu
+    [Table("TraHang")]
+    public partial class TraHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ChucVu()
+        public TraHang()
         {
-            NguoiDungs = new HashSet<NguoiDung>();
+            ChiTietTraHangs = new HashSet<ChiTietTraHang>();
         }
 
         [Key]
-        [StringLength(5)]
-        public string MaCV { get; set; }
+        [StringLength(10)]
+        public string MaTra { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string TenCV { get; set; }
+        [StringLength(5)]
+        public string MaHD { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? NgayTra { get; set; }
 
         [StringLength(200)]
-        public string MoTa { get; set; }
+        public string LyDo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NguoiDung> NguoiDungs { get; set; }
+        public virtual ICollection<ChiTietTraHang> ChiTietTraHangs { get; set; }
+
+        public virtual HoaDon HoaDon { get; set; }
     }
 }
