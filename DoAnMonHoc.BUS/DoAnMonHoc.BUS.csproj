@@ -57,7 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChucVuService.cs" />
     <Compile Include="HoaDonService.cs" />
     <Compile Include="KhachHangService.cs" />
     <Compile Include="LoaiHangService.cs" />
