@@ -38,7 +38,8 @@ namespace menu
 
         private void btnSup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            string thongTin = "📞 Hotline: 0909 123 456\n📧 Email: support@doanmonhoc.vn\n💬 Zalo: @TeamDoAn\n🕒 Hỗ trợ từ 8h đến 22h mỗi ngày";
+            MessageBox.Show(thongTin, "Liên hệ hỗ trợ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public event EventHandler DangXuat;
