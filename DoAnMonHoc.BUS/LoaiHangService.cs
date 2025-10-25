@@ -40,5 +40,21 @@ namespace DoAnMonHoc.BUS
                 context.SaveChanges();
             }
         }
+        public List<LoaiHangViewModel> GetLoaiHangWithCount()
+        {
+            PhuTungContextDB context = new PhuTungContextDB();
+            var result = context.LoaiHangs
+                .Select(lh => new LoaiHangViewModel
+                {
+                    MaLoai = lh.MaLoai,
+                    TenLoai = lh.TenLoai,
+                    SoLuongPhuTung = lh.PhuTungs.Count()
+                })
+                .ToList();
+
+            return result;
+        }
+
+
     }
 }

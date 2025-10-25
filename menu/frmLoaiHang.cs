@@ -43,15 +43,18 @@ namespace menu
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string keyword = txtSearch.Text.Trim();
-            var list = loaiHangService.GetAllLoaiHang()
-                .Where(lh => lh.TenLoai.Contains(keyword) || lh.MaLoai.Contains(keyword))
-                .ToList();
+            var list = loaiHangService.GetLoaiHangWithCount()
+    .Where(lh => lh.TenLoai.Contains(keyword) || lh.MaLoai.Contains(keyword))
+    .ToList();
+
+
 
             dgvLoaiHang.Rows.Clear();
             foreach (var lh in list)
             {
                 dgvLoaiHang.Rows.Add(lh.MaLoai, lh.TenLoai);
             }
+            LoadLoaiHang(txtSearch.Text.Trim());
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -97,14 +100,21 @@ namespace menu
         {
             ResetForm();
         }
-        private void LoadLoaiHang()
+        private void LoadLoaiHang(string keyword = "")
         {
             dgvLoaiHang.Rows.Clear();
-            var list = loaiHangService.GetAllLoaiHang();
+            var list = loaiHangService.GetLoaiHangWithCount();
 
+            // Lọc theo từ khóa nếu có
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                list = list.Where(lh => lh.TenLoai.Contains(keyword) || lh.MaLoai.Contains(keyword)).ToList();
+            }
+
+            // Hiển thị
             foreach (var lh in list)
             {
-                dgvLoaiHang.Rows.Add(lh.MaLoai, lh.TenLoai);
+                dgvLoaiHang.Rows.Add(lh.MaLoai, lh.TenLoai, lh.SoLuongPhuTung);
             }
         }
 
