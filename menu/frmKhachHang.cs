@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoAnMonHoc.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace menu
     public partial class frmKhachHang : Form
     {
         DataTable dtKhachHang = new DataTable();
+        private readonly KhachHangService _service = new KhachHangService();
 
         public frmKhachHang()
         {
@@ -32,6 +34,7 @@ namespace menu
             dtKhachHang.Columns.Add("Tên KH");
             dtKhachHang.Columns.Add("SĐT");
             dtKhachHang.Columns.Add("Địa chỉ");
+            dtKhachHang.Columns.Add("Email");
 
             // Gán DataTable vào DataGridView
             dgvThongTinKH.DataSource = dtKhachHang;
@@ -51,6 +54,8 @@ namespace menu
                 dtKhachHang.Rows[index]["Tên KH"] = txtTenKhachHang.Text;
                 dtKhachHang.Rows[index]["SĐT"] = txtSDT.Text;
                 dtKhachHang.Rows[index]["Địa chỉ"] = txtDiaChi.Text;
+                dtKhachHang.Rows[index]["Email"] = txtEmail.Text;
+
             }
         }
 
@@ -100,6 +105,7 @@ namespace menu
                 row["Tên KH"] = txtTenKhachHang.Text;
                 row["SĐT"] = txtSDT.Text;
                 row["Địa chỉ"] = txtDiaChi.Text;
+                row["Email"] = txtEmail.Text;
 
                 dtKhachHang.Rows.Add(row);
                 dgvThongTinKH.DataSource = dtKhachHang;
@@ -109,6 +115,7 @@ namespace menu
                 txtTenKhachHang.Clear();
                 txtSDT.Clear();
                 txtDiaChi.Clear();
+                txtEmail.Clear();
             }
             else
             {
@@ -150,11 +157,26 @@ namespace menu
             {
                 DataGridViewRow row = dgvThongTinKH.Rows[e.RowIndex];
 
-                txtMaKhachHang.Text = row.Cells["Mã KH"].Value?.ToString();
-                txtTenKhachHang.Text = row.Cells["Tên KH"].Value?.ToString();
-                txtSDT.Text = row.Cells["SĐT"].Value?.ToString();
-                txtDiaChi.Text = row.Cells["Địa chỉ"].Value?.ToString();
+                txtMaKhachHang.Text = row.Cells[0].Value?.ToString();
+                txtTenKhachHang.Text = row.Cells[1].Value?.ToString();
+                txtSDT.Text = row.Cells[2].Value?.ToString();
+                txtDiaChi.Text = row.Cells[3].Value?.ToString();
+                txtEmail.Text = row.Cells[4].Value?.ToString();
             }
+        }
+
+        private void frmKhachHang_Load_1(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            dgvThongTinKH.DataSource = _service.GetAllKhachHang();
+        }
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

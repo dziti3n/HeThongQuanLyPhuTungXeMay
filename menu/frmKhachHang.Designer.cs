@@ -42,6 +42,8 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.dgvThongTinKH = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinKH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,7 +139,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(60, 377);
+            this.btnThem.Location = new System.Drawing.Point(42, 419);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 11;
@@ -147,7 +149,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(142, 377);
+            this.btnSua.Location = new System.Drawing.Point(133, 419);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 12;
@@ -157,7 +159,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(231, 377);
+            this.btnXoa.Location = new System.Drawing.Point(233, 419);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 13;
@@ -172,16 +174,35 @@
             this.dgvThongTinKH.Name = "dgvThongTinKH";
             this.dgvThongTinKH.RowHeadersWidth = 51;
             this.dgvThongTinKH.RowTemplate.Height = 24;
-            this.dgvThongTinKH.Size = new System.Drawing.Size(634, 227);
+            this.dgvThongTinKH.Size = new System.Drawing.Size(895, 227);
             this.dgvThongTinKH.TabIndex = 14;
             this.dgvThongTinKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinKH_CellContentClick);
             this.dgvThongTinKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinKH_CellContentClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(58, 355);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 16);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(59, 378);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(218, 22);
+            this.txtEmail.TabIndex = 16;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 515);
+            this.ClientSize = new System.Drawing.Size(1263, 515);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvThongTinKH);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
@@ -198,6 +219,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmKhachHang";
             this.Text = "frmKhachHang";
+            this.Load += new System.EventHandler(this.frmKhachHang_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinKH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -220,5 +242,7 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.DataGridView dgvThongTinKH;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }
