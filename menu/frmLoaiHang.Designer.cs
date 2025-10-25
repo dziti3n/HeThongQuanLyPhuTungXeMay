@@ -95,6 +95,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(220, 30);
             this.txtSearch.TabIndex = 5;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dgvLoaiHang
             // 
@@ -119,6 +120,7 @@
             this.dgvLoaiHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLoaiHang.Size = new System.Drawing.Size(760, 256);
             this.dgvLoaiHang.TabIndex = 6;
+            this.dgvLoaiHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiHang_CellClick);
             // 
             // colMaLoai
             // 
@@ -144,6 +146,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "🧩 Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -155,6 +158,7 @@
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "✏️ Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -166,6 +170,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "❌ Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLamMoi
             // 
@@ -173,10 +178,11 @@
             this.btnLamMoi.Location = new System.Drawing.Point(330, 0);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(110, 32);
+            this.btnLamMoi.Size = new System.Drawing.Size(120, 32);
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "🔄 Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // pnlTop
             // 
@@ -217,6 +223,7 @@
             this.Name = "frmLoaiHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Quản lý loại hàng";
+            this.Load += new System.EventHandler(this.frmLoaiHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).EndInit();
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
