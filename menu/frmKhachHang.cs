@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DoAnMonHoc.BUS;
+using DoAnMonHoc.DAL.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,149 +14,181 @@ namespace menu
 {
     public partial class frmKhachHang : Form
     {
-        DataTable dtKhachHang = new DataTable();
+       
+        private readonly KhachHangService _service = new KhachHangService();
+        private readonly KhachHangService khachHangService = new KhachHangService();
+        private string selectedMaKH = null;
 
         public frmKhachHang()
         {
             InitializeComponent();
-            dtKhachHang.Columns.Add("Mã KH");
-            dtKhachHang.Columns.Add("Tên KH");
-            dtKhachHang.Columns.Add("SĐT");
-            dtKhachHang.Columns.Add("Địa chỉ");
-
-            dgvThongTinKH.DataSource = dtKhachHang;
+            
+        }  
+        private void frmKhachHang_Load_1(object sender, EventArgs e)
+        {
+            LoadKhachHang();
         }
 
-        private void frmKhachHang_Load(object sender, EventArgs e)
+        private void LoadKhachHang()
         {
-            // Khởi tạo cấu trúc cột cho DataTable
-            dtKhachHang.Columns.Add("Mã KH");
-            dtKhachHang.Columns.Add("Tên KH");
-            dtKhachHang.Columns.Add("SĐT");
-            dtKhachHang.Columns.Add("Địa chỉ");
+            dgvThongTinKH.Rows.Clear();
+            var list = khachHangService.GetAllKhachHang();
 
-            // Gán DataTable vào DataGridView
-            dgvThongTinKH.DataSource = dtKhachHang;
-        }
-
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            if (dgvThongTinKH.CurrentRow != null)
+            foreach (var kh in list)
             {
-                int index = dgvThongTinKH.CurrentRow.Index;
-                dtKhachHang.Rows[index]["Mã KH"] = txtMaKhachHang.Text;
-                dtKhachHang.Rows[index]["Tên KH"] = txtTenKhachHang.Text;
-                dtKhachHang.Rows[index]["SĐT"] = txtSDT.Text;
-                dtKhachHang.Rows[index]["Địa chỉ"] = txtDiaChi.Text;
+                dgvThongTinKH.Rows.Add(kh.MaKH, kh.TenKH, kh.DienThoai, kh.DiaChi, kh.Email);
             }
+
+            lblTongKH.Text = $"Tổng số khách hàng: {list.Count}";
         }
 
-        private void txtMaKhachHang_TextChanged(object sender, EventArgs e)
+
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
+            string keyword = txtTimKiem.Text.Trim();
+            var list = khachHangService.Search(keyword);
 
-        }
-
-        private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtSDT_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtDiaChi_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            string tuKhoa = txtTenKhachHang.Text.ToLower();
-
-            if (tuKhoa != "")
+            dgvThongTinKH.Rows.Clear();
+            foreach (var kh in list)
             {
-                var ketQua = dtKhachHang.AsEnumerable()
-                    .Where(row => row.Field<string>("Tên KH").ToLower().Contains(tuKhoa));
-
-                if (ketQua.Any())
-                    dgvThongTinKH.DataSource = ketQua.CopyToDataTable();
-                else
-                    MessageBox.Show("Không tìm thấy khách hàng nào phù hợp.");
+                dgvThongTinKH.Rows.Add(kh.MaKH, kh.TenKH, kh.DiaChi, kh.DienThoai, kh.Email);
             }
-            else
-            {
-                dgvThongTinKH.DataSource = dtKhachHang;
-            }
+
+            lblTongKH.Text = $"Tìm thấy: {list.Count}";
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
-            if (txtMaKhachHang.Text != "" && txtTenKhachHang.Text != "" && txtSDT.Text != "" && txtDiaChi.Text != "")
+            // Kiểm tra dữ liệu
+            if (string.IsNullOrWhiteSpace(txtMaKhachHang.Text))
             {
-                DataRow row = dtKhachHang.NewRow();
-                row["Mã KH"] = txtMaKhachHang.Text;
-                row["Tên KH"] = txtTenKhachHang.Text;
-                row["SĐT"] = txtSDT.Text;
-                row["Địa chỉ"] = txtDiaChi.Text;
-
-                dtKhachHang.Rows.Add(row);
-                dgvThongTinKH.DataSource = dtKhachHang;
-
-                // Xóa trống các ô nhập sau khi thêm
-                txtMaKhachHang.Clear();
-                txtTenKhachHang.Clear();
-                txtSDT.Clear();
-                txtDiaChi.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-            }
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            // Nếu không có hàng nào trong bảng
-            if (dtKhachHang.Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu để xóa!", "Thông báo");
+                MessageBox.Show("⚠️ Vui lòng nhập mã khách hàng!", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaKhachHang.Focus();
                 return;
             }
 
-            // Nếu người dùng chưa chọn dòng nào
-            if (dgvThongTinKH.SelectedRows.Count == 0)
+            if (string.IsNullOrWhiteSpace(txtTenKhachHang.Text))
             {
-                MessageBox.Show("Vui lòng chọn một khách hàng để xóa!", "Thông báo");
+                MessageBox.Show("⚠️ Vui lòng nhập tên khách hàng!", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTenKhachHang.Focus();
                 return;
             }
 
-            // Lấy chỉ số của dòng đang chọn
-            int index = dgvThongTinKH.SelectedRows[0].Index;
-
-            // Kiểm tra lại chỉ số hợp lệ
-            if (index >= 0 && index < dtKhachHang.Rows.Count)
+            if (string.IsNullOrWhiteSpace(txtSDT.Text))
             {
-                dtKhachHang.Rows.RemoveAt(index);
-                MessageBox.Show("Xóa khách hàng thành công!", "Thông báo");
+                MessageBox.Show("⚠️ Vui lòng nhập số điện thoại!", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSDT.Focus();
+                return;
+            }
+
+            if (!txtSDT.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("⚠️ Số điện thoại chỉ được chứa chữ số!", "Sai định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSDT.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtEmail.Text) || !txtEmail.Text.Contains("@"))
+            {
+                MessageBox.Show("⚠️ Vui lòng nhập email hợp lệ!", "Sai định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Focus();
+                return;
+            }
+
+            if (khachHangService.FindById(txtMaKhachHang.Text) != null)
+            {
+                MessageBox.Show("❌ Mã khách hàng đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Tạo đối tượng
+            var kh = new KhachHang
+            {
+                MaKH = txtMaKhachHang.Text.Trim(),
+                TenKH = txtTenKhachHang.Text.Trim(),
+                DiaChi = txtDiaChi.Text.Trim(),
+                DienThoai = txtSDT.Text.Trim(),
+                Email = txtEmail.Text.Trim()
+            };
+
+            // Thêm vào DB
+            try
+            {
+                khachHangService.AddKhachHang(kh);
+                MessageBox.Show("✅ Thêm khách hàng thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadKhachHang();
+                ResetForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("❌ Lỗi khi thêm khách hàng: " + ex.Message, "Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void dgvThongTinKH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnSua_Click_1(object sender, EventArgs e)
         {
-            // Nếu dòng được chọn hợp lệ (tránh lỗi khi bấm tiêu đề cột)
-            if (e.RowIndex >= 0)
+            if (selectedMaKH == null)
+            {
+                MessageBox.Show("⚠️ Vui lòng chọn khách hàng cần sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var kh = khachHangService.FindById(selectedMaKH);
+            if (kh != null)
+            {
+                kh.TenKH = txtTenKhachHang.Text.Trim();
+                kh.DiaChi = txtDiaChi.Text.Trim();
+                kh.DienThoai = txtSDT.Text.Trim();
+                kh.Email = txtEmail.Text.Trim();
+
+                khachHangService.UpdateKhachHang(kh);
+                MessageBox.Show("✅ Cập nhật khách hàng thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadKhachHang();
+                ResetForm();
+            }
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
+        {
+            if (selectedMaKH == null)
+            {
+                MessageBox.Show("⚠️ Vui lòng chọn khách hàng cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var confirm = MessageBox.Show("Bạn có chắc muốn xóa khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                khachHangService.DeleteKhachHang(selectedMaKH);
+                MessageBox.Show("✅ Xóa thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadKhachHang();
+                ResetForm();
+            }
+        }
+
+        private void dgvThongTinKH_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvThongTinKH.Rows[e.RowIndex];
-
-                txtMaKhachHang.Text = row.Cells["Mã KH"].Value?.ToString();
-                txtTenKhachHang.Text = row.Cells["Tên KH"].Value?.ToString();
-                txtSDT.Text = row.Cells["SĐT"].Value?.ToString();
-                txtDiaChi.Text = row.Cells["Địa chỉ"].Value?.ToString();
+                txtMaKhachHang.Text = row.Cells[0].Value.ToString();
+                txtTenKhachHang.Text = row.Cells[1].Value.ToString();
+                txtSDT.Text = row.Cells[2].Value.ToString();
+                txtDiaChi.Text = row.Cells[3].Value.ToString();
+                txtEmail.Text = row.Cells[4].Value.ToString();
+                selectedMaKH = row.Cells[0].Value.ToString();
             }
+        }
+        private void ResetForm()
+        {
+            txtMaKhachHang.Clear();
+            txtTenKhachHang.Clear();
+            txtDiaChi.Clear();
+            txtSDT.Clear();
+            txtEmail.Clear();
+            txtTimKiem.Clear();
+            selectedMaKH = null;
         }
     }
 }
