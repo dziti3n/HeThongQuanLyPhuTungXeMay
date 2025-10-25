@@ -63,7 +63,7 @@
     <Compile Include="LoaiHangViewModel.cs" />
     <Compile Include="NguoiDungService.cs" />
     <Compile Include="NhaCungCapService.cs" />
-    <Compile Include="PhieuNhapService.cs" />
+    <Compile Include="DonDatHangService.cs" />
     <Compile Include="PhuTungService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
