@@ -470,16 +470,9 @@
             this.btnTraHang.Id = 66;
             this.btnTraHang.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTraHang.ImageOptions.SvgImage")));
             this.btnTraHang.Name = "btnTraHang";
-            this.btnTraHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTraHang_ItemClick);
+    
             // 
-            // btnLichSuBuonBan
-            // 
-            this.btnLichSuBuonBan.Caption = "Lịch sử buôn bán";
-            this.btnLichSuBuonBan.Id = 67;
-            this.btnLichSuBuonBan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLichSuBuonBan.ImageOptions.SvgImage")));
-            this.btnLichSuBuonBan.Name = "btnLichSuBuonBan";
-            this.btnLichSuBuonBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLichSuBuonBan_ItemClick);
-            // 
+            
             // btnXuatHoaDon
             // 
             this.btnXuatHoaDon.Caption = "Xuất hóa đơn";

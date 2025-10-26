@@ -94,17 +94,8 @@ namespace menu
             OpenChildForm(f);
         }
 
-        private void btnTraHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmTraHang f = new frmTraHang();
-            OpenChildForm(f);
-        }
+        
 
-        private void btnLichSuBuonBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmLichSuBuonBan f = new frmLichSuBuonBan();
-            OpenChildForm(f);
-        }
 
         private void btnThongTinKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
