@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
+
 
 namespace DoAnMonHoc.BUS
 {
@@ -14,6 +16,7 @@ namespace DoAnMonHoc.BUS
             PhuTungContextDB contextDB = new PhuTungContextDB();
             return contextDB.DonDatHangs.ToList();
         }
+
         public DonDatHang GetById(string maDDH)
         {
             using (var context = new PhuTungContextDB())
@@ -57,6 +60,10 @@ namespace DoAnMonHoc.BUS
                     .Where(ddh => ddh.MaNCC == maNCC)
                     .ToList();
             }
+
         }
-    }
+        
+
+        }
+    
 }
