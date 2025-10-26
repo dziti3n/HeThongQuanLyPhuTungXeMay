@@ -69,7 +69,7 @@ namespace menu
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-                Application.Exit();
+            Application.Exit();
         }
 
         private void btnThongTinPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -204,18 +204,30 @@ namespace menu
             OpenChildForm(f);
         }
 
+        private bool _isExiting = false;
         private void GiaoDien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var result = MessageBox.Show("Bạn có chắc muốn thoát?", "Xác nhận", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.No)
-            {
-                e.Cancel = true;
-                return;
-            }
+            if (_isExiting) return; // Đã đang thoát → không hỏi lại
 
-            // Đảm bảo thoát toàn bộ ứng dụng
-            Application.Exit();
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                var result = MessageBox.Show("Bạn có chắc muốn thoát?", "Xác nhận",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+
+                // Đóng form con
+                foreach (Form f in this.MdiChildren.ToList())
+                    f.Close();
+
+                // Đặt cờ và thoát toàn bộ
+                _isExiting = true;
+                Application.Exit();
+            }
         }
 
         private void btnLoaiHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
