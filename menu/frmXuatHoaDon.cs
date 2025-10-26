@@ -133,9 +133,15 @@ namespace menu
                 return;
             }
 
-            MessageBox.Show($"Hóa đơn {maHD} đã được xuất thành công!",
-                "Xuất hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            XuatHoaDonRaPDF(maHD); // ← gọi hàm mới
+            try
+            {
+                XuatHoaDonRaPDF(maHD);
+                MessageBox.Show($"Hóa đơn {maHD} đã được xuất thành công!", "Xuất hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất PDF: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvThongTin_CellContentClick(object sender, DataGridViewCellEventArgs e)
