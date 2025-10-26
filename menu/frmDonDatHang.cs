@@ -128,6 +128,10 @@ namespace menu
 
             txtTongSoDon.Text = listDonDatHang.Count.ToString();
         }
-        
+
+        private void btnLoadLai_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }
