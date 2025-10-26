@@ -23,11 +23,18 @@ namespace DoAnMonHoc.BUS
             }
         }
         
+        public void Add(HoaDon hoaDon)
+        {
+            using (var context = new PhuTungContextDB())
+            {
+                context.HoaDons.Add(hoaDon);
+                context.SaveChanges();
+            }
+        }
 
-        
 
-        
 
-        
+
+
     }
 }
