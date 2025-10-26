@@ -1,16 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace DoAnMonHoc.DAL.Model
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
     [Table("ChiTietDonDatHang")]
-    public class ChiTietDonDatHang
+    public partial class ChiTietDonDatHang
     {
-        [Key, Column(Order = 0)]
+        [Key]
+        [Column(Order = 0)]
         [StringLength(10)]
         public string MaDDH { get; set; }
 
-        [Key, Column(Order = 1)]
+        [Key]
+        [Column(Order = 1)]
         [StringLength(5)]
         public string MaPT { get; set; }
 

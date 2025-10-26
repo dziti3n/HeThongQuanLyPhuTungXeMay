@@ -12,8 +12,8 @@ namespace DoAnMonHoc.DAL.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NguoiDung()
         {
+            DonDatHangs = new HashSet<DonDatHang>();
             HoaDons = new HashSet<HoaDon>();
-            PhieuNhaps = new HashSet<PhieuNhap>();
         }
 
         [Key]
@@ -27,18 +27,18 @@ namespace DoAnMonHoc.DAL.Model
         [StringLength(40)]
         public string HoTen { get; set; }
 
-        public bool Admin { get; set; }
-
-        [StringLength(11)]
+        [StringLength(10)]
         public string SDT { get; set; }
 
         [StringLength(40)]
         public string Email { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HoaDon> HoaDons { get; set; }
+        public bool Admin { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhieuNhap> PhieuNhaps { get; set; }
+        public virtual ICollection<DonDatHang> DonDatHangs { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HoaDon> HoaDons { get; set; }
     }
 }

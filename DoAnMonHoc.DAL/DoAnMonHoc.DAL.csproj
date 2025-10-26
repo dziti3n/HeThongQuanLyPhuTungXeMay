@@ -59,21 +59,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\LichSuMuaHangDTO.cs" />
     <Compile Include="Model\ChiTietDonDatHang.cs" />
     <Compile Include="Model\ChiTietHoaDon.cs" />
-    <Compile Include="Model\ChiTietPhieuNhap.cs" />
-    <Compile Include="Model\ChiTietTraHang.cs" />
     <Compile Include="Model\DonDatHang.cs" />
     <Compile Include="Model\HoaDon.cs" />
     <Compile Include="Model\KhachHang.cs" />
-    <Compile Include="Model\LichSuMuaHangDTO.cs" />
     <Compile Include="Model\LoaiHang.cs" />
     <Compile Include="Model\NguoiDung.cs" />
     <Compile Include="Model\NhaCungCap.cs" />
-    <Compile Include="Model\PhieuNhap.cs" />
     <Compile Include="Model\PhuTung.cs" />
     <Compile Include="Model\PhuTungContextDB.cs" />
-    <Compile Include="Model\TraHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

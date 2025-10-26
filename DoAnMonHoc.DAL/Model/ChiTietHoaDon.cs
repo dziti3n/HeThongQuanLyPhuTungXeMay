@@ -11,7 +11,7 @@ namespace DoAnMonHoc.DAL.Model
     {
         [Key]
         [Column(Order = 0)]
-        [StringLength(5)]
+        [StringLength(10)]
         public string MaHD { get; set; }
 
         [Key]

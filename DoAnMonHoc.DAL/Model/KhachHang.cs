@@ -26,7 +26,7 @@ namespace DoAnMonHoc.DAL.Model
         [StringLength(100)]
         public string DiaChi { get; set; }
 
-        [StringLength(11)]
+        [StringLength(10)]
         public string DienThoai { get; set; }
 
         [StringLength(40)]

@@ -13,11 +13,10 @@ namespace DoAnMonHoc.DAL.Model
         public HoaDon()
         {
             ChiTietHoaDons = new HashSet<ChiTietHoaDon>();
-            TraHangs = new HashSet<TraHang>();
         }
 
         [Key]
-        [StringLength(5)]
+        [StringLength(10)]
         public string MaHD { get; set; }
 
         [Column(TypeName = "date")]
@@ -37,8 +36,5 @@ namespace DoAnMonHoc.DAL.Model
         public virtual KhachHang KhachHang { get; set; }
 
         public virtual NguoiDung NguoiDung { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TraHang> TraHangs { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace DoAnMonHoc.DAL.Model
         public string MaLoai { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(30)]
         public string TenLoai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
