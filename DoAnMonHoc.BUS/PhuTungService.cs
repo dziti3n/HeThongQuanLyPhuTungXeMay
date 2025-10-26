@@ -12,8 +12,13 @@ namespace DoAnMonHoc.BUS
     {
         public List<PhuTung> GetAllPhuTung()
         {
-            PhuTungContextDB context = new PhuTungContextDB();
-            return context.PhuTungs.ToList();
+            using (var context = new PhuTungContextDB())
+            {
+                return context.PhuTungs
+                    .Include("LoaiHang")       
+                    .Include("NhaCungCap")     
+                    .ToList();
+            }
         }
         public void AddPhuTung(PhuTung phuTung)
         {
@@ -44,10 +49,17 @@ namespace DoAnMonHoc.BUS
         }
         public List<PhuTung> Search(string keyword)
         {
-            PhuTungContextDB context = new PhuTungContextDB();
-            return context.PhuTungs
-                .Where(pt => pt.TenPT.Contains(keyword) || pt.MaPT.Contains(keyword))
-                .ToList();
+            using (var context = new PhuTungContextDB())
+            {
+                return context.PhuTungs
+                    .Include("LoaiHang")
+                    .Include("NhaCungCap")
+                    .Where(pt =>
+                        pt.TenPT.Contains(keyword) ||
+                        pt.MaPT.Contains(keyword) ||
+                        pt.NhaCungCap.TenNCC.Contains(keyword))
+                    .ToList();
+            }
         }
 
 
