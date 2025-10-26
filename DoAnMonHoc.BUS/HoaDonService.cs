@@ -1,13 +1,14 @@
 ﻿using DoAnMonHoc.DAL.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DoAnMonHoc.BUS
 {
-    internal class HoaDonService
+    public class HoaDonService
     {
         public List<HoaDon>GetAll()
         { 
@@ -21,5 +22,12 @@ namespace DoAnMonHoc.BUS
                 return context.HoaDons.Find(maHD);
             }
         }
+        
+
+        
+
+        
+
+        
     }
 }
