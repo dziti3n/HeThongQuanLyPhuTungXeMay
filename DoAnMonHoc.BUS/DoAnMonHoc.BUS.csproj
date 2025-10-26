@@ -168,6 +168,7 @@
     <Compile Include="LichSuMuaHangService.cs" />
     <Compile Include="LoaiHangService.cs" />
     <Compile Include="LoaiHangViewModel.cs" />
+    <Compile Include="LuuNV.cs" />
     <Compile Include="NguoiDungService.cs" />
     <Compile Include="NhaCungCapService.cs" />
     <Compile Include="DonDatHangService.cs" />

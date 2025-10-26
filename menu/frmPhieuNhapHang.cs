@@ -13,9 +13,8 @@ namespace menu
         private readonly NhaCungCapService nhaCungCapService = new NhaCungCapService();
         private readonly PhuTungService phuTungService = new PhuTungService();
         private readonly DonDatHangService donDatHangService = new DonDatHangService();
-
-
         private readonly List<ChiTietDonDatHang> chiTietTam = new List<ChiTietDonDatHang>();
+        private string _nccDangChon = null;
         public frmPhieuNhapHang()
         {
             InitializeComponent();
@@ -49,6 +48,43 @@ namespace menu
                 cmbTenPhuTung.SelectedIndex = -1;
 
                 txtDonGia.Text = "";
+                if (cmbNhaCungCap.SelectedValue == null) return;
+
+                string maNCCMoi = cmbNhaCungCap.SelectedValue.ToString();
+
+                // Nếu chưa chọn NCC nào trước đó, gán luôn
+                if (_nccDangChon == null)
+                {
+                    _nccDangChon = maNCCMoi;
+                    LoadPhuTungTheoNCC(maNCCMoi);
+                    return;
+                }
+
+                // Nếu đổi NCC khi đã có dữ liệu trong giỏ hàng
+                if (maNCCMoi != _nccDangChon)
+                {
+                    if (dgvDonDatHang.Rows.Count > 0)
+                    {
+                        var result = MessageBox.Show(
+                            "Bạn đang có dữ liệu trong giỏ hàng. Đổi nhà cung cấp sẽ xóa toàn bộ dữ liệu này. Bạn có chắc không?",
+                            "Xác nhận đổi nhà cung cấp",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Warning
+                        );
+
+                        if (result == DialogResult.No)
+                        {
+                            // Giữ nguyên NCC cũ
+                            cmbNhaCungCap.SelectedValue = _nccDangChon;
+                            return;
+                        }
+                    }
+
+                    // Nếu đồng ý đổi → reset giỏ hàng & load lại phụ tùng
+                    dgvDonDatHang.Rows.Clear();
+                    _nccDangChon = maNCCMoi;
+                    LoadPhuTungTheoNCC(maNCCMoi);
+                }
             }
         }
         private void cmbTenPhuTung_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,6 +119,22 @@ namespace menu
             }
         }
 
+        private void LoadPhuTungTheoNCC(string maNCC)
+        {
+            // Lấy danh sách phụ tùng của NCC được chọn
+            var listPhuTung = phuTungService.GetAllPhuTung()
+                                            .Where(pt => pt.MaNCC == maNCC)
+                                            .ToList();
+
+            // Gán vào combobox phụ tùng
+            cmbTenPhuTung.DataSource = listPhuTung;
+            cmbTenPhuTung.DisplayMember = "TenPT";
+            cmbTenPhuTung.ValueMember = "MaPT";
+            cmbTenPhuTung.SelectedIndex = -1;
+
+            // Xóa thông tin đơn giá cũ
+            txtDonGia.Text = "";
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (cmbTenPhuTung.SelectedItem == null)
@@ -148,6 +200,7 @@ namespace menu
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -168,6 +221,8 @@ namespace menu
 
             DonDatHang donDatHang = new DonDatHang
             {
+                MaND = LuuNV.MaNguoiDung,
+                NgayDat = DateTime.Now,
                 MaDDH = maDDH,
                 MaNCC = cmbNhaCungCap.SelectedValue.ToString(),
                 
