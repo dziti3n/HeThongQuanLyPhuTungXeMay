@@ -31,24 +31,18 @@ namespace menu
                 return;
             }
 
-            // THÊM: Gọi service để kiểm tra đăng nhập
             var nguoiDung = _service.DangNhap(maND, matKhau);
 
             if (nguoiDung != null)
             {
-                // THÊM: Kiểm tra tài khoản có bị khoá không (nếu bạn có cột KhoaTaiKhoan)
-                // Nếu chưa có, bỏ qua dòng dưới
-                // if (nguoiDung.KhoaTaiKhoan) { ... }
-
-                // THAY THẾ: Mở GiaoDien như cũ
-                GiaoDien f = new GiaoDien();
+                // 👇 Truyền đối tượng người dùng vào form chính
+                GiaoDien f = new GiaoDien(nguoiDung); // ✅ Giờ đây KHÔNG LỖI
                 f.Show();
                 this.Hide();
                 f.DangXuat += F_DangXuat;
             }
             else
             {
-                // THÊM: Thông báo sai mật khẩu
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

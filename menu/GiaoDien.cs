@@ -7,15 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DoAnMonHoc.DAL.Model;
 
 namespace menu
 {
     public partial class GiaoDien : Form
     {
         public bool isThoat = true;
+        private NguoiDung _currentUser;
         public GiaoDien()
         {
             InitializeComponent();
+            SetupMdiBackground();
             foreach (Control ctl in this.Controls)
             {
                 if (ctl is MdiClient)
@@ -165,8 +168,43 @@ namespace menu
             child.Show();
         }
 
+        public GiaoDien(NguoiDung currentUser) : this() // Gọi constructor trên
+        {
+            _currentUser = currentUser;
+            // Tùy chọn: Ẩn/mở menu theo quyền ở đây
+            ApplyUserPermissions();
+        }
+
+        private void SetupMdiBackground()
+        {
+            foreach (Control ctl in this.Controls)
+            {
+                if (ctl is MdiClient)
+                {
+                    ctl.BackColor = Color.White;
+                    break;
+                }
+            }
+        }
+
+        private void ApplyUserPermissions()
+        {
+            // Nếu không phải admin → ẩn nút "Quản lý tài khoản"
+            if (_currentUser == null || !_currentUser.Admin)
+            {
+                btnQltk.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                // Bạn cũng có thể ẩn các nút khác nếu cần
+            }
+        }
+
         private void btnQltk_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (_currentUser == null || !_currentUser.Admin)
+            {
+                MessageBox.Show("Chỉ quản trị viên mới được phép truy cập!", "Truy cập bị từ chối",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             frmNgDung f = new frmNgDung();
             OpenChildForm(f);
         }
