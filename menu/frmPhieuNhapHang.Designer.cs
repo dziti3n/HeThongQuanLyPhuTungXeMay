@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMaPhieu = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dgvDonDatHang = new System.Windows.Forms.DataGridView();
             this.phutung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtpNgayNhap = new DevExpress.XtraEditors.DateEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -49,40 +46,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbTenPhuTung = new System.Windows.Forms.ComboBox();
             this.lblTrangThai = new System.Windows.Forms.Label();
-            this.txtDonGia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonDatHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpNgayNhap.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpNgayNhap.Properties.CalendarTimeProperties)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã phiếu:";
-            // 
-            // txtMaPhieu
-            // 
-            this.txtMaPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaPhieu.Location = new System.Drawing.Point(90, 30);
-            this.txtMaPhieu.Name = "txtMaPhieu";
-            this.txtMaPhieu.Size = new System.Drawing.Size(178, 27);
-            this.txtMaPhieu.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Thời gian:";
             // 
             // dgvDonDatHang
             // 
@@ -125,21 +91,6 @@
             this.dongia.Name = "dongia";
             this.dongia.ReadOnly = true;
             // 
-            // dtpNgayNhap
-            // 
-            this.dtpNgayNhap.EditValue = null;
-            this.dtpNgayNhap.Location = new System.Drawing.Point(110, 88);
-            this.dtpNgayNhap.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
-            this.dtpNgayNhap.Name = "dtpNgayNhap";
-            this.dtpNgayNhap.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayNhap.Properties.Appearance.Options.UseFont = true;
-            this.dtpNgayNhap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpNgayNhap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpNgayNhap.Size = new System.Drawing.Size(212, 28);
-            this.dtpNgayNhap.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -159,10 +110,8 @@
             this.groupBox1.Controls.Add(this.btnLuu);
             this.groupBox1.Controls.Add(this.cmbNhaCungCap);
             this.groupBox1.Controls.Add(this.btnXoa);
-            this.groupBox1.Controls.Add(this.txtMaPhieu);
             this.groupBox1.Controls.Add(this.lblNhaCungCap);
             this.groupBox1.Controls.Add(this.btnThem);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtSoLuong);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmbTenPhuTung);
@@ -174,6 +123,15 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phụ tùng";
+            // 
+            // txtDonGia
+            // 
+            this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonGia.Location = new System.Drawing.Point(99, 269);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.ReadOnly = true;
+            this.txtDonGia.Size = new System.Drawing.Size(169, 27);
+            this.txtDonGia.TabIndex = 24;
             // 
             // label5
             // 
@@ -278,15 +236,6 @@
             this.lblTrangThai.TabIndex = 15;
             this.lblTrangThai.Text = "Tên phụ tùng:";
             // 
-            // txtDonGia
-            // 
-            this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGia.Location = new System.Drawing.Point(99, 269);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.ReadOnly = true;
-            this.txtDonGia.Size = new System.Drawing.Size(169, 27);
-            this.txtDonGia.TabIndex = 24;
-            // 
             // frmPhieuNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -295,15 +244,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvDonDatHang);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dtpNgayNhap);
             this.Name = "frmPhieuNhapHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đơn đặt hàng";
             this.Load += new System.EventHandler(this.frmPhieuNhapHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonDatHang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpNgayNhap.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpNgayNhap.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -312,11 +257,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMaPhieu;
-        private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.DateEdit dtpNgayNhap;
         private System.Windows.Forms.DataGridView dgvDonDatHang;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;

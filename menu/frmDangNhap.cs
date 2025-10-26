@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DevExpress.XtraEditors.Mask.MaskSettings;
 
 namespace menu
 {
@@ -35,6 +36,8 @@ namespace menu
 
             if (nguoiDung != null)
             {
+                LuuNV.MaNguoiDung = nguoiDung.MaND;
+                LuuNV.TenNguoiDung = nguoiDung.HoTen;
                 // 👇 Truyền đối tượng người dùng vào form chính
                 GiaoDien f = new GiaoDien(nguoiDung); // ✅ Giờ đây KHÔNG LỖI
                 f.Show();
