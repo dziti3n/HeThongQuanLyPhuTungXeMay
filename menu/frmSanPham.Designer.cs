@@ -56,7 +56,6 @@
             this.lblCanhBao = new System.Windows.Forms.Label();
             this.btnThemLoaiHang = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTenNhaCungCap = new System.Windows.Forms.TextBox();
             this.colMa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,13 +63,14 @@
             this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbNCC = new System.Windows.Forms.ComboBox();
             this.grbThongTinSP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhuTung)).BeginInit();
             this.SuspendLayout();
             // 
             // grbThongTinSP
             // 
-            this.grbThongTinSP.Controls.Add(this.txtTenNhaCungCap);
+            this.grbThongTinSP.Controls.Add(this.cmbNCC);
             this.grbThongTinSP.Controls.Add(this.label1);
             this.grbThongTinSP.Controls.Add(this.lblMaPT);
             this.grbThongTinSP.Controls.Add(this.txtMaPT);
@@ -333,13 +333,6 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Nhà cung cấp:";
             // 
-            // txtTenNhaCungCap
-            // 
-            this.txtTenNhaCungCap.Location = new System.Drawing.Point(140, 281);
-            this.txtTenNhaCungCap.Name = "txtTenNhaCungCap";
-            this.txtTenNhaCungCap.Size = new System.Drawing.Size(190, 30);
-            this.txtTenNhaCungCap.TabIndex = 13;
-            // 
             // colMa
             // 
             this.colMa.HeaderText = "Mã phụ tùng";
@@ -388,6 +381,13 @@
             this.nhacungcap.MinimumWidth = 6;
             this.nhacungcap.Name = "nhacungcap";
             this.nhacungcap.ReadOnly = true;
+            // 
+            // cmbNCC
+            // 
+            this.cmbNCC.Location = new System.Drawing.Point(140, 281);
+            this.cmbNCC.Name = "cmbNCC";
+            this.cmbNCC.Size = new System.Drawing.Size(190, 31);
+            this.cmbNCC.TabIndex = 13;
             // 
             // frmSanPham
             // 
@@ -451,7 +451,6 @@
         private System.Windows.Forms.Label lblTong;
         private System.Windows.Forms.Label lblCanhBao;
         private System.Windows.Forms.Button btnThemLoaiHang;
-        private System.Windows.Forms.TextBox txtTenNhaCungCap;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTen;
@@ -460,5 +459,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTon;
         private System.Windows.Forms.DataGridViewTextBoxColumn nhacungcap;
+        private System.Windows.Forms.ComboBox cmbNCC;
     }
 }
