@@ -213,7 +213,9 @@ namespace menu
         private bool _isExiting = false;
         private void GiaoDien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (_isExiting) return; // Đã đang thoát → không hỏi lại
+            if (!isThoat) return; // ✅ Nếu là đăng xuất → không thoát app
+
+            if (_isExiting) return;
 
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -226,13 +228,11 @@ namespace menu
                     return;
                 }
 
-                // Đóng form con
                 foreach (Form f in this.MdiChildren.ToList())
                     f.Close();
 
-                // Đặt cờ và thoát toàn bộ
                 _isExiting = true;
-                Application.Exit();
+                Application.Exit(); // ✅ Chỉ chạy khi isThoat = true
             }
         }
 
