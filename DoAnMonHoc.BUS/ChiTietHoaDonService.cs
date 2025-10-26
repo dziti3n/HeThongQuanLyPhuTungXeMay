@@ -23,5 +23,13 @@ namespace DoAnMonHoc.BUS
                 return chiTiet;
             }
         }
+        public void Add(ChiTietHoaDon chiTiet)
+        {
+            using (var context = new PhuTungContextDB())
+            {
+                context.ChiTietHoaDons.Add(chiTiet);
+                context.SaveChanges();
+            }
+        }
     }
 }
