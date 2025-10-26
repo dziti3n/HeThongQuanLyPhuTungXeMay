@@ -191,7 +191,7 @@
             this.btnLoaiHang});
             this.rbcMENU.Location = new System.Drawing.Point(0, 0);
             this.rbcMENU.Margin = new System.Windows.Forms.Padding(8);
-            this.rbcMENU.MaxItemId = 93;
+            this.rbcMENU.MaxItemId = 94;
             this.rbcMENU.Name = "rbcMENU";
             this.rbcMENU.OptionsMenuMinWidth = 805;
             this.rbcMENU.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
@@ -435,7 +435,7 @@
             // 
             // btnThongTinPhieuNhap
             // 
-            this.btnThongTinPhieuNhap.Caption = "Thông tin phiếu nhập";
+            this.btnThongTinPhieuNhap.Caption = "Thông tin đơn đặt hàng";
             this.btnThongTinPhieuNhap.Id = 58;
             this.btnThongTinPhieuNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThongTinPhieuNhap.ImageOptions.SvgImage")));
             this.btnThongTinPhieuNhap.Name = "btnThongTinPhieuNhap";
@@ -470,9 +470,12 @@
             this.btnTraHang.Id = 66;
             this.btnTraHang.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTraHang.ImageOptions.SvgImage")));
             this.btnTraHang.Name = "btnTraHang";
-    
             // 
-            
+            // btnLichSuBuonBan
+            // 
+            this.btnLichSuBuonBan.Id = 93;
+            this.btnLichSuBuonBan.Name = "btnLichSuBuonBan";
+            // 
             // btnXuatHoaDon
             // 
             this.btnXuatHoaDon.Caption = "Xuất hóa đơn";
