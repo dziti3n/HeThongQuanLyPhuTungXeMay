@@ -87,14 +87,12 @@ namespace menu
 
         private void btnLapHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmHoaDon f = new frmHoaDon();
-            OpenChildForm(f);
+          
         }
 
         private void btnXuatHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmHoaDon f = new frmHoaDon();  
-            OpenChildForm(f);
+            
         }
 
         

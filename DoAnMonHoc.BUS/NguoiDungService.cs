@@ -91,7 +91,7 @@ namespace DoAnMonHoc.BUS
                     return false;
 
                 // Kiểm tra ràng buộc: nếu có hóa đơn hoặc phiếu nhập thì không cho xóa
-                if (nguoiDung.HoaDons.Any() || nguoiDung.PhieuNhaps.Any())
+                if (nguoiDung.HoaDons.Any() || nguoiDung.DonDatHangs.Any())
                     return false;
 
                 _context.NguoiDungs.Remove(nguoiDung);
