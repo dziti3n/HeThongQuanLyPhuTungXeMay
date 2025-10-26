@@ -138,7 +138,7 @@ namespace menu
             {
                 MaHD = maHD,
                 MaKH = maKH,
-                MaND = "ND001", // hoặc lấy từ người dùng đăng nhập
+                MaND = LuuNV.MaNguoiDung, 
                 NgayLap = DateTime.Now,
                 TongTien = tongTien
             };
