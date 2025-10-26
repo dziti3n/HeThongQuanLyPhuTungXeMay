@@ -1,6 +1,6 @@
 ﻿namespace menu
 {
-    partial class frmPhieuNhap
+    partial class frmPhieuNhapHang
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,6 @@
             this.dtpNgayNhap = new DevExpress.XtraEditors.DateEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtDonGia = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbTenPhuTung = new System.Windows.Forms.ComboBox();
             this.lblTrangThai = new System.Windows.Forms.Label();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonDatHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayNhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayNhap.Properties.CalendarTimeProperties)).BeginInit();
@@ -128,8 +128,8 @@
             // dtpNgayNhap
             // 
             this.dtpNgayNhap.EditValue = null;
-            this.dtpNgayNhap.Location = new System.Drawing.Point(118, 88);
-            this.dtpNgayNhap.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.dtpNgayNhap.Location = new System.Drawing.Point(110, 88);
+            this.dtpNgayNhap.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
             this.dtpNgayNhap.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayNhap.Properties.Appearance.Options.UseFont = true;
@@ -137,7 +137,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpNgayNhap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpNgayNhap.Size = new System.Drawing.Size(226, 28);
+            this.dtpNgayNhap.Size = new System.Drawing.Size(212, 28);
             this.dtpNgayNhap.TabIndex = 3;
             // 
             // label3
@@ -175,14 +175,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phụ tùng";
             // 
-            // txtDonGia
-            // 
-            this.txtDonGia.FormattingEnabled = true;
-            this.txtDonGia.Location = new System.Drawing.Point(99, 269);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(169, 28);
-            this.txtDonGia.TabIndex = 24;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -200,6 +192,7 @@
             this.btnThoat.TabIndex = 22;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLuu
             // 
@@ -209,6 +202,7 @@
             this.btnLuu.TabIndex = 21;
             this.btnLuu.Text = "Lưu phiếu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // cmbNhaCungCap
             // 
@@ -218,6 +212,7 @@
             this.cmbNhaCungCap.Name = "cmbNhaCungCap";
             this.cmbNhaCungCap.Size = new System.Drawing.Size(250, 28);
             this.cmbNhaCungCap.TabIndex = 14;
+            this.cmbNhaCungCap.SelectedIndexChanged += new System.EventHandler(this.cmbNhaCungCap_SelectedIndexChanged);
             // 
             // btnXoa
             // 
@@ -227,6 +222,7 @@
             this.btnXoa.TabIndex = 20;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // lblNhaCungCap
             // 
@@ -246,6 +242,7 @@
             this.btnThem.TabIndex = 19;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtSoLuong
             // 
@@ -270,6 +267,7 @@
             this.cmbTenPhuTung.Name = "cmbTenPhuTung";
             this.cmbTenPhuTung.Size = new System.Drawing.Size(250, 28);
             this.cmbTenPhuTung.TabIndex = 16;
+            this.cmbTenPhuTung.SelectedIndexChanged += new System.EventHandler(this.cmbTenPhuTung_SelectedIndexChanged);
             // 
             // lblTrangThai
             // 
@@ -280,7 +278,16 @@
             this.lblTrangThai.TabIndex = 15;
             this.lblTrangThai.Text = "Tên phụ tùng:";
             // 
-            // frmPhieuNhap
+            // txtDonGia
+            // 
+            this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonGia.Location = new System.Drawing.Point(99, 269);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.ReadOnly = true;
+            this.txtDonGia.Size = new System.Drawing.Size(169, 27);
+            this.txtDonGia.TabIndex = 24;
+            // 
+            // frmPhieuNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -290,8 +297,10 @@
             this.Controls.Add(this.dgvDonDatHang);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpNgayNhap);
-            this.Name = "frmPhieuNhap";
+            this.Name = "frmPhieuNhapHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đơn đặt hàng";
+            this.Load += new System.EventHandler(this.frmPhieuNhapHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonDatHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayNhap.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayNhap.Properties)).EndInit();
@@ -323,8 +332,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phutung;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dongia;
-        private System.Windows.Forms.ComboBox txtDonGia;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.TextBox txtDonGia;
     }
 }

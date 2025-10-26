@@ -26,8 +26,15 @@ namespace menu
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //frmPhieuNhap f = new frmPhieuNhap();
-            //f.Show();
+            try
+            {
+                frmPhieuNhapHang f = new frmPhieuNhapHang();
+                f.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi mở form: " + ex.Message);
+            }
         }
 
         private void btnXoaPhieuNhap_Click(object sender, EventArgs e)
