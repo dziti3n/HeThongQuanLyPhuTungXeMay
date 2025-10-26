@@ -16,76 +16,50 @@ namespace DoAnMonHoc.BUS
                 return context.NhaCungCaps.ToList();
             }
         }
-
-        // Lấy theo mã NCC
         public NhaCungCap GetById(string maNCC)
         {
             using (var context = new PhuTungContextDB())
             {
-                return context.NhaCungCaps.FirstOrDefault(n => n.MaNCC == maNCC);
+                return context.NhaCungCaps.Find(maNCC);
             }
         }
-
-        // Thêm NCC
-        public bool Them(NhaCungCap ncc)
+        public void Add(NhaCungCap nhaCungCap)
         {
-            try
+            using (var context = new PhuTungContextDB())
             {
-                using (var context = new PhuTungContextDB())
-                {
-                    context.NhaCungCaps.Add(ncc);
-                    context.SaveChanges();
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
+                context.NhaCungCaps.Add(nhaCungCap);
+                context.SaveChanges();
             }
         }
-
-        // Cập nhật thông tin NCC
-        public bool CapNhat(NhaCungCap ncc)
+        public void Update(NhaCungCap nhaCungCap)
         {
-            try
+            using (var context = new PhuTungContextDB())
             {
-                using (var context = new PhuTungContextDB())
-                {
-                    var existing = context.NhaCungCaps.FirstOrDefault(x => x.MaNCC == ncc.MaNCC);
-                    if (existing == null) return false;
-
-                    existing.TenNCC = ncc.TenNCC;
-                    existing.DienThoai = ncc.DienThoai;
-                    existing.Email = ncc.Email;
-
-                    context.SaveChanges();
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
+                context.Entry(nhaCungCap).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
             }
         }
-
-        // Xóa NCC
-        public bool Xoa(string maNCC)
+        public void Delete(string maNCC)
         {
-            try
+            using (var context = new PhuTungContextDB())
             {
-                using (var context = new PhuTungContextDB())
+                var nhaCungCap = context.NhaCungCaps.Find(maNCC);
+                if (nhaCungCap != null)
                 {
-                    var ncc = context.NhaCungCaps.FirstOrDefault(x => x.MaNCC == maNCC);
-                    if (ncc == null) return false;
-
-                    context.NhaCungCaps.Remove(ncc);
+                    context.NhaCungCaps.Remove(nhaCungCap);
                     context.SaveChanges();
-                    return true;
                 }
             }
-            catch
+        }
+        public List<NhaCungCap> SearchByName(string keyword)
+        {
+            using (var context = new PhuTungContextDB())
             {
-                return false;
+                return context.NhaCungCaps
+                    .Where(ncc => ncc.TenNCC.Contains(keyword) ||
+                                  ncc.MaNCC.Contains(keyword) ||
+                                  ncc.DienThoai.Contains(keyword))
+                    .ToList();
             }
         }
     }

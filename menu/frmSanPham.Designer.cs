@@ -49,23 +49,28 @@
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.dgvPhuTung = new System.Windows.Forms.DataGridView();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.lblTieuDe = new System.Windows.Forms.Label();
+            this.lblTong = new System.Windows.Forms.Label();
+            this.btnThemLoaiHang = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.colMa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.lblTieuDe = new System.Windows.Forms.Label();
-            this.lblTong = new System.Windows.Forms.Label();
-            this.btnThemLoaiHang = new System.Windows.Forms.Button();
+            this.nhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbNCC = new System.Windows.Forms.ComboBox();
             this.grbThongTinSP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhuTung)).BeginInit();
             this.SuspendLayout();
             // 
             // grbThongTinSP
             // 
+            this.grbThongTinSP.Controls.Add(this.cmbNCC);
+            this.grbThongTinSP.Controls.Add(this.label1);
             this.grbThongTinSP.Controls.Add(this.lblMaPT);
             this.grbThongTinSP.Controls.Add(this.txtMaPT);
             this.grbThongTinSP.Controls.Add(this.lblTenPT);
@@ -253,7 +258,8 @@
             this.colLoai,
             this.colDonVi,
             this.colDonGia,
-            this.colTon});
+            this.colTon,
+            this.nhacungcap});
             this.dgvPhuTung.Location = new System.Drawing.Point(408, 104);
             this.dgvPhuTung.Name = "dgvPhuTung";
             this.dgvPhuTung.ReadOnly = true;
@@ -262,48 +268,6 @@
             this.dgvPhuTung.Size = new System.Drawing.Size(693, 353);
             this.dgvPhuTung.TabIndex = 2;
             this.dgvPhuTung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhuTung_CellClick);
-            // 
-            // colMa
-            // 
-            this.colMa.HeaderText = "Mã phụ tùng";
-            this.colMa.MinimumWidth = 6;
-            this.colMa.Name = "colMa";
-            this.colMa.ReadOnly = true;
-            // 
-            // colTen
-            // 
-            this.colTen.HeaderText = "Tên phụ tùng";
-            this.colTen.MinimumWidth = 6;
-            this.colTen.Name = "colTen";
-            this.colTen.ReadOnly = true;
-            // 
-            // colLoai
-            // 
-            this.colLoai.HeaderText = "Loại phụ tùng";
-            this.colLoai.MinimumWidth = 6;
-            this.colLoai.Name = "colLoai";
-            this.colLoai.ReadOnly = true;
-            // 
-            // colDonVi
-            // 
-            this.colDonVi.HeaderText = "Đơn vị tính";
-            this.colDonVi.MinimumWidth = 6;
-            this.colDonVi.Name = "colDonVi";
-            this.colDonVi.ReadOnly = true;
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.HeaderText = "Đơn giá (VNĐ)";
-            this.colDonGia.MinimumWidth = 6;
-            this.colDonGia.Name = "colDonGia";
-            this.colDonGia.ReadOnly = true;
-            // 
-            // colTon
-            // 
-            this.colTon.HeaderText = "Số lượng tồn";
-            this.colTon.MinimumWidth = 6;
-            this.colTon.Name = "colTon";
-            this.colTon.ReadOnly = true;
             // 
             // txtTimKiem
             // 
@@ -348,6 +312,71 @@
             this.btnThemLoaiHang.Size = new System.Drawing.Size(110, 35);
             this.btnThemLoaiHang.TabIndex = 14;
             this.btnThemLoaiHang.Text = "Thêm loại hàng";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 284);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 23);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Nhà cung cấp:";
+            // 
+            // colMa
+            // 
+            this.colMa.HeaderText = "Mã phụ tùng";
+            this.colMa.MinimumWidth = 6;
+            this.colMa.Name = "colMa";
+            this.colMa.ReadOnly = true;
+            // 
+            // colTen
+            // 
+            this.colTen.HeaderText = "Tên phụ tùng";
+            this.colTen.MinimumWidth = 6;
+            this.colTen.Name = "colTen";
+            this.colTen.ReadOnly = true;
+            // 
+            // colLoai
+            // 
+            this.colLoai.HeaderText = "Loại phụ tùng";
+            this.colLoai.MinimumWidth = 6;
+            this.colLoai.Name = "colLoai";
+            this.colLoai.ReadOnly = true;
+            // 
+            // colDonVi
+            // 
+            this.colDonVi.HeaderText = "Đơn vị tính";
+            this.colDonVi.MinimumWidth = 6;
+            this.colDonVi.Name = "colDonVi";
+            this.colDonVi.ReadOnly = true;
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.HeaderText = "Đơn giá (VNĐ)";
+            this.colDonGia.MinimumWidth = 6;
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.ReadOnly = true;
+            // 
+            // colTon
+            // 
+            this.colTon.HeaderText = "Số lượng";
+            this.colTon.MinimumWidth = 6;
+            this.colTon.Name = "colTon";
+            this.colTon.ReadOnly = true;
+            // 
+            // nhacungcap
+            // 
+            this.nhacungcap.HeaderText = "Nhà cung cấp";
+            this.nhacungcap.MinimumWidth = 6;
+            this.nhacungcap.Name = "nhacungcap";
+            this.nhacungcap.ReadOnly = true;
+            // 
+            // cmbNCC
+            // 
+            this.cmbNCC.Location = new System.Drawing.Point(140, 281);
+            this.cmbNCC.Name = "cmbNCC";
+            this.cmbNCC.Size = new System.Drawing.Size(190, 31);
+            this.cmbNCC.TabIndex = 13;
             // 
             // frmSanPham
             // 
@@ -414,6 +443,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonVi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTon;
-        private System.Windows.Forms.Button btnThemLoaiHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nhacungcap;
+        private System.Windows.Forms.ComboBox cmbNCC;
     }
 }

@@ -114,6 +114,8 @@
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.rbcMENU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -184,10 +186,11 @@
             this.btnNhatKy,
             this.btnSaoLuu,
             this.btnQltk,
-            this.btnLoaiHang});
+            this.btnLoaiHang,
+            this.barButtonItem1});
             this.rbcMENU.Location = new System.Drawing.Point(0, 0);
             this.rbcMENU.Margin = new System.Windows.Forms.Padding(8);
-            this.rbcMENU.MaxItemId = 97;
+            this.rbcMENU.MaxItemId = 95;
             this.rbcMENU.Name = "rbcMENU";
             this.rbcMENU.OptionsMenuMinWidth = 805;
             this.rbcMENU.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
@@ -429,7 +432,7 @@
             // 
             // btnThongTinPhieuNhap
             // 
-            this.btnThongTinPhieuNhap.Caption = "Thông tin phiếu nhập";
+            this.btnThongTinPhieuNhap.Caption = "Thông tin đơn đặt hàng";
             this.btnThongTinPhieuNhap.Id = 58;
             this.btnThongTinPhieuNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThongTinPhieuNhap.ImageOptions.SvgImage")));
             this.btnThongTinPhieuNhap.Name = "btnThongTinPhieuNhap";
@@ -662,7 +665,8 @@
             this.rbgkhohang.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
             this.ribbonPageGroup10,
-            this.pgGrLoaiHang});
+            this.pgGrLoaiHang,
+            this.ribbonPageGroup4});
             this.rbgkhohang.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("rbgkhohang.ImageOptions.SvgImage")));
             this.rbgkhohang.Name = "rbgkhohang";
             this.rbgkhohang.Text = "Kho hàng";
@@ -778,6 +782,19 @@
             this.ribbonPageGroup18.Name = "ribbonPageGroup18";
             this.ribbonPageGroup18.Text = "Thông tin mua bán";
             // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Thêm sản phẩm của nhà cung cấp ";
+            this.barButtonItem1.Id = 94;
+            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // GiaoDien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -891,5 +908,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup pgGrLoaiHang;
         private DevExpress.XtraBars.BarButtonItem btnLoaiHang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
     }
 }

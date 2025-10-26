@@ -9,114 +9,53 @@ namespace DoAnMonHoc.BUS
 {
     public class DonDatHangService
     {
-        public List<PhieuNhap> GetAll()
+        public List<DonDatHang> GetAll()
         {
             PhuTungContextDB contextDB = new PhuTungContextDB();
-            return contextDB.PhieuNhaps.ToList();
+            return contextDB.DonDatHangs.ToList();
         }
-        public List<ChiTietPhieuNhap> GetChiTietByMaPhieu(string maPhieu)
+        public DonDatHang GetById(string maDDH)
         {
             using (var context = new PhuTungContextDB())
             {
-                return context.ChiTietPhieuNhaps
-                              .Where(ct => ct.MaPN == maPhieu)
-                              .ToList();
+                return context.DonDatHangs.Find(maDDH);
             }
         }
-        public bool KiemTraMaPhieuTonTai(string maPhieu)
+        public void Add(DonDatHang donDatHang)
         {
             using (var context = new PhuTungContextDB())
             {
-                return context.PhieuNhaps.Any(p => p.MaPN == maPhieu);
+                context.DonDatHangs.Add(donDatHang);
+                context.SaveChanges();
             }
         }
-        public string SinhMaPhieuMoi()
+        public void Update(DonDatHang donDatHang)
         {
-            string ngayHienTai = DateTime.Now.ToString("yyyyMMdd");
-            string prefix = "PN" + ngayHienTai;
-
             using (var context = new PhuTungContextDB())
             {
-                var maLonNhat = context.PhieuNhaps
-                    .Where(p => p.MaPN.StartsWith(prefix))
-                    .OrderByDescending(p => p.MaPN)
-                    .Select(p => p.MaPN)
-                    .FirstOrDefault();
-
-                int soThuTu = 1;
-                if (maLonNhat != null)
+                context.Entry(donDatHang).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
+        public void Delete(string maDDH)
+        {
+            using (var context = new PhuTungContextDB())
+            {
+                var donDatHang = context.DonDatHangs.Find(maDDH);
+                if (donDatHang != null)
                 {
-                    if (maLonNhat.Contains('-'))
-                    {
-                        var phanSo = maLonNhat.Split('-').Last();
-                        if (int.TryParse(phanSo, out int so))
-                        {
-                            soThuTu = so + 1;
-                        }
-                    }
-                }
-                return $"{prefix}-{soThuTu:D3}";
-            }
-        }
-        public bool LuuPhieuNhap(PhieuNhap phieu, List<ChiTietPhieuNhap> chiTietList)
-        {
-            using (var context = new PhuTungContextDB())
-            {
-                try
-                {
-                    if (KiemTraMaPhieuTonTai(phieu.MaPN))
-                    {
-                        var phieuCu = context.PhieuNhaps.Find(phieu.MaPN);
-                        if (phieuCu == null) return false;
-
-                        phieuCu.NgayNhap = phieu.NgayNhap;
-                        phieuCu.MaNCC = phieu.MaNCC;
-                        
-
-                        var chiTietCu = context.ChiTietPhieuNhaps
-                            .Where(ct => ct.MaPN == phieu.MaPN);
-                        context.ChiTietPhieuNhaps.RemoveRange(chiTietCu);
-                    }
-                    else
-                    {
-                        context.PhieuNhaps.Add(phieu);
-                    }
-
-                    foreach (var ct in chiTietList)
-                    {
-                        ct.MaPN = phieu.MaPN;
-                        context.ChiTietPhieuNhaps.Add(ct);
-                    }
-
+                    context.DonDatHangs.Remove(donDatHang);
                     context.SaveChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
                 }
             }
         }
-        public bool XoaPhieuNhap(string maPhieu)
+        public List<DonDatHang> SearchByNhaCungCap(string maNCC)
         {
             using (var context = new PhuTungContextDB())
             {
-                try
-                {
-                    var phieu = context.PhieuNhaps.Find(maPhieu);
-                    if (phieu == null) return false;                  
-                    var chiTiet = context.ChiTietPhieuNhaps
-                        .Where(ct => ct.MaPN == maPhieu);
-                    context.ChiTietPhieuNhaps.RemoveRange(chiTiet);
-
-                    context.PhieuNhaps.Remove(phieu);
-                    context.SaveChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                return context.DonDatHangs
+                    .Where(ddh => ddh.MaNCC == maNCC)
+                    .ToList();
             }
         }
     }
