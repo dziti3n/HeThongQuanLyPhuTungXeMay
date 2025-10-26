@@ -15,55 +15,73 @@ namespace menu
     public partial class frmNgDung : Form
     {
         private NguoiDungService _service;
-        private bool _isAdding = false; // Đang thêm mới?
-        private string _currentMaND = ""; // Mã ND đang chọn để sửa/xóa/khóa
         public frmNgDung()
         {
             InitializeComponent();
-            _service = new NguoiDungService();
         }
 
         private void frmNgDung_Load(object sender, EventArgs e)
         {
-            LoadDanhSachNguoiDung();
-            ResetForm();
+            try
+            {
+                _service = new NguoiDungService();
+                LoadDataGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void LoadDanhSachNguoiDung()
+        private void LoadDataGrid(string keyword = null)
         {
-            var list = _service.GetAllNguoiDung()
-                .Select(nd => new
-                {
-                    MaND = nd.MaND,
-                    HoTen = nd.HoTen,
-                    MatKhau = nd.MatKhau,
-                    Admin = nd.Admin,
-                    SDT = nd.SDT,
-                    Email = nd.Email
-                })
-                .ToList();
+            var list = _service.GetAllNguoiDung();
 
-            dgvNguoiDung.DataSource = list;
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                keyword = keyword.ToLower();
+                list = list.Where(nd =>
+                    nd.MaND.ToLower().Contains(keyword) ||
+                    nd.HoTen?.ToLower().Contains(keyword) == true ||
+                    nd.SDT?.Contains(keyword) == true ||
+                    nd.Email?.ToLower().Contains(keyword) == true
+                ).ToList();
+            }
 
-            // Cấu hình tiêu đề cột
-            dgvNguoiDung.Columns["MaND"].HeaderText = "Tài khoản";
-            dgvNguoiDung.Columns["HoTen"].HeaderText = "Tên NV";
-            dgvNguoiDung.Columns["MatKhau"].HeaderText = "Mật Khẩu";
-            dgvNguoiDung.Columns["Admin"].HeaderText = "Quản Trị";
-            dgvNguoiDung.Columns["SDT"].HeaderText = "SĐT";
-            dgvNguoiDung.Columns["Email"].HeaderText = "Email";
-
-            // Đặt thứ tự cột (nếu cần)
-            dgvNguoiDung.Columns["Admin"].DisplayIndex = 3;
-
-            // Ẩn cột "Khoa" nếu có
-            if (dgvNguoiDung.Columns.Contains("Khoa"))
-                dgvNguoiDung.Columns["Khoa"].Visible = false;
+            dgvNguoiDung.Rows.Clear();
+            foreach (var nd in list)
+            {
+                int index = dgvNguoiDung.Rows.Add();
+                dgvNguoiDung.Rows[index].Cells["MaND"].Value = nd.MaND;
+                dgvNguoiDung.Rows[index].Cells["HoTen"].Value = nd.HoTen;
+                dgvNguoiDung.Rows[index].Cells["MatKhau"].Value = nd.MatKhau;
+                dgvNguoiDung.Rows[index].Cells["Admin"].Value = nd.Admin;
+                dgvNguoiDung.Rows[index].Cells["SDT"].Value = nd.SDT;
+                dgvNguoiDung.Rows[index].Cells["Email"].Value = nd.Email;
+            }
 
             txtTong.Text = list.Count.ToString();
         }
 
-        // Làm sạch form nhập liệu
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrWhiteSpace(txtTaiKhoan.Text) ||
+                string.IsNullOrWhiteSpace(txtMatKhau.Text) ||
+                string.IsNullOrWhiteSpace(txtTenNV.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin bắt buộc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (txtTaiKhoan.Text.Length > 5)
+            {
+                MessageBox.Show("Mã người dùng không được vượt quá 5 ký tự!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
         private void ResetForm()
         {
             txtTaiKhoan.Clear();
@@ -72,87 +90,33 @@ namespace menu
             chkAdmin.Checked = false;
             txtSDT.Clear();
             txtEmail.Clear();
-
-            txtTaiKhoan.Enabled = true;
-            _isAdding = false;
-            _currentMaND = "";
-        }
-
-        // Lấy dữ liệu từ form để tạo hoặc cập nhật đối tượng NguoiDung
-        private NguoiDung GetNguoiDungFromForm()
-        {
-            return new NguoiDung
-            {
-                MaND = txtTaiKhoan.Text.Trim(),
-                MatKhau = txtMatKhau.Text.Trim(),
-                HoTen = txtTenNV.Text.Trim(),
-                Admin = chkAdmin.Checked,
-                SDT = txtSDT.Text.Trim(),
-                Email = txtEmail.Text.Trim()
-            };
-        }
+        }   
 
         private void btnThemSua_Click(object sender, EventArgs e)
         {
-            if (_isAdding || string.IsNullOrEmpty(_currentMaND))
-            {
-                // Chuyển sang chế độ thêm mới
-                ResetForm();
-                txtTaiKhoan.Focus();
-                _isAdding = true;
-                txtTaiKhoan.Enabled = true;
-            }
-            else
-            {
-                // Chuyển sang chế độ sửa
-                txtTaiKhoan.Enabled = false;
-                _isAdding = false;
-                txtMatKhau.Focus();
-            }
-        }
+            if (!ValidateInput()) return;
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(_currentMaND))
-            {
-                MessageBox.Show("Vui lòng chọn người dùng cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string maND = txtTaiKhoan.Text.Trim();
+            var existing = _service.GetNguoiDungByMaND(maND);
 
-            if (MessageBox.Show($"Bạn có chắc muốn xóa người dùng '{_currentMaND}'?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (existing == null)
             {
-                if (_service.XoaNguoiDung(_currentMaND))
+                // ➤ Thêm mới
+                var nguoiDung = new NguoiDung
                 {
-                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadDanhSachNguoiDung();
-                    ResetForm();
-                }
-                else
-                {
-                    MessageBox.Show("Không thể xóa người dùng này! Có thể do đang có hóa đơn hoặc phiếu nhập liên quan.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
+                    MaND = maND,
+                    MatKhau = txtMatKhau.Text.Trim(),
+                    HoTen = txtTenNV.Text.Trim(),
+                    Admin = chkAdmin.Checked,
+                    SDT = txtSDT.Text.Trim(),
+                    Email = txtEmail.Text.Trim()
+                };
 
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtTaiKhoan.Text) ||
-                string.IsNullOrWhiteSpace(txtMatKhau.Text) ||
-                string.IsNullOrWhiteSpace(txtTenNV.Text))
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin bắt buộc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            var nguoiDung = GetNguoiDungFromForm();
-
-            if (_isAdding)
-            {
                 if (_service.ThemNguoiDung(nguoiDung))
                 {
-                    MessageBox.Show("Thêm người dùng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadDanhSachNguoiDung();
+                    LoadDataGrid();
                     ResetForm();
+                    MessageBox.Show("Thêm mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -161,11 +125,18 @@ namespace menu
             }
             else
             {
-                if (_service.CapNhatNguoiDung(nguoiDung))
+                // ➤ Cập nhật
+                existing.MatKhau = txtMatKhau.Text.Trim();
+                existing.HoTen = txtTenNV.Text.Trim();
+                existing.Admin = chkAdmin.Checked;
+                existing.SDT = txtSDT.Text.Trim();
+                existing.Email = txtEmail.Text.Trim();
+
+                if (_service.CapNhatNguoiDung(existing))
                 {
-                    MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadDanhSachNguoiDung();
+                    LoadDataGrid();
                     ResetForm();
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -174,56 +145,46 @@ namespace menu
             }
         }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string maND = txtTaiKhoan.Text.Trim();
+            if (string.IsNullOrEmpty(maND))
+            {
+                MessageBox.Show("Vui lòng chọn người dùng cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var nguoiDung = _service.GetNguoiDungByMaND(maND);
+            if (nguoiDung == null)
+            {
+                MessageBox.Show("Người dùng cần xóa không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var result = MessageBox.Show("Bạn có chắc muốn xóa người dùng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                if (_service.XoaNguoiDung(maND))
+                {
+                    LoadDataGrid();
+                    ResetForm();
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xóa! Người dùng này đang liên quan đến hóa đơn hoặc phiếu nhập.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void btnHuy_Click(object sender, EventArgs e)
         {
             ResetForm();
-            LoadDanhSachNguoiDung();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string tuKhoa = txtTimKiem.Text.Trim();
-            var ketQua = _service.TimKiemNguoiDung(tuKhoa)
-                .Select(nd => new
-                {
-                    MaND = nd.MaND,
-                    HoTen = nd.HoTen,
-                    MatKhau = nd.MatKhau,
-                    Admin = nd.Admin,
-                    SDT = nd.SDT,
-                    Email = nd.Email
-                })
-                .ToList();
-
-            dgvNguoiDung.DataSource = ketQua;
-            txtTong.Text = ketQua.Count.ToString();
-
-            if (ketQua.Count == 0)
-            {
-                MessageBox.Show("Không tìm thấy người dùng nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void dgvNguoiDung_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvNguoiDung.SelectedRows.Count > 0)
-            {
-                var row = dgvNguoiDung.SelectedRows[0];
-                var nd = row.DataBoundItem as NguoiDung;
-
-                if (nd != null)
-                {
-                    txtTaiKhoan.Text = nd.MaND;
-                    txtTenNV.Text = nd.HoTen;
-                    txtMatKhau.Text = nd.MatKhau;
-                    chkAdmin.Checked = nd.Admin;
-                    txtSDT.Text = nd.SDT;
-                    txtEmail.Text = nd.Email;
-
-                    _currentMaND = nd.MaND;
-                    txtTaiKhoan.Enabled = false;
-                }
-            }
+            LoadDataGrid(txtTimKiem.Text.Trim());
         }
 
         private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
@@ -232,6 +193,19 @@ namespace menu
             {
                 btnTimKiem_Click(sender, e);
             }
+        }
+
+        private void dgvNguoiDung_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var row = dgvNguoiDung.Rows[e.RowIndex];
+            txtTaiKhoan.Text = row.Cells["MaND"].Value?.ToString() ?? "";
+            txtTenNV.Text = row.Cells["HoTen"].Value?.ToString() ?? "";
+            txtMatKhau.Text = row.Cells["MatKhau"].Value?.ToString() ?? "";
+            chkAdmin.Checked = row.Cells["Admin"].Value != null && (bool)row.Cells["Admin"].Value;
+            txtSDT.Text = row.Cells["SDT"].Value?.ToString() ?? "";
+            txtEmail.Text = row.Cells["Email"].Value?.ToString() ?? "";
         }
     }
 }

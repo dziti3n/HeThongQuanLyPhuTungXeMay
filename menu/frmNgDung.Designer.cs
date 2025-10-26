@@ -41,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
@@ -50,8 +49,13 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnThemSua = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
-            this.btnKhoa = new System.Windows.Forms.ToolStripButton();
             this.txtTong = new System.Windows.Forms.TextBox();
+            this.MaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Admin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguoiDung)).BeginInit();
             this.grbThongTin.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -62,6 +66,13 @@
             this.dgvNguoiDung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNguoiDung.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvNguoiDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNguoiDung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaND,
+            this.HoTen,
+            this.MatKhau,
+            this.Admin,
+            this.SDT,
+            this.Email});
             this.dgvNguoiDung.Location = new System.Drawing.Point(12, 57);
             this.dgvNguoiDung.Name = "dgvNguoiDung";
             this.dgvNguoiDung.ReadOnly = true;
@@ -69,7 +80,7 @@
             this.dgvNguoiDung.RowTemplate.Height = 24;
             this.dgvNguoiDung.Size = new System.Drawing.Size(1190, 333);
             this.dgvNguoiDung.TabIndex = 0;
-            this.dgvNguoiDung.SelectionChanged += new System.EventHandler(this.dgvNguoiDung_SelectionChanged);
+            this.dgvNguoiDung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNguoiDung_CellClick);
             // 
             // txtTimKiem
             // 
@@ -107,7 +118,6 @@
             this.grbThongTin.Controls.Add(this.label3);
             this.grbThongTin.Controls.Add(this.label2);
             this.grbThongTin.Controls.Add(this.btnHuy);
-            this.grbThongTin.Controls.Add(this.btnLuu);
             this.grbThongTin.Controls.Add(this.txtEmail);
             this.grbThongTin.Controls.Add(this.txtSDT);
             this.grbThongTin.Controls.Add(this.txtMatKhau);
@@ -177,23 +187,13 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(202, 254);
+            this.btnHuy.Location = new System.Drawing.Point(9, 268);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 7;
-            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Text = "Tái lập";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(121, 254);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 6;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtEmail
             // 
@@ -235,39 +235,34 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnThemSua,
-            this.btnXoa,
-            this.btnKhoa});
+            this.btnXoa});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1567, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1567, 32);
             this.toolStrip1.TabIndex = 10;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnThemSua
             // 
+            this.btnThemSua.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnThemSua.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemSua.Image = ((System.Drawing.Image)(resources.GetObject("btnThemSua.Image")));
             this.btnThemSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThemSua.Name = "btnThemSua";
-            this.btnThemSua.Size = new System.Drawing.Size(109, 24);
+            this.btnThemSua.Size = new System.Drawing.Size(127, 29);
             this.btnThemSua.Text = "Thêm / Sửa";
             this.btnThemSua.Click += new System.EventHandler(this.btnThemSua_Click);
             // 
             // btnXoa
             // 
+            this.btnXoa.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(59, 24);
+            this.btnXoa.Size = new System.Drawing.Size(67, 29);
             this.btnXoa.Text = "Xoá";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnKhoa
-            // 
-            this.btnKhoa.Image = ((System.Drawing.Image)(resources.GetObject("btnKhoa.Image")));
-            this.btnKhoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnKhoa.Name = "btnKhoa";
-            this.btnKhoa.Size = new System.Drawing.Size(67, 24);
-            this.btnKhoa.Text = "Khoá";
             // 
             // txtTong
             // 
@@ -276,6 +271,48 @@
             this.txtTong.Name = "txtTong";
             this.txtTong.Size = new System.Drawing.Size(100, 22);
             this.txtTong.TabIndex = 11;
+            // 
+            // MaND
+            // 
+            this.MaND.HeaderText = "Tài Khoản";
+            this.MaND.MinimumWidth = 6;
+            this.MaND.Name = "MaND";
+            this.MaND.ReadOnly = true;
+            // 
+            // HoTen
+            // 
+            this.HoTen.HeaderText = "Tên Nhân Viên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.HeaderText = "Mật Khẩu";
+            this.MatKhau.MinimumWidth = 6;
+            this.MatKhau.Name = "MatKhau";
+            this.MatKhau.ReadOnly = true;
+            // 
+            // Admin
+            // 
+            this.Admin.HeaderText = "Quyền Quản Trị";
+            this.Admin.MinimumWidth = 6;
+            this.Admin.Name = "Admin";
+            this.Admin.ReadOnly = true;
+            // 
+            // SDT
+            // 
+            this.SDT.HeaderText = "Số Điện Thoại";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // frmNgDung
             // 
@@ -315,7 +352,6 @@
         private System.Windows.Forms.TextBox txtTenNV;
         private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -326,8 +362,13 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnThemSua;
         private System.Windows.Forms.ToolStripButton btnXoa;
-        private System.Windows.Forms.ToolStripButton btnKhoa;
         private System.Windows.Forms.TextBox txtTong;
         private System.Windows.Forms.CheckBox chkAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaND;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Admin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }
