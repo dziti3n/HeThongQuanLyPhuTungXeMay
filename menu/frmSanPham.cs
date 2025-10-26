@@ -28,7 +28,15 @@ namespace menu
 
             foreach (var pt in list)
             {
-                dgvPhuTung.Rows.Add(pt.MaPT, pt.TenPT, pt.LoaiHang?.TenLoai, pt.DonViTinh, pt.DonGia, pt.SoLuong);
+                dgvPhuTung.Rows.Add(
+            pt.MaPT,
+            pt.TenPT,
+            pt.LoaiHang?.TenLoai,
+            pt.DonViTinh,
+            pt.DonGia,
+            pt.SoLuong,
+            pt.NhaCungCap?.TenNCC 
+                 );
             }
 
             lblTong.Text = $"Tổng hàng tồn: {list.Sum(p => p.SoLuong)}";
@@ -46,6 +54,14 @@ namespace menu
         {
             cmbDonViTinh.Items.Clear();
             cmbDonViTinh.Items.AddRange(new string[] { "Cái", "Chai", "Cặp", "Bộ", "Lít" });
+        }
+        private void LoadNhaCungCap()
+        {
+            PhuTungContextDB context = new PhuTungContextDB();
+            var nccList = context.NhaCungCaps.ToList();
+            cmbNCC.DataSource = nccList;
+            cmbNCC.DisplayMember = "TenNCC";
+            cmbNCC.ValueMember = "MaNCC";
         }
 
 
@@ -137,7 +153,8 @@ namespace menu
                 DonViTinh = cmbDonViTinh.Text,
                 DonGia = donGia,
                 SoLuong = soLuong,
-                MaLoai = cmbLoaiPT.SelectedValue.ToString()
+                MaLoai = cmbLoaiPT.SelectedValue.ToString(),
+                MaNCC = cmbNCC.SelectedValue.ToString()
             };
 
             // Thêm vào CSDL
@@ -250,6 +267,7 @@ namespace menu
             LoadPhuTung();
             LoadLoaiPhuTung();
             LoadDonViTinh();
+            LoadNhaCungCap();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -268,7 +286,7 @@ namespace menu
                 pt.DonGia = decimal.Parse(txtDonGia.Text);
                 pt.SoLuong = int.Parse(txtSoLuongTon.Text);
                 pt.MaLoai = cmbLoaiPT.SelectedValue.ToString();
-
+                pt.MaNCC = cmbNCC.SelectedValue.ToString();
                 phuTungService.UpdatePhuTung(pt);
                 MessageBox.Show("Cập nhật thành công!");
                 LoadPhuTung();
@@ -316,7 +334,7 @@ namespace menu
                 pt.DonGia = decimal.Parse(txtDonGia.Text);
                 pt.SoLuong = int.Parse(txtSoLuongTon.Text);
                 pt.MaLoai = cmbLoaiPT.SelectedValue.ToString();
-
+                pt.MaNCC = cmbNCC.SelectedValue.ToString();
                 phuTungService.UpdatePhuTung(pt);
                 MessageBox.Show("Lưu thành công!");
                 LoadPhuTung();
@@ -340,6 +358,7 @@ namespace menu
                 cmbDonViTinh.Text = dgvPhuTung.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtDonGia.Text = dgvPhuTung.Rows[e.RowIndex].Cells[4].Value.ToString();
                 txtSoLuongTon.Text = dgvPhuTung.Rows[e.RowIndex].Cells[5].Value.ToString();
+                cmbNCC.Text = dgvPhuTung.Rows[e.RowIndex].Cells[6].Value.ToString();
             }
         }
     }
