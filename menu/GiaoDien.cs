@@ -110,54 +110,7 @@ namespace menu
         {
             frmLichSuMuaHang f = new frmLichSuMuaHang();
             OpenChildForm(f);
-        }
-
-        private void btnDoanhThu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (_currentUser == null)
-            {
-                MessageBox.Show("Không tìm thấy thông tin người dùng đã đăng nhập.", "Lỗi",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!_currentUser.Admin)
-            {
-                MessageBox.Show("Bạn không có quyền truy cập chức năng này!\nChỉ quản trị viên mới được phép sử dụng.",
-                                "Truy cập bị từ chối",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
-                return; // 👈 Dừng lại, không mở form
-            }
-            frmDoanhThu f = new frmDoanhThu();
-            OpenChildForm(f);
-        }
-
-        private void btnLoiNhuan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (_currentUser == null)
-            {
-                MessageBox.Show("Không tìm thấy thông tin người dùng đã đăng nhập.", "Lỗi",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!_currentUser.Admin)
-            {
-                MessageBox.Show("Bạn không có quyền truy cập chức năng này!\nChỉ quản trị viên mới được phép sử dụng.",
-                                "Truy cập bị từ chối",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
-                return; // 👈 Dừng lại, không mở form
-            }
-            frmLoiNhuan f = new frmLoiNhuan();
-            OpenChildForm(f);
-        }
-
-        
-
-        
-
+        }         
         private void btnThietLapTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmNgDung f = new frmNgDung();

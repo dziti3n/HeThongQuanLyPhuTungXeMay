@@ -106,8 +106,6 @@
             this.ribbonPageCategory4 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.rgbKhachHang = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageCategory5 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            this.ribbonPageCategory6 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.repositoryItemCheckedComboBoxEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -189,16 +187,14 @@
             this.btnLoaiHang});
             this.rbcMENU.Location = new System.Drawing.Point(0, 0);
             this.rbcMENU.Margin = new System.Windows.Forms.Padding(8);
-            this.rbcMENU.MaxItemId = 94;
+            this.rbcMENU.MaxItemId = 97;
             this.rbcMENU.Name = "rbcMENU";
             this.rbcMENU.OptionsMenuMinWidth = 805;
             this.rbcMENU.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1,
             this.ribbonPageCategory2,
             this.ribbonPageCategory3,
-            this.ribbonPageCategory4,
-            this.ribbonPageCategory5,
-            this.ribbonPageCategory6});
+            this.ribbonPageCategory4});
             this.rbcMENU.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemImageEdit1,
             this.repositoryItemDateEdit1,
@@ -493,25 +489,17 @@
             // 
             // btnDoanhThu
             // 
-            this.btnDoanhThu.Caption = "Doanh thu";
-            this.btnDoanhThu.Id = 71;
-            this.btnDoanhThu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDoanhThu.ImageOptions.SvgImage")));
+            this.btnDoanhThu.Id = 94;
             this.btnDoanhThu.Name = "btnDoanhThu";
-            this.btnDoanhThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoanhThu_ItemClick);
             // 
             // btnLoiNhuan
             // 
-            this.btnLoiNhuan.Caption = "Lợi nhuận";
-            this.btnLoiNhuan.Id = 72;
-            this.btnLoiNhuan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLoiNhuan.ImageOptions.SvgImage")));
+            this.btnLoiNhuan.Id = 95;
             this.btnLoiNhuan.Name = "btnLoiNhuan";
-            this.btnLoiNhuan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoiNhuan_ItemClick);
             // 
             // btnThongTinTonKhoVaSapHet
             // 
-            this.btnThongTinTonKhoVaSapHet.Caption = "Thông tin tồn kho/sắp hết";
-            this.btnThongTinTonKhoVaSapHet.Id = 74;
-            this.btnThongTinTonKhoVaSapHet.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThongTinTonKhoVaSapHet.ImageOptions.SvgImage")));
+            this.btnThongTinTonKhoVaSapHet.Id = 96;
             this.btnThongTinTonKhoVaSapHet.Name = "btnThongTinTonKhoVaSapHet";
             // 
             // barButtonItem42
@@ -741,16 +729,6 @@
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
             this.ribbonPageGroup13.Text = "Quản ký khách hàng";
             // 
-            // ribbonPageCategory5
-            // 
-            this.ribbonPageCategory5.Name = "ribbonPageCategory5";
-            this.ribbonPageCategory5.Text = "👷 Nhân viên";
-            // 
-            // ribbonPageCategory6
-            // 
-            this.ribbonPageCategory6.Name = "ribbonPageCategory6";
-            this.ribbonPageCategory6.Text = "📊 Báo cáo";
-            // 
             // repositoryItemImageEdit1
             // 
             this.repositoryItemImageEdit1.AutoHeight = false;
@@ -839,10 +817,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage rbgBanHang;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory4;
         private DevExpress.XtraBars.Ribbon.RibbonPage rgbKhachHang;
-        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory5;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
