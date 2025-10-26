@@ -91,7 +91,8 @@ namespace menu
 
         private void btnLapHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-          
+            frmBanHang f = new frmBanHang();
+            OpenChildForm(f);
         }
 
         private void btnXuatHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
