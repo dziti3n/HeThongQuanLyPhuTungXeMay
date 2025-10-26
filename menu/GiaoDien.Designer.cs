@@ -88,7 +88,7 @@
             this.btnSaoLuu = new DevExpress.XtraBars.BarButtonItem();
             this.btnQltk = new DevExpress.XtraBars.BarButtonItem();
             this.btnLoaiHang = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNCC = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.rbgHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -187,7 +187,7 @@
             this.btnSaoLuu,
             this.btnQltk,
             this.btnLoaiHang,
-            this.barButtonItem1});
+            this.btnNCC});
             this.rbcMENU.Location = new System.Drawing.Point(0, 0);
             this.rbcMENU.Margin = new System.Windows.Forms.Padding(8);
             this.rbcMENU.MaxItemId = 95;
@@ -602,12 +602,13 @@
             this.btnLoaiHang.Name = "btnLoaiHang";
             this.btnLoaiHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoaiHang_ItemClick);
             // 
-            // barButtonItem1
+            // btnNCC
             // 
-            this.barButtonItem1.Caption = "Thêm nhà cung cấp";
-            this.barButtonItem1.Id = 94;
-            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btnNCC.Caption = "Thêm nhà cung cấp";
+            this.btnNCC.Id = 94;
+            this.btnNCC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.btnNCC.Name = "btnNCC";
+            this.btnNCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNCC_ItemClick);
             // 
             // ribbonPageCategory1
             // 
@@ -697,7 +698,7 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnNCC);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Nhà cung cấp";
             // 
@@ -907,7 +908,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup pgGrLoaiHang;
         private DevExpress.XtraBars.BarButtonItem btnLoaiHang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnNCC;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
     }
 }

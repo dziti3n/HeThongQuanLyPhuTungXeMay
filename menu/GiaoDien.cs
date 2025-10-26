@@ -223,5 +223,11 @@ namespace menu
             frmLoaiHang f = new frmLoaiHang();
             OpenChildForm(f);
         }
+
+        private void btnNCC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmNhaCungCap f = new frmNhaCungCap();
+            OpenChildForm(f);
+        }
     }
 }
