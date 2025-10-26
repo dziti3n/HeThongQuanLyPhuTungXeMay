@@ -7,15 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DoAnMonHoc.DAL.Model;
 
 namespace menu
 {
     public partial class GiaoDien : Form
     {
         public bool isThoat = true;
+        private NguoiDung _currentUser;
         public GiaoDien()
         {
             InitializeComponent();
+            SetupMdiBackground();
             foreach (Control ctl in this.Controls)
             {
                 if (ctl is MdiClient)
@@ -66,7 +69,7 @@ namespace menu
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Close();
+                Application.Exit();
         }
 
         private void btnThongTinPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -111,12 +114,42 @@ namespace menu
 
         private void btnDoanhThu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (_currentUser == null)
+            {
+                MessageBox.Show("Không tìm thấy thông tin người dùng đã đăng nhập.", "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!_currentUser.Admin)
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này!\nChỉ quản trị viên mới được phép sử dụng.",
+                                "Truy cập bị từ chối",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return; // 👈 Dừng lại, không mở form
+            }
             frmDoanhThu f = new frmDoanhThu();
             OpenChildForm(f);
         }
 
         private void btnLoiNhuan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (_currentUser == null)
+            {
+                MessageBox.Show("Không tìm thấy thông tin người dùng đã đăng nhập.", "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!_currentUser.Admin)
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này!\nChỉ quản trị viên mới được phép sử dụng.",
+                                "Truy cập bị từ chối",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return; // 👈 Dừng lại, không mở form
+            }
             frmLoiNhuan f = new frmLoiNhuan();
             OpenChildForm(f);
         }
@@ -168,16 +201,70 @@ namespace menu
             child.Show();
         }
 
+        public GiaoDien(NguoiDung currentUser) : this() // Gọi constructor trên
+        {
+            _currentUser = currentUser;
+            // Tùy chọn: Ẩn/mở menu theo quyền ở đây
+            //ApplyUserPermissions();
+        }
+
+        private void SetupMdiBackground()
+        {
+            foreach (Control ctl in this.Controls)
+            {
+                if (ctl is MdiClient)
+                {
+                    ctl.BackColor = Color.White;
+                    break;
+                }
+            }
+        }
+
+        /*private void ApplyUserPermissions()
+        {
+            // Nếu không phải admin → ẩn nút "Quản lý tài khoản"
+            if (_currentUser == null || !_currentUser.Admin)
+            {
+                btnQltk.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                // Bạn cũng có thể ẩn các nút khác nếu cần
+            }
+        }*/
+
         private void btnQltk_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (_currentUser == null)
+            {
+                MessageBox.Show("Không tìm thấy thông tin người dùng đã đăng nhập.", "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!_currentUser.Admin)
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này!\nChỉ quản trị viên mới được phép sử dụng.",
+                                "Truy cập bị từ chối",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return; // 👈 Dừng lại, không mở form
+            }
+
+            // Nếu là admin → cho phép mở form
             frmNgDung f = new frmNgDung();
             OpenChildForm(f);
         }
 
-        private void btnLoaiHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void GiaoDien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            frmLoaiHang f = new frmLoaiHang();
-            OpenChildForm(f);
+            var result = MessageBox.Show("Bạn có chắc muốn thoát?", "Xác nhận", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+                return;
+            }
+
+            // Đảm bảo thoát toàn bộ ứng dụng
+            Application.Exit();
         }
     }
 }
