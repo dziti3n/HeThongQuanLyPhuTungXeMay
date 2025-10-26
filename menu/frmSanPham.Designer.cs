@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grbThongTinSP = new System.Windows.Forms.GroupBox();
+            this.cmbNCC = new System.Windows.Forms.ComboBox();
             this.lblMaPT = new System.Windows.Forms.Label();
             this.txtMaPT = new System.Windows.Forms.TextBox();
             this.lblTenPT = new System.Windows.Forms.Label();
@@ -49,12 +50,6 @@
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.dgvPhuTung = new System.Windows.Forms.DataGridView();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.lblTieuDe = new System.Windows.Forms.Label();
-            this.lblTong = new System.Windows.Forms.Label();
-            this.btnThemLoaiHang = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.colMa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,15 +57,19 @@
             this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbNCC = new System.Windows.Forms.ComboBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.lblTieuDe = new System.Windows.Forms.Label();
+            this.lblTong = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.grbThongTinSP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhuTung)).BeginInit();
             this.SuspendLayout();
             // 
             // grbThongTinSP
             // 
-            this.grbThongTinSP.Controls.Add(this.cmbNCC);
             this.grbThongTinSP.Controls.Add(this.label1);
+            this.grbThongTinSP.Controls.Add(this.cmbNCC);
             this.grbThongTinSP.Controls.Add(this.lblMaPT);
             this.grbThongTinSP.Controls.Add(this.txtMaPT);
             this.grbThongTinSP.Controls.Add(this.lblTenPT);
@@ -90,6 +89,13 @@
             this.grbThongTinSP.TabIndex = 1;
             this.grbThongTinSP.TabStop = false;
             this.grbThongTinSP.Text = "Thông tin phụ tùng";
+            // 
+            // cmbNCC
+            // 
+            this.cmbNCC.Location = new System.Drawing.Point(140, 281);
+            this.cmbNCC.Name = "cmbNCC";
+            this.cmbNCC.Size = new System.Drawing.Size(190, 31);
+            this.cmbNCC.TabIndex = 13;
             // 
             // lblMaPT
             // 
@@ -269,59 +275,6 @@
             this.dgvPhuTung.TabIndex = 2;
             this.dgvPhuTung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhuTung_CellClick);
             // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(582, 72);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(300, 22);
-            this.txtTimKiem.TabIndex = 3;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(888, 68);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(90, 30);
-            this.btnTimKiem.TabIndex = 4;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click_1);
-            // 
-            // lblTieuDe
-            // 
-            this.lblTieuDe.AutoSize = true;
-            this.lblTieuDe.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblTieuDe.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblTieuDe.Location = new System.Drawing.Point(320, 10);
-            this.lblTieuDe.Name = "lblTieuDe";
-            this.lblTieuDe.Size = new System.Drawing.Size(404, 41);
-            this.lblTieuDe.TabIndex = 0;
-            this.lblTieuDe.Text = "Quản lý thông tin phụ tùng";
-            // 
-            // lblTong
-            // 
-            this.lblTong.AutoSize = true;
-            this.lblTong.Location = new System.Drawing.Point(995, 462);
-            this.lblTong.Name = "lblTong";
-            this.lblTong.Size = new System.Drawing.Size(106, 16);
-            this.lblTong.TabIndex = 12;
-            this.lblTong.Text = "Tổng hàng tồn: 0";
-            // 
-            // btnThemLoaiHang
-            // 
-            this.btnThemLoaiHang.Location = new System.Drawing.Point(648, 493);
-            this.btnThemLoaiHang.Name = "btnThemLoaiHang";
-            this.btnThemLoaiHang.Size = new System.Drawing.Size(110, 35);
-            this.btnThemLoaiHang.TabIndex = 14;
-            this.btnThemLoaiHang.Text = "Thêm loại hàng";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 284);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 23);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Nhà cung cấp:";
-            // 
             // colMa
             // 
             this.colMa.HeaderText = "Mã phụ tùng";
@@ -371,17 +324,54 @@
             this.nhacungcap.Name = "nhacungcap";
             this.nhacungcap.ReadOnly = true;
             // 
-            // cmbNCC
+            // txtTimKiem
             // 
-            this.cmbNCC.Location = new System.Drawing.Point(140, 281);
-            this.cmbNCC.Name = "cmbNCC";
-            this.cmbNCC.Size = new System.Drawing.Size(190, 31);
-            this.cmbNCC.TabIndex = 13;
+            this.txtTimKiem.Location = new System.Drawing.Point(582, 72);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(300, 22);
+            this.txtTimKiem.TabIndex = 3;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(888, 68);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(90, 30);
+            this.btnTimKiem.TabIndex = 4;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click_1);
+            // 
+            // lblTieuDe
+            // 
+            this.lblTieuDe.AutoSize = true;
+            this.lblTieuDe.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblTieuDe.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblTieuDe.Location = new System.Drawing.Point(320, 10);
+            this.lblTieuDe.Name = "lblTieuDe";
+            this.lblTieuDe.Size = new System.Drawing.Size(404, 41);
+            this.lblTieuDe.TabIndex = 0;
+            this.lblTieuDe.Text = "Quản lý thông tin phụ tùng";
+            // 
+            // lblTong
+            // 
+            this.lblTong.AutoSize = true;
+            this.lblTong.Location = new System.Drawing.Point(995, 462);
+            this.lblTong.Name = "lblTong";
+            this.lblTong.Size = new System.Drawing.Size(106, 16);
+            this.lblTong.TabIndex = 12;
+            this.lblTong.Text = "Tổng hàng tồn: 0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 284);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 23);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Nhà cung cấp:";
             // 
             // frmSanPham
             // 
             this.ClientSize = new System.Drawing.Size(1120, 551);
-            this.Controls.Add(this.btnThemLoaiHang);
             this.Controls.Add(this.lblTieuDe);
             this.Controls.Add(this.grbThongTinSP);
             this.Controls.Add(this.dgvPhuTung);
@@ -445,5 +435,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTon;
         private System.Windows.Forms.DataGridViewTextBoxColumn nhacungcap;
         private System.Windows.Forms.ComboBox cmbNCC;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -88,6 +88,7 @@
             this.btnSaoLuu = new DevExpress.XtraBars.BarButtonItem();
             this.btnQltk = new DevExpress.XtraBars.BarButtonItem();
             this.btnLoaiHang = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.rbgHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -100,6 +101,7 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pgGrLoaiHang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageCategory3 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.rbgBanHang = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -114,8 +116,6 @@
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.rbcMENU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -602,6 +602,13 @@
             this.btnLoaiHang.Name = "btnLoaiHang";
             this.btnLoaiHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoaiHang_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Thêm nhà cung cấp";
+            this.barButtonItem1.Id = 94;
+            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
@@ -617,7 +624,6 @@
             this.ribbonPageGroup2,
             this.ribbonPageGroup1,
             this.ribbonPageGroup16});
-            this.rbgHeThong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("rbgHeThong.ImageOptions.SvgImage")));
             this.rbgHeThong.Name = "rbgHeThong";
             this.rbgHeThong.Text = "Hệ thống";
             // 
@@ -688,6 +694,12 @@
             this.pgGrLoaiHang.ItemLinks.Add(this.btnLoaiHang);
             this.pgGrLoaiHang.Name = "pgGrLoaiHang";
             this.pgGrLoaiHang.Text = "Quản lý loại hàng";
+            // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "Nhà cung cấp";
             // 
             // ribbonPageCategory3
             // 
@@ -781,19 +793,6 @@
             // 
             this.ribbonPageGroup18.Name = "ribbonPageGroup18";
             this.ribbonPageGroup18.Text = "Thông tin mua bán";
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Thêm sản phẩm của nhà cung cấp ";
-            this.barButtonItem1.Id = 94;
-            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // GiaoDien
             // 
