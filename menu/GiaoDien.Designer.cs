@@ -804,7 +804,7 @@
             this.IsMdiContainer = true;
             this.Name = "GiaoDien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GiaoDien";
+            this.Text = "Hệ thống quản lý phụ tùng xe máy";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GiaoDien_FormClosing);
             this.Load += new System.EventHandler(this.GiaoDien_Load);

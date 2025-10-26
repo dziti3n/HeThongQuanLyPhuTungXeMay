@@ -58,5 +58,15 @@ namespace menu
         {
             if (chkHienMK.Checked) { txtMK.UseSystemPasswordChar = false; } else { txtMK.UseSystemPasswordChar = true; }
         }
+
+        private void btnQuenMK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDK_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

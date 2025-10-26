@@ -35,10 +35,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMK = new System.Windows.Forms.TextBox();
-            this.lblDK = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTK = new System.Windows.Forms.TextBox();
-            this.btnQuenMK = new System.Windows.Forms.Button();
             this.btnDN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -53,10 +51,8 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtMK);
-            this.panel1.Controls.Add(this.lblDK);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtTK);
-            this.panel1.Controls.Add(this.btnQuenMK);
             this.panel1.Controls.Add(this.btnDN);
             this.panel1.Location = new System.Drawing.Point(145, 46);
             this.panel1.Name = "panel1";
@@ -122,18 +118,6 @@
             this.txtMK.TabIndex = 1;
             this.txtMK.UseSystemPasswordChar = true;
             // 
-            // lblDK
-            // 
-            this.lblDK.AutoSize = true;
-            this.lblDK.BackColor = System.Drawing.Color.White;
-            this.lblDK.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDK.ForeColor = System.Drawing.Color.Blue;
-            this.lblDK.Location = new System.Drawing.Point(16, 311);
-            this.lblDK.Name = "lblDK";
-            this.lblDK.Size = new System.Drawing.Size(151, 22);
-            this.lblDK.TabIndex = 5;
-            this.lblDK.Text = "Chưa có tài khoản?";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -152,16 +136,6 @@
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(209, 22);
             this.txtTK.TabIndex = 0;
-            // 
-            // btnQuenMK
-            // 
-            this.btnQuenMK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnQuenMK.Location = new System.Drawing.Point(223, 304);
-            this.btnQuenMK.Name = "btnQuenMK";
-            this.btnQuenMK.Size = new System.Drawing.Size(145, 36);
-            this.btnQuenMK.TabIndex = 4;
-            this.btnQuenMK.Text = "Quên mật khẩu?";
-            this.btnQuenMK.UseVisualStyleBackColor = false;
             // 
             // btnDN
             // 
@@ -183,7 +157,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chương Trình Đăng Nhập";
+            this.Text = "Hệ thống quản lý phụ tùng xe máy";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -199,10 +173,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtMK;
-        private System.Windows.Forms.Label lblDK;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTK;
-        private System.Windows.Forms.Button btnQuenMK;
         private System.Windows.Forms.Button btnDN;
     }
 }
