@@ -53,7 +53,6 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.lblTieuDe = new System.Windows.Forms.Label();
             this.lblTong = new System.Windows.Forms.Label();
-            this.lblCanhBao = new System.Windows.Forms.Label();
             this.btnThemLoaiHang = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.colMa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -306,16 +305,6 @@
             this.lblTong.TabIndex = 12;
             this.lblTong.Text = "Tổng hàng tồn: 0";
             // 
-            // lblCanhBao
-            // 
-            this.lblCanhBao.AutoSize = true;
-            this.lblCanhBao.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblCanhBao.Location = new System.Drawing.Point(405, 462);
-            this.lblCanhBao.Name = "lblCanhBao";
-            this.lblCanhBao.Size = new System.Drawing.Size(253, 16);
-            this.lblCanhBao.TabIndex = 13;
-            this.lblCanhBao.Text = "⚠️ Hệ thống sẽ cảnh báo khi hàng sắp hết";
-            // 
             // btnThemLoaiHang
             // 
             this.btnThemLoaiHang.Location = new System.Drawing.Point(648, 493);
@@ -406,7 +395,6 @@
             this.Controls.Add(this.btnXuatExcel);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.lblTong);
-            this.Controls.Add(this.lblCanhBao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -449,9 +437,6 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label lblTieuDe;
         private System.Windows.Forms.Label lblTong;
-        private System.Windows.Forms.Label lblCanhBao;
-        private System.Windows.Forms.Button btnThemLoaiHang;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLoai;

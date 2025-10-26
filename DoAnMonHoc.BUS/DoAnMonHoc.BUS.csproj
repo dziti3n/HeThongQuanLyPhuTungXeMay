@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="HoaDonService.cs" />
     <Compile Include="KhachHangService.cs" />
+    <Compile Include="LichSuMuaHangService.cs" />
     <Compile Include="LoaiHangService.cs" />
     <Compile Include="LoaiHangViewModel.cs" />
     <Compile Include="NguoiDungService.cs" />

@@ -27,6 +27,8 @@ namespace DoAnMonHoc.DAL.Model
         [StringLength(40)]
         public string HoTen { get; set; }
 
+        public bool Admin { get; set; }
+
         [StringLength(11)]
         public string SDT { get; set; }
 
