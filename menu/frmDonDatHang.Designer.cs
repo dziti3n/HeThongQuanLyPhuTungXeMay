@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnXoaPhieuNhap = new System.Windows.Forms.Button();
+            this.btnLoadLai = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonDatHang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,11 +175,23 @@
             this.btnXoaPhieuNhap.UseVisualStyleBackColor = true;
             this.btnXoaPhieuNhap.Click += new System.EventHandler(this.btnXoaPhieuNhap_Click);
             // 
+            // btnLoadLai
+            // 
+            this.btnLoadLai.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadLai.Location = new System.Drawing.Point(456, 490);
+            this.btnLoadLai.Name = "btnLoadLai";
+            this.btnLoadLai.Size = new System.Drawing.Size(132, 49);
+            this.btnLoadLai.TabIndex = 13;
+            this.btnLoadLai.Text = "Tải lại";
+            this.btnLoadLai.UseVisualStyleBackColor = true;
+            this.btnLoadLai.Click += new System.EventHandler(this.btnLoadLai_Click);
+            // 
             // frmDonDatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 551);
+            this.Controls.Add(this.btnLoadLai);
             this.Controls.Add(this.btnXoaPhieuNhap);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label1);
@@ -213,5 +226,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayDat;
         private System.Windows.Forms.DataGridViewTextBoxColumn nhacungcap;
         private System.Windows.Forms.Button btnXoaPhieuNhap;
+        private System.Windows.Forms.Button btnLoadLai;
     }
 }
