@@ -262,7 +262,7 @@
             this.dgvPhuTung.RowHeadersWidth = 51;
             this.dgvPhuTung.Size = new System.Drawing.Size(693, 353);
             this.dgvPhuTung.TabIndex = 2;
-            this.dgvPhuTung.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhuTung_CellContentClick);
+            this.dgvPhuTung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhuTung_CellClick);
             // 
             // colMa
             // 

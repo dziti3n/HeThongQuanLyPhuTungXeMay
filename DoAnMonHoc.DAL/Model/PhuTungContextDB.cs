@@ -23,6 +23,8 @@ namespace DoAnMonHoc.DAL.Model
         public virtual DbSet<PhieuNhap> PhieuNhaps { get; set; }
         public virtual DbSet<PhuTung> PhuTungs { get; set; }
         public virtual DbSet<TraHang> TraHangs { get; set; }
+        public DbSet<DonDatHang> DonDatHangs { get; set; }
+        public DbSet<ChiTietDonDatHang> ChiTietDonDatHangs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -292,16 +292,7 @@ namespace menu
 
         private void dgvPhuTung_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                selectedMaPT = dgvPhuTung.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtMaPT.Text = selectedMaPT;
-                txtTenPT.Text = dgvPhuTung.Rows[e.RowIndex].Cells[1].Value.ToString();
-                cmbLoaiPT.Text = dgvPhuTung.Rows[e.RowIndex].Cells[2].Value.ToString();
-                cmbDonViTinh.Text = dgvPhuTung.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtDonGia.Text = dgvPhuTung.Rows[e.RowIndex].Cells[4].Value.ToString();
-                txtSoLuongTon.Text = dgvPhuTung.Rows[e.RowIndex].Cells[5].Value.ToString();
-            }
+           
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -336,6 +327,20 @@ namespace menu
         private void btnThoat_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvPhuTung_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                selectedMaPT = dgvPhuTung.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtMaPT.Text = selectedMaPT;
+                txtTenPT.Text = dgvPhuTung.Rows[e.RowIndex].Cells[1].Value.ToString();
+                cmbLoaiPT.Text = dgvPhuTung.Rows[e.RowIndex].Cells[2].Value.ToString();
+                cmbDonViTinh.Text = dgvPhuTung.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtDonGia.Text = dgvPhuTung.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txtSoLuongTon.Text = dgvPhuTung.Rows[e.RowIndex].Cells[5].Value.ToString();
+            }
         }
     }
 }

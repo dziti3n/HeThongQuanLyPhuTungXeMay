@@ -59,11 +59,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ChiTietDonDatHang.cs" />
     <Compile Include="Model\ChiTietHoaDon.cs" />
     <Compile Include="Model\ChiTietPhieuNhap.cs" />
     <Compile Include="Model\ChiTietTraHang.cs" />
+    <Compile Include="Model\DonDatHang.cs" />
     <Compile Include="Model\HoaDon.cs" />
     <Compile Include="Model\KhachHang.cs" />
+    <Compile Include="Model\LichSuMuaHangDTO.cs" />
     <Compile Include="Model\LoaiHang.cs" />
     <Compile Include="Model\NguoiDung.cs" />
     <Compile Include="Model\NhaCungCap.cs" />

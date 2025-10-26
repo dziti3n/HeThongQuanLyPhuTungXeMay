@@ -36,12 +36,28 @@ namespace menu
 
         private void btnHDSD_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            try
+            {
+                string filePath = "README.txt"; // vì đã nằm trong bin\Debug
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.Diagnostics.Process.Start(filePath);
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy file README.txt. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi mở file hướng dẫn:\n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            string thongTin = "📞 Hotline: 0909 123 456\n📧 Email: support@doanmonhoc.vn\n💬 Zalo: @TeamDoAn\n🕒 Hỗ trợ từ 8h đến 22h mỗi ngày";
+            MessageBox.Show(thongTin, "Liên hệ hỗ trợ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public event EventHandler DangXuat;
@@ -81,17 +97,8 @@ namespace menu
             OpenChildForm(f);
         }
 
-        private void btnTraHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmTraHang f = new frmTraHang();
-            OpenChildForm(f);
-        }
+        
 
-        private void btnLichSuBuonBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmLichSuBuonBan f = new frmLichSuBuonBan();
-            OpenChildForm(f);
-        }
 
         private void btnThongTinKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -149,11 +156,7 @@ namespace menu
 
         
 
-        private void btnThongTinTonKhoVaSapHet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmThongTinTonKho f = new frmThongTinTonKho();
-            OpenChildForm(f);
-        }
+        
 
         private void btnThietLapTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
