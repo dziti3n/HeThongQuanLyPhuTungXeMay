@@ -107,8 +107,6 @@
             this.rgbKhachHang = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageCategory5 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            this.rgbBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageCategory6 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.repositoryItemCheckedComboBoxEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit();
@@ -746,24 +744,7 @@
             // ribbonPageCategory5
             // 
             this.ribbonPageCategory5.Name = "ribbonPageCategory5";
-            this.ribbonPageCategory5.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.rgbBaoCao});
             this.ribbonPageCategory5.Text = "👷 Nhân viên";
-            // 
-            // rgbBaoCao
-            // 
-            this.rgbBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup7});
-            this.rgbBaoCao.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("rgbBaoCao.ImageOptions.SvgImage")));
-            this.rgbBaoCao.Name = "rgbBaoCao";
-            this.rgbBaoCao.Text = "Báo cáo";
-            // 
-            // ribbonPageGroup7
-            // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnDoanhThu);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnLoiNhuan, true);
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.Text = "Thông tin kinh doanh";
             // 
             // ribbonPageCategory6
             // 
@@ -862,8 +843,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory6;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rgbBaoCao;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;

@@ -80,12 +80,6 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDoanhThu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDoanhThu.Designer.cs">
-      <DependentUpon>frmDoanhThu.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDonDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,12 +109,6 @@
     </Compile>
     <Compile Include="frmLoaiHang.Designer.cs">
       <DependentUpon>frmLoaiHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLoiNhuan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLoiNhuan.Designer.cs">
-      <DependentUpon>frmLoiNhuan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNgDung.cs">
       <SubType>Form</SubType>
