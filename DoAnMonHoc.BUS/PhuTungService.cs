@@ -28,9 +28,15 @@ namespace DoAnMonHoc.BUS
         }
         public void UpdatePhuTung(PhuTung phuTung)
         {
-            PhuTungContextDB context = new PhuTungContextDB();
-            context.PhuTungs.AddOrUpdate(phuTung);
-            context.SaveChanges();
+            using (var context = new PhuTungContextDB())
+            {
+                var existing = context.PhuTungs.Find(phuTung.MaPT);
+                if (existing != null)
+                {
+                    context.Entry(existing).CurrentValues.SetValues(phuTung);
+                    context.SaveChanges();
+                }
+            }
         }
         public void DeletePhuTung(string maPT)
         {

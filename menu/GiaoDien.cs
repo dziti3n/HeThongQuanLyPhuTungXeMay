@@ -96,7 +96,8 @@ namespace menu
 
         private void btnXuatHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            frmXuatHoaDon f = new frmXuatHoaDon();
+            OpenChildForm(f);
         }
 
         
