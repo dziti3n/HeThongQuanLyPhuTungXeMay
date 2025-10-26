@@ -39,7 +39,7 @@
             this.dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTongSoDon = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnXoaPhieuNhap = new System.Windows.Forms.Button();
@@ -136,12 +136,12 @@
             this.nhacungcap.Name = "nhacungcap";
             this.nhacungcap.ReadOnly = true;
             // 
-            // textBox1
+            // txtTongSoDon
             // 
-            this.textBox1.Location = new System.Drawing.Point(919, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(42, 27);
-            this.textBox1.TabIndex = 9;
+            this.txtTongSoDon.Location = new System.Drawing.Point(919, 36);
+            this.txtTongSoDon.Name = "txtTongSoDon";
+            this.txtTongSoDon.Size = new System.Drawing.Size(42, 27);
+            this.txtTongSoDon.TabIndex = 9;
             // 
             // label1
             // 
@@ -182,7 +182,7 @@
             this.Controls.Add(this.btnXoaPhieuNhap);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTongSoDon);
             this.Controls.Add(this.dgvDonDatHang);
             this.Controls.Add(this.lblTongDon);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -202,7 +202,7 @@
 
         // data grid
         private System.Windows.Forms.DataGridView dgvDonDatHang;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTongSoDon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt;

@@ -128,8 +128,8 @@
             // dtpNgayNhap
             // 
             this.dtpNgayNhap.EditValue = null;
-            this.dtpNgayNhap.Location = new System.Drawing.Point(116, 89);
-            this.dtpNgayNhap.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.dtpNgayNhap.Location = new System.Drawing.Point(118, 88);
+            this.dtpNgayNhap.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
             this.dtpNgayNhap.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayNhap.Properties.Appearance.Options.UseFont = true;
@@ -137,7 +137,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpNgayNhap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpNgayNhap.Size = new System.Drawing.Size(339, 28);
+            this.dtpNgayNhap.Size = new System.Drawing.Size(226, 28);
             this.dtpNgayNhap.TabIndex = 3;
             // 
             // label3
@@ -200,7 +200,6 @@
             this.btnThoat.TabIndex = 22;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLuu
             // 
@@ -210,7 +209,6 @@
             this.btnLuu.TabIndex = 21;
             this.btnLuu.Text = "Lưu phiếu";
             this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // cmbNhaCungCap
             // 
@@ -229,7 +227,6 @@
             this.btnXoa.TabIndex = 20;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // lblNhaCungCap
             // 
@@ -249,7 +246,6 @@
             this.btnThem.TabIndex = 19;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtSoLuong
             // 
@@ -296,7 +292,6 @@
             this.Controls.Add(this.dtpNgayNhap);
             this.Name = "frmPhieuNhap";
             this.Text = "Đơn đặt hàng";
-            this.Load += new System.EventHandler(this.frmPhieuNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonDatHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayNhap.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayNhap.Properties)).EndInit();
