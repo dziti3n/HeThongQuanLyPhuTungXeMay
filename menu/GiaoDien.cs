@@ -266,5 +266,11 @@ namespace menu
             // Đảm bảo thoát toàn bộ ứng dụng
             Application.Exit();
         }
+
+        private void btnLoaiHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmLoaiHang f = new frmLoaiHang();
+            OpenChildForm(f);
+        }
     }
 }
