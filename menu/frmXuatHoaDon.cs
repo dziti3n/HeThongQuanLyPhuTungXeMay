@@ -222,7 +222,13 @@ namespace menu
                     }
 
                     doc.Add(table);
-                    doc.Add(new Paragraph($"Tổng tiền: {hoaDon.TongTien:N0} VNĐ").SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT));
+
+                    // Tính lại tổng tiền từ chi tiết
+                    decimal tongTienTinhLai = chiTietList.Sum(ct => (ct.SoLuong ?? 0) * (ct.DonGiaBan ?? 0));
+
+                    doc.Add(new Paragraph($"Tổng tiền: {tongTienTinhLai:N0} VNĐ")
+                        .SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT));
+
                     doc.Add(new Paragraph("\nCảm ơn quý khách!"));
                 }
 
