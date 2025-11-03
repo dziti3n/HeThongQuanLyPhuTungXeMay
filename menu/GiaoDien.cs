@@ -247,5 +247,16 @@ namespace menu
             frmNhaCungCap f = new frmNhaCungCap();
             OpenChildForm(f);
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnTonKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmThongKeTonKho f = new frmThongKeTonKho();
+            OpenChildForm(f);
+        }
     }
 }
