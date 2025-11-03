@@ -1,6 +1,6 @@
 ﻿namespace menu
 {
-    partial class frmThongKeTonKho
+    partial class frmXuatNcc
     {
         /// <summary>
         /// Required designer variable.
@@ -31,51 +31,51 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.TonKhoDataSet = new menu.TonKhoDataSet();
-            this.PhuTungBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PhuTungTableAdapter = new menu.TonKhoDataSetTableAdapters.PhuTungTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.TonKhoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhuTungBindingSource)).BeginInit();
+            this.XuatNcc = new menu.XuatNcc();
+            this.NhaCungCapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.NhaCungCapTableAdapter = new menu.XuatNccTableAdapters.NhaCungCapTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.XuatNcc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NhaCungCapBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.PhuTungBindingSource;
+            reportDataSource1.Value = this.NhaCungCapBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "menu.TonKhoReport.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "menu.XuatNcc.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // TonKhoDataSet
+            // XuatNcc
             // 
-            this.TonKhoDataSet.DataSetName = "TonKhoDataSet";
-            this.TonKhoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.XuatNcc.DataSetName = "XuatNcc";
+            this.XuatNcc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // PhuTungBindingSource
+            // NhaCungCapBindingSource
             // 
-            this.PhuTungBindingSource.DataMember = "PhuTung";
-            this.PhuTungBindingSource.DataSource = this.TonKhoDataSet;
+            this.NhaCungCapBindingSource.DataMember = "NhaCungCap";
+            this.NhaCungCapBindingSource.DataSource = this.XuatNcc;
             // 
-            // PhuTungTableAdapter
+            // NhaCungCapTableAdapter
             // 
-            this.PhuTungTableAdapter.ClearBeforeFill = true;
+            this.NhaCungCapTableAdapter.ClearBeforeFill = true;
             // 
-            // frmThongKeTonKho
+            // frmXuatNcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "frmThongKeTonKho";
-            this.Text = "frmThongKeTonKho";
-            this.Load += new System.EventHandler(this.frmThongKeTonKho_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.TonKhoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhuTungBindingSource)).EndInit();
+            this.Name = "frmXuatNcc";
+            this.Text = "frmXuatNcc";
+            this.Load += new System.EventHandler(this.frmXuatNcc_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.XuatNcc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NhaCungCapBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -83,8 +83,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource PhuTungBindingSource;
-        private TonKhoDataSet TonKhoDataSet;
-        private TonKhoDataSetTableAdapters.PhuTungTableAdapter PhuTungTableAdapter;
+        private System.Windows.Forms.BindingSource NhaCungCapBindingSource;
+        private XuatNcc XuatNcc;
+        private XuatNccTableAdapters.NhaCungCapTableAdapter NhaCungCapTableAdapter;
     }
 }
