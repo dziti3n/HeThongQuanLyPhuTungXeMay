@@ -181,8 +181,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
@@ -301,23 +300,17 @@
     <Compile Include="frmSanPham.Designer.cs">
       <DependentUpon>frmSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongKeTonKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThongKeTonKho.Designer.cs">
-      <DependentUpon>frmThongKeTonKho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmXuatDonDatHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmXuatDonDatHang.Designer.cs">
-      <DependentUpon>frmXuatDonDatHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmXuatHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmXuatHoaDon.Designer.cs">
       <DependentUpon>frmXuatHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmXuatNcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXuatNcc.Designer.cs">
+      <DependentUpon>frmXuatNcc.cs</DependentUpon>
     </Compile>
     <Compile Include="GiaoDien.cs">
       <SubType>Form</SubType>
@@ -337,6 +330,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ThongKeDoanhThu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="XuatNcc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XuatNcc.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmDoanhThu.resx">
       <DependentUpon>frmDoanhThu.cs</DependentUpon>
@@ -371,14 +369,11 @@
     <EmbeddedResource Include="frmLoaiHang.resx">
       <DependentUpon>frmLoaiHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongKeTonKho.resx">
-      <DependentUpon>frmThongKeTonKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmXuatDonDatHang.resx">
-      <DependentUpon>frmXuatDonDatHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmXuatHoaDon.resx">
       <DependentUpon>frmXuatHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXuatNcc.resx">
+      <DependentUpon>frmXuatNcc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien.resx">
       <DependentUpon>GiaoDien.cs</DependentUpon>
@@ -396,6 +391,7 @@
     <EmbeddedResource Include="ThongKeDoanhThu.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="XuatNcc.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -416,6 +412,17 @@
     </None>
     <None Include="ThongKeDoanhThu.xss">
       <DependentUpon>ThongKeDoanhThu.xsd</DependentUpon>
+    </None>
+    <None Include="XuatNcc.xsc">
+      <DependentUpon>XuatNcc.xsd</DependentUpon>
+    </None>
+    <None Include="XuatNcc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>XuatNcc.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="XuatNcc.xss">
+      <DependentUpon>XuatNcc.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
