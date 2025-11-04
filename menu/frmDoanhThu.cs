@@ -27,14 +27,21 @@ namespace menu
             public decimal DoanhThu { get; set; }
         }
 
+        public class ThongKeDoanhThuThangViewModel
+        {
+            public int Thang { get; set; }
+            public int Nam { get; set; }
+            public decimal DoanhThu { get; set; }
+        }
+
         private void frmDoanhThu_Load(object sender, EventArgs e)
         {
             try
             {
                 using (var context = new PhuTungContextDB())
                 {
-                    // ✅ Lấy dữ liệu từ bảng Hóa Đơn, nhóm theo ngày
-                    var list = context.HoaDons
+                    // ✅ Thống kê theo ngày
+                    var listNgay = context.HoaDons
                         .GroupBy(hd => hd.NgayLap)
                         .Select(g => new ThongKeDoanhThuViewModel
                         {
@@ -44,7 +51,21 @@ namespace menu
                         .OrderBy(x => x.NgayLap)
                         .ToList();
 
-                    // ✅ Xác định đường dẫn RDLC
+                    // ✅ Thống kê theo tháng
+                    var listThang = context.HoaDons
+                        .Where(hd => hd.NgayLap != null)
+                        .GroupBy(hd => new { hd.NgayLap.Value.Year, hd.NgayLap.Value.Month })
+                        .Select(g => new ThongKeDoanhThuThangViewModel
+                        {
+                            Nam = g.Key.Year,
+                            Thang = g.Key.Month,
+                            DoanhThu = g.Sum(x => x.TongTien ?? 0)
+                        })
+                        .OrderBy(x => x.Nam)
+                        .ThenBy(x => x.Thang)
+                        .ToList();
+
+                    // ✅ Đường dẫn file RDLC
                     string reportPath = Path.Combine(Application.StartupPath, "ThongKeDoanhThu.rdlc");
                     if (!File.Exists(reportPath))
                     {
@@ -52,12 +73,12 @@ namespace menu
                         return;
                     }
 
-                    // ✅ Cấu hình ReportViewer
+                    // ✅ Gán dữ liệu cho ReportViewer
                     reportViewer1.LocalReport.ReportPath = reportPath;
                     reportViewer1.LocalReport.DataSources.Clear();
-                    reportViewer1.LocalReport.DataSources.Add(
-                        new ReportDataSource("DataSet1", list)
-                    );
+
+                    reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSetNgay", listNgay));
+                    reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSetThang", listThang));
 
                     reportViewer1.RefreshReport();
                 }
