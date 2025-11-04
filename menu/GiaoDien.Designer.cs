@@ -213,7 +213,7 @@
             this.barButtonItem8,
             this.barButtonItem10});
             this.rbcMENU.Location = new System.Drawing.Point(0, 0);
-            this.rbcMENU.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.rbcMENU.Margin = new System.Windows.Forms.Padding(10);
             this.rbcMENU.MaxItemId = 101;
             this.rbcMENU.Name = "rbcMENU";
             this.rbcMENU.OptionsMenuMinWidth = 1006;
@@ -658,6 +658,7 @@
             this.btnCap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCap.ImageOptions.Image")));
             this.btnCap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCap.ImageOptions.LargeImage")));
             this.btnCap.Name = "btnCap";
+            this.btnCap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCap_ItemClick);
             // 
             // barButtonItem8
             // 
