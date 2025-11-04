@@ -147,7 +147,7 @@
             // rbcMENU
             // 
             this.rbcMENU.BackColor = System.Drawing.Color.LightGray;
-            this.rbcMENU.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(89);
+            this.rbcMENU.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(111);
             this.rbcMENU.ExpandCollapseItem.Id = 0;
             this.rbcMENU.ForeColor = System.Drawing.Color.Black;
             this.rbcMENU.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -213,10 +213,10 @@
             this.barButtonItem8,
             this.barButtonItem10});
             this.rbcMENU.Location = new System.Drawing.Point(0, 0);
-            this.rbcMENU.Margin = new System.Windows.Forms.Padding(10);
+            this.rbcMENU.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.rbcMENU.MaxItemId = 101;
             this.rbcMENU.Name = "rbcMENU";
-            this.rbcMENU.OptionsMenuMinWidth = 1006;
+            this.rbcMENU.OptionsMenuMinWidth = 1257;
             this.rbcMENU.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1,
             this.ribbonPageCategory2,
@@ -693,6 +693,7 @@
             this.ribbonPageGroup2,
             this.ribbonPageGroup1,
             this.ribbonPageGroup16});
+            this.rbgHeThong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("rbgHeThong.ImageOptions.SvgImage")));
             this.rbgHeThong.Name = "rbgHeThong";
             this.rbgHeThong.Text = "Hệ thống";
             // 
