@@ -29,6 +29,10 @@ namespace menu
             try
             {
                 frmPhieuNhapHang f = new frmPhieuNhapHang();
+                f.DonDatHangSaved += (s, args) =>
+                {
+                    LoadData(); // hoặc LoadData(), tùy tên hàm bạn đang dùng
+                };
                 f.ShowDialog();
             }
             catch (Exception ex)

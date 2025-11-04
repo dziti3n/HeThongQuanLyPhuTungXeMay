@@ -270,5 +270,11 @@ namespace menu
             frmXuatNcc f = new frmXuatNcc();
             OpenChildForm(f);
         }
+
+        private void btnCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmPTBanCap f = new frmPTBanCap();
+            OpenChildForm(f);
+        }
     }
 }
