@@ -258,5 +258,17 @@ namespace menu
             frmThongKeTonKho f = new frmThongKeTonKho();
             OpenChildForm(f);
         }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDoanhThu f = new frmDoanhThu();
+            OpenChildForm(f);
+        }
+
+        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmXuatNcc f = new frmXuatNcc();
+            OpenChildForm(f);
+        }
     }
 }
