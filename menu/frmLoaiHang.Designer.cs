@@ -32,7 +32,6 @@
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.colMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -110,8 +109,7 @@
             this.dgvLoaiHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaLoai,
-            this.colTenLoai,
-            this.colSoLg});
+            this.colTenLoai});
             this.dgvLoaiHang.Location = new System.Drawing.Point(20, 96);
             this.dgvLoaiHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvLoaiHang.Name = "dgvLoaiHang";
@@ -211,13 +209,6 @@
             this.colTenLoai.Name = "colTenLoai";
             this.colTenLoai.ReadOnly = true;
             // 
-            // colSoLg
-            // 
-            this.colSoLg.HeaderText = "Số lượng";
-            this.colSoLg.MinimumWidth = 6;
-            this.colSoLg.Name = "colSoLg";
-            this.colSoLg.ReadOnly = true;
-            // 
             // frmLoaiHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,6 +249,5 @@
         private System.Windows.Forms.Panel pnlButtons;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenLoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSoLg;
     }
 }

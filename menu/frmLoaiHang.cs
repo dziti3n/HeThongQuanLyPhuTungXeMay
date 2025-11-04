@@ -114,7 +114,7 @@ namespace menu
             // Hiển thị
             foreach (var lh in list)
             {
-                dgvLoaiHang.Rows.Add(lh.MaLoai, lh.TenLoai, lh.SoLuongPhuTung);
+                dgvLoaiHang.Rows.Add(lh.MaLoai, lh.TenLoai);
             }
         }
 
