@@ -255,7 +255,8 @@ namespace menu
 
         private void btnTonKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            frmThongKeTonKho f = new frmThongKeTonKho();
+            OpenChildForm(f);
         }
     }
 }

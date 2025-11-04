@@ -300,6 +300,12 @@
     <Compile Include="frmSanPham.Designer.cs">
       <DependentUpon>frmSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThongKeTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongKeTonKho.Designer.cs">
+      <DependentUpon>frmThongKeTonKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmXuatHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ThongKeDoanhThu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TonKhoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="XuatNcc.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -369,6 +380,9 @@
     <EmbeddedResource Include="frmLoaiHang.resx">
       <DependentUpon>frmLoaiHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKeTonKho.resx">
+      <DependentUpon>frmThongKeTonKho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmXuatHoaDon.resx">
       <DependentUpon>frmXuatHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,6 +405,7 @@
     <EmbeddedResource Include="ThongKeDoanhThu.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="TonKhoReport.rdlc" />
     <EmbeddedResource Include="XuatNcc.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -412,6 +427,17 @@
     </None>
     <None Include="ThongKeDoanhThu.xss">
       <DependentUpon>ThongKeDoanhThu.xsd</DependentUpon>
+    </None>
+    <None Include="TonKhoDataSet.xsc">
+      <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TonKhoDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TonKhoDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TonKhoDataSet.xss">
+      <DependentUpon>TonKhoDataSet.xsd</DependentUpon>
     </None>
     <None Include="XuatNcc.xsc">
       <DependentUpon>XuatNcc.xsd</DependentUpon>
