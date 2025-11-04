@@ -147,7 +147,7 @@
             // rbcMENU
             // 
             this.rbcMENU.BackColor = System.Drawing.Color.LightGray;
-            this.rbcMENU.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(71);
+            this.rbcMENU.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(89);
             this.rbcMENU.ExpandCollapseItem.Id = 0;
             this.rbcMENU.ForeColor = System.Drawing.Color.Black;
             this.rbcMENU.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -213,10 +213,10 @@
             this.barButtonItem8,
             this.barButtonItem10});
             this.rbcMENU.Location = new System.Drawing.Point(0, 0);
-            this.rbcMENU.Margin = new System.Windows.Forms.Padding(8);
+            this.rbcMENU.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.rbcMENU.MaxItemId = 101;
             this.rbcMENU.Name = "rbcMENU";
-            this.rbcMENU.OptionsMenuMinWidth = 805;
+            this.rbcMENU.OptionsMenuMinWidth = 1006;
             this.rbcMENU.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1,
             this.ribbonPageCategory2,
@@ -670,7 +670,7 @@
             // 
             // barButtonItem10
             // 
-            this.barButtonItem10.Caption = "Xuất phiếu nhập";
+            this.barButtonItem10.Caption = "Xuất thông tin nhà cung cấp";
             this.barButtonItem10.Id = 100;
             this.barButtonItem10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
             this.barButtonItem10.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
@@ -841,7 +841,7 @@
             // 
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem10);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "Phiếu nhập";
+            this.ribbonPageGroup8.Text = "Nhà cung cấp";
             // 
             // ribbonPageCategory5
             // 

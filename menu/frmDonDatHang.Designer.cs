@@ -161,7 +161,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(157, 49);
             this.btnUpdate.TabIndex = 11;
-            this.btnUpdate.Text = "Thêm/sửa phiếu";
+            this.btnUpdate.Text = "Thêm phiếu";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
