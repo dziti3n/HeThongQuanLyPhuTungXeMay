@@ -16,6 +16,7 @@ namespace menu
         private readonly CTDonDatHangService CTDonDatHangService = new CTDonDatHangService();
         private readonly List<ChiTietDonDatHang> chiTietTam = new List<ChiTietDonDatHang>();
         private string _nccDangChon = null;
+        public event EventHandler DonDatHangSaved;
         public frmPhieuNhapHang()
         {
             InitializeComponent();
@@ -261,6 +262,7 @@ namespace menu
             }
 
             MessageBox.Show($"Lưu thành công! Mã phiếu: {maDDH}");
+            DonDatHangSaved?.Invoke(this, EventArgs.Empty);
             chiTietTam.Clear();
             dgvDonDatHang.Rows.Clear();
         }
