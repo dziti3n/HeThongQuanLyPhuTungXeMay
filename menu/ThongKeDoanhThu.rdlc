@@ -9,11 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Tổng doanh thu: </Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=Sum(Fields!DoanhThu.Value)</Value>
+                <Value>="Tổng doanh thu: " &amp; FormatCurrency(Sum(Fields!DoanhThu.Value, "DataSetThang"), 0)</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -21,10 +17,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>5.2197cm</Top>
+        <Top>5.5372cm</Top>
         <Left>9.64207cm</Left>
         <Height>0.727cm</Height>
-        <Width>5.74463cm</Width>
+        <Width>4.38996cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -551,7 +547,7 @@
     <Height>2.79167in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>7.175in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
