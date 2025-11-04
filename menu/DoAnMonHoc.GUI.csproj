@@ -240,6 +240,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsPTBanTheoCap.cs">
+      <DependentUpon>dsPTBanTheoCap.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPTBanTheoCap.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPTBanTheoCap.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +301,12 @@
     </Compile>
     <Compile Include="frmNhaCungCap.Designer.cs">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPTBanCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPTBanCap.Designer.cs">
+      <DependentUpon>frmPTBanCap.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSanPham.cs">
       <SubType>Form</SubType>
@@ -368,6 +382,9 @@
     <EmbeddedResource Include="frmPhieuNhapHang.resx">
       <DependentUpon>frmPhieuNhapHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPTBanCap.resx">
+      <DependentUpon>frmPTBanCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSanPham.resx">
       <DependentUpon>frmSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -402,11 +419,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="rBaoCaoPTBanCap.rdlc" />
     <EmbeddedResource Include="ThongKeDoanhThu.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="TonKhoReport.rdlc" />
     <EmbeddedResource Include="XuatNcc.rdlc" />
+    <None Include="dsPTBanTheoCap.xsc">
+      <DependentUpon>dsPTBanTheoCap.xsd</DependentUpon>
+    </None>
+    <None Include="dsPTBanTheoCap.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPTBanTheoCap.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsPTBanTheoCap.xss">
+      <DependentUpon>dsPTBanTheoCap.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
