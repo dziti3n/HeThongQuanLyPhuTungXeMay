@@ -44,5 +44,16 @@ namespace menu.Properties {
                 return ((string)(this["QLPhuTungXeMayConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-811BNLKG\\SQLEXPRESS;Initial Catalog=QLPhuTungXeMay;Integrated " +
+            "Security=True;Encrypt=True;TrustServerCertificate=True")]
+        public string QLPhuTungXeMayConnectionString2 {
+            get {
+                return ((string)(this["QLPhuTungXeMayConnectionString2"]));
+            }
+        }
     }
 }
