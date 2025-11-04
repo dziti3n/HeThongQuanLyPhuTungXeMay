@@ -45,7 +45,7 @@ namespace menu
                         .ToList();
 
                     // ✅ Xác định đường dẫn RDLC
-                    string reportPath = @"C:\Users\ASUS\source\repos\HeThongQuanLyPhuTungXeMay\menu\ThongKeDoanhThu.rdlc";
+                    string reportPath = Path.Combine(Application.StartupPath, "ThongKeDoanhThu.rdlc");
                     if (!File.Exists(reportPath))
                     {
                         MessageBox.Show("Không tìm thấy file báo cáo: " + reportPath, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
