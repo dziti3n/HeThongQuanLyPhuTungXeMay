@@ -13,6 +13,7 @@ namespace menu
         private readonly NhaCungCapService nhaCungCapService = new NhaCungCapService();
         private readonly PhuTungService phuTungService = new PhuTungService();
         private readonly DonDatHangService donDatHangService = new DonDatHangService();
+        private readonly CTDonDatHangService CTDonDatHangService = new CTDonDatHangService();
         private readonly List<ChiTietDonDatHang> chiTietTam = new List<ChiTietDonDatHang>();
         private string _nccDangChon = null;
         public frmPhieuNhapHang()
@@ -91,8 +92,20 @@ namespace menu
         {
             if (cmbTenPhuTung.SelectedIndex >= 0)
             {
-                var pt = (PhuTung)cmbTenPhuTung.SelectedItem;
-                txtDonGia.Text = pt.DonGia.ToString(); // Lấy giá bán hoặc giá nhập tùy DB
+                var pt = (PhuTung)cmbTenPhuTung.SelectedItem; // ✅ đúng kiểu
+
+                using (var context = new PhuTungContextDB())
+                {
+                    // Lấy đơn giá nhập mới nhất của phụ tùng đó
+                    var giaNhapGanNhat = (from ct in context.ChiTietDonDatHangs
+                                          join ddh in context.DonDatHangs on ct.MaDDH equals ddh.MaDDH
+                                          where ct.MaPT == pt.MaPT
+                                          orderby ddh.NgayDat descending
+                                          select ct.DonGiaNhap)
+                                          .FirstOrDefault();
+
+                    txtDonGia.Text = giaNhapGanNhat != null ? giaNhapGanNhat.ToString() : "0";
+                }
             }
         }
         public string GenerateNewMaDDH()
@@ -151,21 +164,26 @@ namespace menu
                 return;
             }
 
-            decimal donGia = pt.DonGia ?? 0;
-            
+            decimal donGiaNhap;
+            if (!decimal.TryParse(txtDonGia.Text, out donGiaNhap))
+            {
+                MessageBox.Show("Đơn giá nhập không hợp lệ!");
+                return;
+            }
+
 
             // Thêm vào DataGridView
             int index = dgvDonDatHang.Rows.Add();
             dgvDonDatHang.Rows[index].Cells[0].Value = pt.TenPT;
             dgvDonDatHang.Rows[index].Cells[1].Value = soLuong;
-            dgvDonDatHang.Rows[index].Cells[2].Value = donGia;
+            dgvDonDatHang.Rows[index].Cells[2].Value = donGiaNhap;
 
             // Lưu tạm để sau ghi xuống DB
             chiTietTam.Add(new ChiTietDonDatHang
             {
                 MaPT = pt.MaPT,
                 SoLuong = soLuong,
-                DonGiaNhap = donGia
+                DonGiaNhap = donGiaNhap
             });
 
             // reset
