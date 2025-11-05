@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Tổng doanh thu: " &amp; FormatCurrency(Sum(Fields!DoanhThu.Value, "DataSetThang"), 0)</Value>
+                <Value>="Tổng doanh thu: " &amp; Format(Sum(Fields!DoanhThu.Value, "DataSetThang"), "#,##0") &amp; " VND"</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -18,9 +18,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
         <Top>5.5372cm</Top>
-        <Left>9.64207cm</Left>
+        <Left>9.47274cm</Left>
         <Height>0.727cm</Height>
-        <Width>4.38996cm</Width>
+        <Width>5.91396cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -128,6 +128,7 @@
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
+                                <Format>d</Format>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
@@ -148,6 +149,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -489,7 +491,7 @@
         <Top>0.96492cm</Top>
         <Left>1.07104cm</Left>
         <Height>0.6cm</Height>
-        <Width>4.19567cm</Width>
+        <Width>4.6825cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>

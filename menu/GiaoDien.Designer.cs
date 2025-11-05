@@ -147,7 +147,7 @@
             // rbcMENU
             // 
             this.rbcMENU.BackColor = System.Drawing.Color.LightGray;
-            this.rbcMENU.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(111);
+            this.rbcMENU.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(139);
             this.rbcMENU.ExpandCollapseItem.Id = 0;
             this.rbcMENU.ForeColor = System.Drawing.Color.Black;
             this.rbcMENU.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -213,10 +213,10 @@
             this.barButtonItem8,
             this.barButtonItem10});
             this.rbcMENU.Location = new System.Drawing.Point(0, 0);
-            this.rbcMENU.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.rbcMENU.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
             this.rbcMENU.MaxItemId = 101;
             this.rbcMENU.Name = "rbcMENU";
-            this.rbcMENU.OptionsMenuMinWidth = 1257;
+            this.rbcMENU.OptionsMenuMinWidth = 1571;
             this.rbcMENU.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1,
             this.ribbonPageCategory2,
@@ -662,7 +662,7 @@
             // 
             // barButtonItem8
             // 
-            this.barButtonItem8.Caption = "Doanh thu theo tháng";
+            this.barButtonItem8.Caption = "Chi tiết doanh thu";
             this.barButtonItem8.Id = 99;
             this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
             this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
